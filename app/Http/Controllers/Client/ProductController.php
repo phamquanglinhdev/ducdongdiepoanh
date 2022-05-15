@@ -25,4 +25,7 @@ class ProductController extends Controller
         Category::find($id)->update(["active"=>false]);
         return redirect()->back();
     }
+    public function showProduct($slug){
+        return Product::where("slug","=",$slug)->first();
+    }
 }

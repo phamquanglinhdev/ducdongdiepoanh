@@ -38,6 +38,10 @@ class Product extends Model
     {
         return view("components.delete",['route'=>"hide-product","id"=>$this->id]);
     }
+    public function showProduct()
+    {
+        return view("components.show",['route'=>"product","slug"=>$this->slug]);
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

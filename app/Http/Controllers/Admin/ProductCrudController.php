@@ -31,6 +31,7 @@ class ProductCrudController extends CrudController
         CRUD::setEntityNameStrings("Sản phẩm", 'Những sản phẩm');
         $this->crud->denyAccess(["show", "delete"]);
         $this->crud->addButtonFromModelFunction("line", "hide", "hideProduct", "line");
+        $this->crud->addButtonFromModelFunction("line", "showing", "showProduct", "line");
     }
 
     /**
