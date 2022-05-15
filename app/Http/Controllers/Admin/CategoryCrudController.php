@@ -26,9 +26,12 @@ class CategoryCrudController extends CrudController
      */
     public function setup()
     {
+
         CRUD::setModel(\App\Models\Category::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/category');
         CRUD::setEntityNameStrings('Danh mục', 'Các danh mục');
+        $this->crud->denyAccess(["show","delete"]);
+        $this->crud->addButtonFromModelFunction("line","hide","hideCategory","line");
     }
 
     /**
@@ -39,6 +42,7 @@ class CategoryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->addClause("where","active","=",true);
         CRUD::column('name')->label("Tên danh mục");
         CRUD::column('slug')->label("URL");
         CRUD::column('thumbnail')->type("image")->label("Ảnh");

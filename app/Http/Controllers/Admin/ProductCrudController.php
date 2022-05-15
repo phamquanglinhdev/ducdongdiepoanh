@@ -29,6 +29,8 @@ class ProductCrudController extends CrudController
         CRUD::setModel(\App\Models\Product::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/product');
         CRUD::setEntityNameStrings("Sản phẩm", 'Những sản phẩm');
+        $this->crud->denyAccess(["show", "delete"]);
+        $this->crud->addButtonFromModelFunction("line", "hide", "hideProduct", "line");
     }
 
     /**
@@ -39,15 +41,17 @@ class ProductCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-
+        $this->crud->addClause("where", "active", "=", true);
         CRUD::column('name')->label("Tên sản phẩm");
         CRUD::column('slug')->label("URL");
         CRUD::addColumn([
             'name' => 'category_id',
             'type' => 'select',
-            'models'=>'App\Models\Category',
-            'entity'=>'Category',
-            'attribute'=>'name',
+            'models' => 'App\Models\Category',
+            'entity' => 'Category',
+            'attribute' => 'name',
+
+
         ]);
         CRUD::column('size')->label("Kích thước");
         CRUD::column('price')->label("Khoảng giá");
@@ -75,11 +79,14 @@ class ProductCrudController extends CrudController
         CRUD::field('slug')->label("URL")->type("hidden");
         CRUD::addField([
             'name' => 'category_id',
-            'label'=>'Danh mục',
+            'label' => 'Danh mục',
             'type' => 'select',
-            'models'=>'App\Models\Category',
-            'entity'=>'Category',
-            'attribute'=>'name',
+            'models' => 'App\Models\Category',
+            'entity' => 'Category',
+            'attribute' => 'name',
+            'options' => (function ($query) {
+                return $query->orderBy('name','ASC')->where('active',true)->get();
+            })
         ]);
         CRUD::field('size')->label("Kích thước");
         CRUD::field('price')->label("Khoảng giá");

@@ -34,6 +34,10 @@ class Product extends Model
 
         $this->attributes['slug'] = Str::slug($this->name, "-") . ".aspx";
     }
+    public function hideProduct()
+    {
+        return view("components.delete",['route'=>"hide-product","id"=>$this->id]);
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
