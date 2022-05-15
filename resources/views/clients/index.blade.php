@@ -61,7 +61,7 @@
     <!-- end phan gioi thieu nghe nhan  -->
     <!-- gioi thieu du an tieu bieu -->
     <section class="good-project">
-        <div class="container p-5 mx-auto">
+        <div class="container p-md-5 p-1 mx-auto">
             <h1 class="text-main text-center">DỰ ÁN TIÊU BIỂU</h1>
             <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}" class="img-fluid py-2" alt=""></div>
             <p class="text-center text-main">
@@ -97,7 +97,7 @@
     <!-- ket thuc phan gioi thieu duu an tieu bieu -->
     <!-- bat dau phan san pham -->
     <section class="products">
-        <div class="container p-5 mx-auto">
+        <div class="container p-md-5 p-1 mx-auto">
             <h1 class="text-main text-center font-weight-bold">SẢN PHẨM</h1>
             <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2" alt=""></div>
             <p class="text-center text-main">
