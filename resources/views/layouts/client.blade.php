@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{asset("assets/css/owl.carousel.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/owl.theme.default.min.css")}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-    <meta name="zalo-platform-site-verification" content="OOwL2EMJ1WuHauCix8CRCoggpWd6snLJCp4" />
     @yield("css")
 </head>
 <body>

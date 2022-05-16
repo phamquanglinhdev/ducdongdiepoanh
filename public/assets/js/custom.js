@@ -15,7 +15,9 @@ closer.addEventListener('click',(e)=>{
 window.onresize = (e)=>{
     if(window.screen.width >= 768){
         togller = 0
-        subNav.classList.remove('sticky-top')
+        if (subNav.classList.contains(('sticky-top'))){
+            subNav.classList.remove('sticky-top')
+        }
         if(navbar.classList.contains("show-main-nav")){
             navbarTogglerBtn.classList.remove("btn-toggler-show")
             navbar.classList.remove("show-main-nav")
@@ -24,7 +26,7 @@ window.onresize = (e)=>{
 }
 
 const handleToggler = (event)=>{
-    if(togller === 0){
+    if(togller == 0){
         togller = 1
         if(!navbar.classList.contains("show-main-nav")){
             navbarTogglerBtn.classList.add("btn-toggler-show")
@@ -43,15 +45,15 @@ const handleToggler = (event)=>{
 }
 
 window.addEventListener('scroll',(e)=>{
-    if(window.screen.width > 767){
-        if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 20){
+    if(document.body.clientWidth > 767){
+        if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
             navbar.classList.add('sticky-top')
         }else{
             navbar.classList.remove('sticky-top')
         }
     }else{
         if(!togller){
-            if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 20){
+            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
                 subNav.classList.add('sticky-top')
             }else{
                 subNav.classList.remove('sticky-top')
@@ -61,10 +63,10 @@ window.addEventListener('scroll',(e)=>{
         }
 
     }
+
 })
 navbarTogglerBtn.addEventListener('click',handleToggler)
 
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel();
-
 });

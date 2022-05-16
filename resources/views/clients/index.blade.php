@@ -1,5 +1,53 @@
 @extends("layouts.client")
+
 @section("content")
+    <style>
+        .introduce-product .image-card {
+            min-height: 230px;
+            max-height: 250px;
+            overflow: hidden;
+        }
+
+        .introduce-product .image-card img {
+            min-height: 230px;
+        }
+
+        .introduce-artis .title {
+            font-size: 48px !important;
+        }
+
+        .introduce-artis .sub-title {
+            font-size: 20px !important;
+        }
+
+        .introduce-artis .desc {
+            font-size: 14px !important;
+            letter-spacing: 1.5px;
+        }
+
+        .avatar-wraper {
+            overflow: hidden;
+            max-height: 334px !important;
+            min-height: 334px !important;
+            object-fit: cover;
+            border-radius: 50%;
+            max-width: 336px !important;
+        }
+
+        .avatar-wraper .avatar {
+            transform: scale(2);
+        }
+
+        .good-project {
+            background-image: url("{{asset("assets/images/product-introduce-bg.png")}}");
+            background-position: top;
+        }
+
+        .introduce-artis {
+            background-image: url("{{asset("assets/images/backchitiettintuc.png")}}");
+        }
+
+    </style>
     <!-- end header banner -->
     <!-- start gioi thieu nghe nhan -->
     <section class="introduce-artis">
@@ -10,7 +58,8 @@
                     <div>
                         <div class="pt-4 pb-1 text-main font-weight-bold h1">ĐÚC ĐỒNG DIỆP OANH</div>
                         <h2 class="sub-title pb-4 text-main">ĐÚC ĐỒNG GIA TRUYỀN</h2>
-                        <p class="desc pb-2 pt-4">oanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế
+                        <p class="desc pb-2 pt-4">oanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và
+                            chế
                             tác đồ
                             đồng lớn của làng nghề tại TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân
                             xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội ngũ các thợ giỏi và nghệ nhân
@@ -26,7 +75,7 @@
                     <div class="avatar-wraper my-3 text-center mx-auto">
                         <img src="{{asset("assets/images/paris.jpg")}}" class="img-fluid avatar " alt="">
                     </div>
-                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng  Diệp Oanh</h4>
+                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
                 </div>
             </div>
             <div class="row py-5">
@@ -62,11 +111,13 @@
     <!-- gioi thieu du an tieu bieu -->
     <section class="good-project">
         <div class="container p-md-5 p-1 mx-auto">
-            <h1 class="text-main text-center">DỰ ÁN TIÊU BIỂU</h1>
-            <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}" class="img-fluid py-2" alt=""></div>
+            <h1 class="text-main text-center font-weight-bold">DỰ ÁN TIÊU BIỂU</h1>
+            <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}"
+                                          class="img-fluid py-2" alt=""></div>
             <p class="text-center text-main">
                 Với kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
-                kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với kinh
+                kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
+                kinh
                 nghiệp nhiều đời, Đúc đồng Điệp
                 Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....
             </p>
@@ -99,7 +150,8 @@
     <section class="products">
         <div class="container p-md-5 p-1 mx-auto">
             <h1 class="text-main text-center font-weight-bold">SẢN PHẨM</h1>
-            <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2" alt=""></div>
+            <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
+                                          alt=""></div>
             <p class="text-center text-main">
                 Đồ đồng Điệp Oanh được nghiên cứu và sáng tao như một tác phẩm nghệ thuật thật sự. <br>
                 Đây là các sản phẩm thủ công mỹ nghệ rất độc đáo , đồi hỏi kỹ nghệ cao.
@@ -148,7 +200,8 @@
                     <div class="row py-4">
                         <div class="col-6 px-1 px-sm-3 px-md-1">
                             <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="img-fluid rounded-20" alt="...">
+                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
+                                     alt="...">
                                 <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
                                     <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
 
@@ -157,7 +210,8 @@
                         </div>
                         <div class="col-6 px-1 px-sm-3 px-md-1">
                             <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="img-fluid rounded-20" alt="...">
+                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
+                                     alt="...">
                                 <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
                                     <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
 
@@ -168,7 +222,8 @@
                     <div class="row py-1 py-lg-3 py-xl-4">
                         <div class="col-6 px-1 px-sm-3 px-md-1">
                             <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="img-fluid rounded-20" alt="...">
+                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
+                                     alt="...">
                                 <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
                                     <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
 
@@ -177,7 +232,8 @@
                         </div>
                         <div class="col-6 px-1 px-sm-3 px-md-1">
                             <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="img-fluid rounded-20" alt="...">
+                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
+                                     alt="...">
                                 <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
                                     <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
                                 </div>
@@ -189,4 +245,7 @@
         </div>
     </section>
     <!-- ket thuc phan video -->
+@endsection
+@section("css")
+
 @endsection
