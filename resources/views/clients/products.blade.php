@@ -78,6 +78,12 @@
     </style>
 @endsection
 @section("content")
+    <style>
+        .ajax-load {
+            margin: auto;
+            width: 100%;
+        }
+    </style>
     <section class="my-5">
         <div class="container m-auto text-center color-web">
             <div class="text-main h1 font-weight-bold">Sản Phẩm</div>
@@ -91,9 +97,9 @@
     <section class="products">
         <div class="container px-5 m-auto">
             <div class="row justify-content-end">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 px-1 px-md-3 py-sm-3 fixed">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 px-1 px-md-3 py-sm-3 d-none d-md-block">
                     <h5 class="bg-main w-100 px-4 py-2 text-white text-center ">Sản phẩm</h5>
-                    <form action="#">
+                    <div id="large-filter">
                         <ul class="list-unstyled list-type-product">
                             <li>
                                 <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>
@@ -137,19 +143,18 @@
                                 <p><span id="valueRange"></span><span> đ</span></p>
                             </div>
                         </ul>
-                    </form>
-                    <div class="text-center py-5">
-                        <a class="btn btn-outline-dark m-5 text-center p-2 m-auto" id="load-more">Xem thêm</a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-9 my-3 my-md-0">
-                    <div class="row mb-2 my-sm-0 mb-md-4" id="products" style="overflow-y: scroll;max-height: 800px">
+                    <div class="row mb-2 my-sm-0 mb-md-4" id="products">
                         {!! $data !!}
                     </div>
                     <hr>
 
                 </div>
-
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9 my-3 my-md-0 text-center py-2">
+                    Hiển thị <span id="counter-value">9</span> sản phẩm
+                </div>
             </div>
         </div>
     </section>
@@ -159,6 +164,7 @@
     <script>
         let categories = "";
         let limit = 9;
+
         function loadData(limit, category) {
             $.ajax({
                 url: "{{route("filter")}}",
@@ -168,10 +174,13 @@
                     categories: category,
                     _token: "{{csrf_token()}}"
                 },
+                beforeSend: function () {
+                    $("#products").html("<img src='https://cdn.dribbble.com/users/902865/screenshots/4814970/loading-opaque.gif' alt='...' class='ajax-load'>")
+                },
                 success: function (response) {
-                    console.log(response);
                     if (response) {
                         $("#products").html(response);
+                        $("#counter-value").html(limit);
                     }
                 },
                 error: function (error) {
@@ -179,17 +188,24 @@
                 }
             });
         }
+
         $("input").click(function () {
+            limit=6;
             categories = "";
             $('input[name="categories"]:checked').each(function (e) {
-                categories+=this.value+",";
+                categories += this.value + ",";
             });
-            loadData(limit,categories)
+            loadData(limit, categories)
         })
-        $("#load-more").click(function () {
-            limit+=3;
-            loadData(limit,categories)
-        })
+
+        $(window).scroll(function() {
+            console.log($(window).scrollTop());
+            if($(window).scrollTop() >= ($(document).height() - $(window).height()-300)) {
+                limit += 3;
+                loadData(limit, categories)
+
+            }
+        });
     </script>
     <script>
         let rangeInput = document.getElementById("sliderRange")
