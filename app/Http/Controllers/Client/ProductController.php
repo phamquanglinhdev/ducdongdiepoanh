@@ -13,11 +13,12 @@ class ProductController extends Controller
     public function index()
     {
         $data = null;
-        $products = Product::orderBy("updated_at", "DESC")->where("active", "=", true)->where("active", "=", true)->get();
+        $products = Product::orderBy("updated_at", "DESC")->where("active", "=", true)->where("active", "=", true)->limit(9)->get();
+        $categories = Category::where("active","=",true)->get();
         foreach ($products as $product) {
             $data .= view("components.product", ["product" => $product]);
         }
-        return view("clients.products", ["data" => $data]);
+        return view("clients.products", ["data" => $data,"categories"=>$categories]);
     }
 
     public function filter(Request $request)
@@ -30,6 +31,8 @@ class ProductController extends Controller
             foreach ($categories as $item) {
                 $products = $products->orWhere("category_id", "=", $item);
             }
+        }else{
+            $products = Product::orderBy("updated_at", "DESC");
         }
 //        if ($request->type != "empty") {
 ////            $products=Product::orderBy("updated_at","DESC");
