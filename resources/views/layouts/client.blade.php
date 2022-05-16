@@ -9,8 +9,40 @@
     <link rel="stylesheet" href="{{asset("assets/css/owl.carousel.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/owl.theme.default.min.css")}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <meta name="zalo-platform-site-verification" content="OOwL2EMJ1WuHauCix8CRCoggpWd6snLJCp4" />
+    @yield("css")
 </head>
 <body>
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "104416362062991");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v13.0'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <header>
     <!-- top banner -->
     <div class="banner-wrap">
@@ -176,9 +208,93 @@
         <h6 class="text-center text-white small">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
     </div>
 </footer>
+<a id="back-top-top" class="d-flex align-items-center">
+    <i class="fas fa-arrow-up w-100 fa-2x text-white "></i>
+</a>
+<style>
+    .fb_dialog_content iframe{
+        bottom: 90px!important;
+        right: 25px!important;
+    }
+    #back-top-top {
+        display: inline-block;
+        background-color: #FF9800;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 4px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s,
+        opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+    }
+    #back-top-top:hover {
+        cursor: pointer;
+        background-color: #333;
+        text-decoration: none;
+    }
+    #back-top-top:active {
+        background-color: #555;
+    }
+    #back-top-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Styles for the content section */
+
+    .content {
+        width: 77%;
+        margin: 50px auto;
+        font-family: 'Merriweather', serif;
+        font-size: 17px;
+        color: #6c767a;
+        line-height: 1.9;
+    }
+    @media (min-width: 500px) {
+        .content {
+            width: 43%;
+        }
+        #button {
+            margin: 30px;
+        }
+    }
+    .content h1 {
+        margin-bottom: -10px;
+        color: #03a9f4;
+        line-height: 1.5;
+    }
+    .content h3 {
+        font-style: italic;
+        color: #96a2a7;
+    }
+</style>
 <script src="{{asset("assets/js/jquery.slim.min.js")}}"></script>
 <script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
 <script src="{{asset("assets/js/owl.carousel.min.js")}}"></script>
 <script src="{{asset("assets/js/custom.js")}}"></script>
+<script>
+    var btn = $('#back-top-top');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '300');
+    });
+
+
+</script>
+@yield("js")
 </body>
 </html>
