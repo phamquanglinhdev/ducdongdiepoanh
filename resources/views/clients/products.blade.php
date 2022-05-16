@@ -6,7 +6,6 @@
         </div>
     </div>
 @endsection
-
 @section("js")
     <script>
         function loadData(limit, category) {

@@ -19,6 +19,7 @@
 <!-- Your Plugin chat code -->
 <div id="fb-customer-chat" class="fb-customerchat">
 </div>
+<x-zalo-chat></x-zalo-chat>
 
 <script>
     var chatbox = document.getElementById('fb-customer-chat');
@@ -213,7 +214,6 @@
 </a>
 <style>
     .fb_dialog_content iframe{
-        bottom: 90px!important;
         right: 25px!important;
     }
     #back-top-top {
@@ -225,7 +225,7 @@
         border-radius: 4px;
         position: fixed;
         bottom: 30px;
-        right: 30px;
+        left: 30px;
         transition: background-color .3s,
         opacity .5s, visibility .5s;
         opacity: 0;
@@ -292,8 +292,6 @@
         e.preventDefault();
         $('html, body').animate({scrollTop:0}, '300');
     });
-
-
 </script>
 @yield("js")
 </body>
