@@ -134,15 +134,24 @@
                                 <input type="checkbox" id="input_product_type_9"/>
                                 <label class="small" for="input_product_type_9">Đồ trang trí</label>
                             </li>
+
                         </ul>
                         <ul class="list-group text-left">
                             <div class="form-group">
                                 <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>
-                                <input type="range" class="form-control-range my-2 slider-score" min="0" max="10000000"
+                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0" max="19999999"
                                        value="0" id="sliderRange">
-                                <p><span id="valueRange"></span><span> đ</span></p>
+                                <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>
                             </div>
                         </ul>
+                        <div class="row justify-content-between py-2">
+                            <div class="col-6">
+                                <a class="btn bg-main p-2 text-white w-100" id="previous">Trang trước</a>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn bg-main p-2 text-white w-100" id="next">Trang kế</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-9 my-3 my-md-0">
@@ -152,9 +161,7 @@
                     <hr>
 
                 </div>
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 my-3 my-md-0 text-center py-2">
-                    Hiển thị <span id="counter-value">9</span> sản phẩm
-                </div>
+
             </div>
         </div>
     </section>
@@ -163,24 +170,37 @@
 @section("js")
     <script>
         let categories = "";
-        let limit = 9;
+        let limit = 1;
+        let price = 0;
+        let search = "";
 
-        function loadData(limit, category) {
+        function loadData() {
+            prvData = $("#products").html();
             $.ajax({
                 url: "{{route("filter")}}",
                 type: "POST",
                 data: {
                     limit: limit,
-                    categories: category,
+                    categories: categories,
+                    price:price,
                     _token: "{{csrf_token()}}"
                 },
                 beforeSend: function () {
+
                     $("#products").html("<img src='https://cdn.dribbble.com/users/902865/screenshots/4814970/loading-opaque.gif' alt='...' class='ajax-load'>")
                 },
                 success: function (response) {
-                    if (response) {
+                    if (response !== "") {
                         $("#products").html(response);
                         $("#counter-value").html(limit);
+                    } else {
+                        Swal.fire({
+                            // title: 'Đã đến trang cuối',
+                            text: 'Không tìm thấy dữ liệu phù hợp',
+                            icon: 'warning',
+                        })
+                        limit -= 1;
+                        $("#products").html(prvData)
                     }
                 },
                 error: function (error) {
@@ -190,22 +210,39 @@
         }
 
         $("input").click(function () {
-            limit=6;
+            limit = 1;
             categories = "";
             $('input[name="categories"]:checked').each(function (e) {
                 categories += this.value + ",";
             });
-            loadData(limit, categories)
+            price=$('input[name="price"]').val()
+            console.log(price)
+            loadData()
         })
-
-        $(window).scroll(function() {
-            console.log($(window).scrollTop());
-            if($(window).scrollTop() >= ($(document).height() - $(window).height()-300)) {
-                limit += 3;
-                loadData(limit, categories)
-
+        $("#next").click(function () {
+            limit += 1;
+            categories = "";
+            $('input[name="categories"]:checked').each(function (e) {
+                categories += this.value + ",";
+            });
+            loadData()
+        })
+        $("#previous").click(function () {
+            if (limit > 1) {
+                limit -= 1;
+                categories = "";
+                $('input[name="categories"]:checked').each(function (e) {
+                    categories += this.value + ",";
+                });
+                loadData()
+            }else {
+                Swal.fire({
+                    // title: 'Đã đến trang cuối',
+                    text: 'Đã ở trang đầu',
+                    icon: 'warning',
+                })
             }
-        });
+        })
     </script>
     <script>
         let rangeInput = document.getElementById("sliderRange")

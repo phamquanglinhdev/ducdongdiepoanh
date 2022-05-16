@@ -31,7 +31,7 @@ class ProductSeeder extends Seeder
                 "name" => $name,
                 "slug" => $name,
                 "description" => "<p>Xin chào</p>",
-                "price" => rand(1900, 2500) * 1000,
+                "price" => rand(1000, 20000) * 1000,
                 "rating" => rand(3, 5),
                 "size" => "Chưa cập nhật",
                 "first_thumbnail" => $image[rand(0,4)],

@@ -13,7 +13,8 @@ class ProductController extends Controller
     public function index()
     {
         $data = null;
-        $products = Product::orderBy("updated_at", "DESC")->where("active", "=", true)->where("active", "=", true)->limit(9)->get();
+        $products = Product::orderBy("updated_at", "DESC")->where("active", "=", true)->where("active", "=", true)->limit(6)->get();
+
         $categories = Category::where("active","=",true)->get();
         foreach ($products as $product) {
             $data .= view("components.product", ["product" => $product]);
@@ -40,11 +41,15 @@ class ProductController extends Controller
 ////                $products = $products->orWhere("category","=",$item);
 ////            }
 //        }
-        if(isset($request->limit))
-            $products = $products->where("active", "=", true)->limit($request->limit)->get();
-        else
-            $products = $products->where("active", "=", true)->get();
-        $data = null;
+        $page = $request->limit;
+        $start = ($page-1)*6;
+//        $end = $start+8;
+        $data=null;
+        $products = $products->where("price",">=",$request->price);
+        if($request->price > 0){
+            $products = $products->orderBy("price","ASC");
+        }
+        $products = $products->where("active", "=", true)->offset($start)->limit(6)->get();
         foreach ($products as $product) {
             $data .= view("components.product", ["product" => $product]);
         }
