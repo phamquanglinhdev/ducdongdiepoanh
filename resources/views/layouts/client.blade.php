@@ -1,150 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title Page</title>
-
-    <!-- Liên kết css của bootstrap -->
-    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-    <!-- Css của mình -->
-    <link rel="stylesheet" type="text/css" href="{{asset("css/all.css")}}">
-    <link rel="stylesheet" href="{{asset("css/style.css")}}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset("assets/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/owl.carousel.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/owl.theme.default.min.css")}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
 </head>
 <body>
-
-<header id="menu-bar">
-    <nav class="navbar navbar-fixed-top navbar-default opaque-navbar" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="DO_AN.html"><img src="{{asset("img/logo1.png")}}" class="img-responsive" alt=""></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Trang chủ</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu<span class="caret"></span></a>
-                        <ul class="dropdown-menu one">
-                            <li><a href="gioithieunghe.html" style="margin-top: 5px;">Giới thiệu về linh vật Nghê</a></li>
-                            <li><a href="tranhauyenthe.html">Họa sĩ Trần Hậu Yên Thế</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Phân loại<span class="caret"></span></a>
-                        <ul class="dropdown-menu two">
-                            <li><a href="phanloai.html" style="margin-top: 5px;">Phân loại linh vật Nghê</a></li>
-                            <li><a href="linhvatnghe.html">Linh vật Nghê VR3D</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="hinhthai.html">Hình thái</a></li>
-                    <li><a href="sanpham.html">Sản phẩm ứng dụng</a></li>
-                    <li><a href="tintuc.html">Tin tức</a></li>
-                    <li><a href="lienhe.html">Liên hệ</a></li>
-                    <li class="dropdown search">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                        <ul class="dropdown-menu">
-                            <form class="navbar-form navbar-left" action="/action_page.php">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
+<header>
+    <!-- top banner -->
+    <div class="banner-wrap">
+        <div class="container mx-auto">
+            <div class="row align-items-center">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
+                    <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 w-100">
+                    <div class="row d-flex justify-content-around align-items-center h-100">
+                        <div class="d-none d-md-block col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <form action="">
+                                <input type="search" name="" class="px-2 py-1 border-0 rounded w-100"
+                                       id="header-search-input">
                             </form>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="social">
-                            <li class="fb"><img src="{{"img/fbw.png"}}" alt="" class="img-responsive">
-                                <div class="overlay">
-                                    <a href="" title=""><img src="{{asset("img/facebook.png")}}" class="img-responsive" alt="Image"></a>
-                                </div></li>
-                            <li class="fb"><img src="{{asset("img/youtube.png")}}" alt="" class="img-responsive">
-                                <div class="overlay">
-                                    <a href="" title=""><img src="{{asset("img/youtuye.png")}}" class="img-responsive" alt="Image"></a>
-                                </div></li>
-                            <li class="fb"><img src="{{asset("img/pinterest.png")}}" alt="" class="img-responsive">
-                                <div class="overlay">
-                                    <a href="" title=""><img src="{{asset("img/pinye.png")}}" class="img-responsive" alt="Image"></a>
-                                </div></li>
-                            <li class="fb"><img src="{{asset("img/instagram.png")}}" alt="" class="img-responsive">
-                                <div class="overlay">
-                                    <a href="" title=""><img src="{{asset("img/instaye.png")}}" class="img-responsive" alt="Image"></a>
-                                </div></li>
-                        </ul>
-                    </li>
-                </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 pb-sm-0 col-md-6 col-lg-6 col-xl-6">
+                            <ul class="d-flex list-social-icon justify-content-end px-2 justify-content-sm-end justify-content-md-center align-items-center list-unstyled">
+                                <li class="d-none  d-md-inline">
+                                    <span class="fa-stack">
+                                        <i class="fas fa-circle text-white fa-stack-2x"></i>
+                                        <i class="fab fa-facebook text-dark fa-stack-1x fa-inverse"></i>
+                                      </span>
+                                </li>
+                                <li class="d-none  d-md-inline">
+                                    <span class="fa-stack">
+                                        <i class="fas fa-circle text-white fa-stack-2x"></i>
+                                        <i class="fab fa-youtube text-dark  fa-stack-1x fa-inverse"></i>
+                                      </span>
+                                </li>
+                                <li class="d-none  d-md-inline">
+                                    <span class="fa-stack">
+                                        <i class="fas fa-circle text-white fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin text-dark fa-stack-1x fa-inverse"></i>
+                                      </span>
+                                </li>
+                                <li class="d-none  d-md-inline">
+                                    <span class="fa-stack">
+                                        <i class="fas fa-circle text-white fa-stack-2x"></i>
+                                        <i class="fab fa-instagram text-dark fa-stack-1x fa-inverse"></i>
+                                      </span>
+                                </li>
+                                <button class="d-block d-md-none rounded" id="navbar-toggler-btn" type="button"
+                                        data-show="0">
+                                    <span class="fa-stack">
+                                        <i class="fas fa-circle text-white fa-stack-2x"></i>
+                                        <i class="fas fa-bars text-dark fa-stack-1x fa-inverse"></i>
+                                      </span>
+                                </button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <!-- end top banner -->
+    <!-- main nav -->
+    <div class="bg-main main-nav">
+        <div class="container m-auto">
+            <nav class="navbar navbar-expand-md navbar-dark px-5 py-2 py-md-2" id="main-nav">
+
+                <i class="d-block d-md-none fas fa-times text-dark" id="toggler-close-btn" data-hide="1"></i>
+
+                <div class="sidebar w-100" id="main-sidebar">
+
+                    <ul class="navbar-nav d-block d-md-flex justify-content-around align-items-center  w-100 py-2">
+                        <li class="nav-item px-2 py-md-0 py-2 d-block d-md-none">
+                            <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
+                        </li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">GIỚI THIỆU</a>
+                        </li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>
+                        </li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">SẢN PHẨM</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU
+                                BIỂU</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">TIN TỨC</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">LIÊN HỆ</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2">
+                            <div class="d-block d-md-none">
+                                <form action="">
+                                    <input type="search" name="" class="px-2 border-0 rounded w-100"
+                                           id="header-search-input">
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- end main nav -->
+    <!-- start header banner -->
+    <section class="container-fluid">
+        <img src="{{asset("assets/images/header_banner.jpg")}}" class="img-fluid" alt="">
+    </section>
 </header>
 @yield("content")
-<section id="footer">
-    <div class="container">
-        <div class="noidung">
-            <img src="{{asset("img/logo2.png")}}" class="img-responsive" alt="Image">
-            <p style="margin-top: 15px;">Nghê đích thực là gã linh vật chầu rìa độc đáo nhất trong nghệ thuật cổ truyền của người Việt.
-                Gã linh vật bên lề - nghê đã góp phần làm nên một diện mạo tinh thần sống động, lạc quan, bình dânvà thân thuộc cho nghệ thuật người Việt thời Trung đại. Nghê đã gắn bó ân tình với người Việt
-                hàng nghìn năm nay. Nhỏ nhắn và khiêm nhường, chất phác và thuần hậu.</p>
-            <img src="{{asset("img/hoatiet2.png")}}" class="hoa img-responsive " alt="Image">
+<footer class="bg-main container-fluid">
+    <div class="container m-auto py-3 px-5">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
         </div>
-
-        <div class="row" style="margin-top: 30px; margin-bottom: 20px;">
-            <div class="col-md-4 col-xs-4">
-                <h5>Hợp tác và liên kết:</h5>
-                <p>La Sonmai <br>Bảo tàng Mỹ thuật Việt Nam <br>Bảo tàng tỉnh Nam Định</p>
+        <p class="text-center small  text-white my-3">
+            Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
+            TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội
+            ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm
+            bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
+        </p>
+        <div class="row">
+            <div class="col">
+                <h5 class="text-center text-warning">Hệ thống showroom</h5>
+                <h6 class="text-center text-white small py-2">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white small">Email : đucongdiepoanh@gmail.com</h6>
             </div>
-            <div class="col-md-4 col-xs-4">
-                <h5>Liên hệ:</h5>
-                <p>Điện thoại: (+84) 388 517 838<br>Email: nghevietnam@contact.com<br>Địa chỉ: 264 Cầu Giấy, Hà Nội </p>
+            <div class="col text-center">
+                <h5 class="text-center text-warning">Liên hệ</h5>
+                <h6 class="text-center text-white py-2 small">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white small">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
             </div>
-            <div class="col-md-4 col-xs-4">
-                <h5>Liên hệ với chúng tôi:</h5>
-                <ul class="nav navbar-nav social">
-                    <li class="fb"><img src="{{asset("img/fbw.png")}}" alt="" class="img-responsive">
-                        <div class="overlay">
-                            <a href="" title=""><img src="{{asset("img/facebook.png")}}" class="img-responsive" alt="Image"></a>
-                        </div></li>
-                    <li class="fb one"><img src="{{asset("img/youtube.png")}}" alt="" class="img-responsive">
-                        <div class="overlay">
-                            <a href="" title=""><img src="{{asset("img/youtuye.png")}}" class="img-responsive" alt="Image"></a>
-                        </div></li>
-                    <li class="fb"><img src="{{asset("img/pinterest.png")}}" alt="" class="img-responsive">
-                        <div class="overlay">
-                            <a href="" title=""><img src="{{asset("img/pinye.png")}}" class="img-responsive" alt="Image"></a>
-                        </div></li>
-                    <li class="fb two"><img src="{{asset("img/instagram.png")}}" alt="" class="img-responsive">
-                        <div class="overlay">
-                            <a href="" title=""><img src="{{asset("img/instaye.png")}}" class="img-responsive" alt="Image"></a>
-                        </div></li>
+        </div>
+        <div class="row py-3">
+            <div class="col text-center">
+                <img src="{{asset("assets/images/good_projects_stiker.png")}}" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5 class="text-center text-warning">Kết nối với chúng tôi</h5>
+                <ul class="d-flex justify-content-center align-items-center list-unstyled my-3">
+                    <li>
+                        <span class="fa-stack">
+                            <i class="fas fa-circle text-white fa-stack-2x"></i>
+                            <i class="fab fa-facebook text-dark fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack">
+                            <i class="fas fa-circle text-white fa-stack-2x"></i>
+                            <i class="fab fa-youtube text-dark  fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack">
+                            <i class="fas fa-circle text-white fa-stack-2x"></i>
+                            <i class="fab fa-linkedin text-dark fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack">
+                            <i class="fas fa-circle text-white fa-stack-2x"></i>
+                            <i class="fab fa-instagram text-dark fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="copy" style="background-color: #4f0c08">
-        <p>&copy;Copyright 2006 - 2019  All Rights Reserved. Dodongoanhdiep.com<p>
+    <div class="container-fluid bg-footer py-3">
+        <h6 class="text-center text-white small">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
     </div>
-</section>
-
-
-
-<!-- Liên kết js tổng -->
-<script src="{{asset("js/jquery.min.js")}}"></script>
-<!-- Liên kết js của bootstrap -->
-<script src="{{asset("js/bootstrap.min.js")}}"></script>
-<script>  $(window).scroll(function() {
-        if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes non opaque*/
-        {
-            $('.opaque-navbar').addClass('opaque');
-        } else {
-            $('.opaque-navbar').removeClass('opaque');
-        }
-    });</script>
+</footer>
+<script src="{{asset("assets/js/jquery.slim.min.js")}}"></script>
+<script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
+<script src="{{asset("assets/js/owl.carousel.min.js")}}"></script>
+<script src="{{asset("assets/js/custom.js")}}"></script>
 </body>
 </html>

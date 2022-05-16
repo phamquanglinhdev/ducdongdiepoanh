@@ -1,0 +1,199 @@
+
+*{
+    padding: 0!important;
+    margin: 0!important;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'MedievalSharp', serif;
+}
+.banner-wrap{
+    background-color: #661013;
+}
+.text-main{
+    color: #661013;
+}
+.header-logo{
+
+}
+.padding--16{
+
+}
+.bg-main{
+
+    background-color: #61100c!important;
+}
+
+.top-search-input{
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-radius: 4px 0 0 4px !important;
+}
+.main-nav .nav-link{
+    font-size: .8rem!important;
+    font-weight: 700;
+}
+
+#navbar-toggler-btn{
+    background-color: transparent!important;
+    border: none;
+    outline: none;
+}
+.introduce-artis{
+    background-image: url("../images/backchitiettintuc.png");
+    background-size: cover;
+}
+.introduce-artis .title{
+    font-size: 48px!important;
+}
+.introduce-artis .sub-title{
+    font-size: 20px!important;
+}
+.introduce-artis .desc{
+    font-size: 14px!important;
+    letter-spacing: 1.5px;
+}
+.avatar-wraper{
+    overflow: hidden;
+    max-height: 334px!important;
+    min-height: 334px!important;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 336px!important;
+}
+.avatar-wraper .avatar{
+    transform: scale(2);
+}
+#toggler-close-btn{
+    color: white!important;
+    z-index: 999;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    top: 10px;
+}
+.good-project{
+    background-image: url("../images/product-introduce-bg.png");
+    background-size: auto;
+    background-position: top;
+}
+
+.products .product-card img{
+    width: 100%!important;
+    height: 100%!important;
+}
+.rounded-20{
+    border-radius: 20px;
+}
+.introduce-product .image-card {
+    min-height: 230px;
+    max-height: 250px;
+    overflow: hidden;
+}
+.introduce-product .image-card img{
+    min-height:230px;
+}
+.bg-footer{
+    background-color:#4f0502!important ;
+}
+
+.bg-product-card{
+    background-color: #e1decb!important;
+}
+.list-social-icon li:hover .fas{
+    color: #e8c24f!important;
+}
+.list-social-icon li:hover {
+    cursor: pointer!important;
+}
+.sticky-top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media (max-width: 1200px) {
+    .main-nav .nav-link{
+        font-size: .7rem!important;
+    }
+    .introduce-artis .title{
+        font-size: 36px!important;
+    }
+    .introduce-product .image-card {
+        min-height: 150px!important;
+        max-height: 250px!important;
+        overflow: hidden;
+    }
+    .introduce-product .image-card img{
+        min-height:190px!important;
+    }
+}
+
+.products .product-card:hover {
+    cursor: pointer;
+    transition: 0.4s ease;
+    background-color:#661013;
+}
+
+@media (max-width: 992px) {
+    .main-nav .nav-link{
+        font-size: .6rem!important;
+    }
+    .introduce-product .image-card {
+        min-height: 135px!important;
+        max-height: 250px!important;
+        overflow: hidden;
+    }
+    .introduce-product .image-card img{
+        min-height:135px!important;
+    }
+}
+@media (max-width: 768px) {
+    .main-nav .nav-link{
+        font-size: .7rem!important;
+    }
+    .main-nav{
+        position: fixed!important;
+        top: 0;
+        width: 70vw!important;
+        left: -1000px;
+        height: 100vh;
+        transition: 0.2s ease;
+    }
+    #main-sidebar{
+
+    }
+    .introduce-artis .title{
+        font-size: 36px;
+    }
+    .introduce-artis .sub-title{
+        font-size: 18px;
+    }
+    .introduce-artis .desc{
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+}
+@media (max-width: 576px) {
+    .main-nav .nav-link{
+        font-size: .6rem!important;
+    }
+    .avatar-wraper{
+        min-width: 215px!important;
+        max-width: 215px!important;
+        min-height: 215px!important;
+        max-height: 215px!important;
+        padding: 0!important;
+    }
+}
+
+.show-main-nav{
+    z-index: 99;
+    position: fixed!important;
+    left:0!important;
+    transition: 0.2s ease!important;
+}
+

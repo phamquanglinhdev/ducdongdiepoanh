@@ -34,6 +34,10 @@ class Category extends Model
 
         $this->attributes['slug'] = Str::slug($this->name, "-") . ".aspx";
     }
+    public function hideCategory()
+    {
+        return view("components.delete",['route'=>"hide-category","id"=>$this->id]);
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
