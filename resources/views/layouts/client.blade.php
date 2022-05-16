@@ -113,16 +113,16 @@
                         <li class="nav-item px-2 py-md-0 py-2 d-block d-md-none">
                             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">TRANG CHỦ</a>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}" class="nav-link text-white">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">GIỚI THIỆU</a>
                         </li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">SẢN PHẨM</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}" class="nav-link text-white">SẢN PHẨM</a></li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU
                                 BIỂU</a></li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">TIN TỨC</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="" class="nav-link text-white">TIN TỨC</a></li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">LIÊN HỆ</a></li>
                         <li class="nav-item px-2 py-md-0 py-2">
                             <div class="d-block d-md-none">
@@ -139,9 +139,6 @@
     </div>
     <!-- end main nav -->
     <!-- start header banner -->
-    <section class="container-fluid">
-        <img src="{{asset("assets/images/header_banner.jpg")}}" class="img-fluid" alt="">
-    </section>
 </header>
 @yield("content")
 <footer class="bg-main container-fluid">

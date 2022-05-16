@@ -48,6 +48,9 @@
         }
 
     </style>
+    <section class="container-fluid">
+        <img src="{{asset("assets/images/header_banner.jpg")}}" class="img-fluid" alt="">
+    </section>
     <!-- end header banner -->
     <!-- start gioi thieu nghe nhan -->
     <section class="introduce-artis">
