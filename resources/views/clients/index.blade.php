@@ -48,8 +48,8 @@
         }
 
     </style>
-    <section class="container-fluid">
-        <img src="{{asset("assets/images/header_banner.jpg")}}" class="img-fluid" alt="">
+    <section class="">
+        <img src="{{asset("assets/images/header_banner.jpg")}}" class="w-100" alt="">
     </section>
     <!-- end header banner -->
     <!-- start gioi thieu nghe nhan -->
@@ -59,9 +59,9 @@
                 <div
                     class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
                     <div>
-                        <div class="pt-4 pb-1 text-main font-weight-bold h1">ĐÚC ĐỒNG DIỆP OANH</div>
+                        <div class="pt-4 pb-1 text-main font-weight-bold h2">ĐÚC ĐỒNG DIỆP OANH</div>
                         <h2 class="sub-title pb-4 text-main">ĐÚC ĐỒNG GIA TRUYỀN</h2>
-                        <p class="desc pb-2 pt-4">oanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và
+                        <p class="desc pb-2 pt-4">Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và
                             chế
                             tác đồ
                             đồng lớn của làng nghề tại TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân

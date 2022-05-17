@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Client\FixedPageController;
 use App\Http\Controllers\Client\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::get("/tat-ca-san-pham",[ProductController::class,"index"])->name("product
 Route::get("/products/delete/{id}",[ProductController::class,'hide',"id"])->where(["id"])->name("hide-product");
 Route::get("/categories/delete/{id}",[ProductController::class,'hideCategory',"id"])->where(["id"])->name("hide-category");
 Route::get("/san-pham/{slug}",[ProductController::class,'showProduct',"slug"])->where(["slug"])->name("product");
+Route::get("/lien-he/",[FixedPageController::class,'contact'])->name("contact");
+Route::post("/lien-he/",[FixedPageController::class,'saveFeedback'])->name("contact.save");
