@@ -1,6 +1,6 @@
 <div class="col-12 col-sm-6 col-md-6 col-lg-4 px-sm-2 px-2 py-2">
     <div class="product-card shadow-lg rounded-20 text-center p-2 mb-3">
-        <a href="#">
+        <a href="{{route("product",$product->slug)}}">
             <img src="{{$product->first_thumbnail}}" class="img-fluid pb-2" alt="">
             <div class="d-flex justify-content-center align-items-center pb-4 product-rating">
                 @for($i=1;$i<=$product->rating;$i++)

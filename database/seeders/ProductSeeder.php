@@ -30,12 +30,15 @@ class ProductSeeder extends Seeder
                 "category_id" => rand(1, 4),
                 "name" => $name,
                 "slug" => $name,
-                "description" => "<p>Xin chào</p>",
+                "description" => Str::random(200),
                 "price" => rand(1000, 20000) * 1000,
                 "rating" => rand(3, 5),
                 "size" => "Chưa cập nhật",
                 "first_thumbnail" => $image[rand(0,4)],
                 "second_thumbnail" => $image[rand(0,4)],
+                "third_thumbnail" => $image[rand(0,4)],
+                "four_thumbnail" => $image[rand(0,4)],
+                "five_thumbnail" => $image[rand(0,4)],
             ];
             Product::create($product);
         }

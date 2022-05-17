@@ -29,9 +29,14 @@ class ProductController extends Controller
         if (isset($request->categories)) {
             $categories = explode(",", $request->categories);
             $products = Product::orderBy("updated_at", "DESC");
-            foreach ($categories as $item) {
-                $products = $products->orWhere("category_id", "=", $item);
-            }
+//            foreach ($categories as $item) {
+//                $products = $products->orWhere("category_id", "=", $item);
+//            }
+            $products = $products->where(function ($query) use ( $categories){
+                foreach ($categories as $item){
+                    $query->orWhere("category_id","=",$item);
+                }
+            });
         }else{
             $products = Product::orderBy("updated_at", "DESC");
         }
@@ -43,7 +48,6 @@ class ProductController extends Controller
 //        }
         $page = $request->limit;
         $start = ($page-1)*6;
-//        $end = $start+8;
         $data=null;
         $products = $products->where("price",">=",$request->price);
         if($request->price > 0){
@@ -73,6 +77,7 @@ class ProductController extends Controller
 
     public function showProduct($slug)
     {
-        return Product::where("slug", "=", $slug)->first();
+        $product =Product::where("slug", "=", $slug)->first();
+        return view("clients.product",['product'=>$product]);
     }
 }
