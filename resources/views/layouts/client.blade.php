@@ -25,7 +25,9 @@
         <div class="container mx-auto">
             <div class="row align-items-center">
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
-                    <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                   <a href="{{route("index")}}">
+                       <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                   </a>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 w-100">
                     <div class="row d-flex justify-content-around align-items-center h-100">

@@ -47,7 +47,7 @@
         <div class="container row m-auto px-3 px-sm-3 px-md-5 px-lg-0">
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <img class="mt-2" src="../assets/images/products-sticker.png">
-                <p class="text-monospace font-weight-bold">Năm nay các doanh nghiệp, người làm nghề đúc
+                <p class=" font-weight-bold">Năm nay các doanh nghiệp, người làm nghề đúc
                     huyện Ý Yên đón Tết Nguyên đán với tâm thế
                     rộn ràng hơn hẳn khi làng nghề có2nghệ nhân
                     là Dương Bá Dũng, Vũ Duy Điệp (thị trấn Lâm)
@@ -74,7 +74,7 @@
                 <div class="my-4 mt-3">
                     <img class="pb-4" src="../assets/images/good_projects_stiker.png">
                 </div>
-                <p class="text-monospace text-left">Chia sẻ của hai Nghệ nhân Ưu tú Dương Bá Dũng
+                <p class=" text-left">Chia sẻ của hai Nghệ nhân Ưu tú Dương Bá Dũng
                     (Giám đốc Doanh nghiệp tư nhân Bá Dũng) và Vũ
                     Duy Điệp cho thấy: Điều giúp các ông vưot qua mọi
                     khó khăn, vất vả suốt chặng đường làm nghề cho
@@ -87,7 +87,7 @@
                     điều kiện thẩm thấu trình độ, kỹ năng làm nghề</p>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-justify px-3 mt-4">
-                <p class="text-monospace">Chia sẻ của hai Nghệ nhân Ưu tú Dương Bá Dũng (Giám đốc Doanh nghiệp tư nhân
+                <p class="">Chia sẻ của hai Nghệ nhân Ưu tú Dương Bá Dũng (Giám đốc Doanh nghiệp tư nhân
                     Bá Dũng) và Vũ Duy Điệp cho thấy: Điều
                     giúp các ông vượt qua mọi khó khăn, vất vả suốt chặng đường làm nghề cho đến khi được vinh danh nghệ
                     nhân phải kể đến
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-justify px-3 mt-4">
-                <p class="text-monospace">Chia sẻ của hai Nghệ nhân Ưu tú Dương Bá Dũng (Giám đốc Doanh nghiệp tư nhân
+                <p class="">Chia sẻ của hai Nghệ nhân Ưu tú Dương Bá Dũng (Giám đốc Doanh nghiệp tư nhân
                     Bá Dũng) và Vũ Duy Điệp cho thấy: Điều
                     giúp các ông vượt qua mọi khó khăn, vất vả suốt chặng đường làm nghề cho đến khi được vinh danh nghệ
                     nhân phải kể đến
