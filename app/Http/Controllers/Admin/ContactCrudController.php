@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ContactRequest;
+use App\Models\Contact;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -30,6 +31,7 @@ class ContactCrudController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/contact');
         CRUD::setEntityNameStrings('Lời nhắn', 'Lời nhắn');
         $this->crud->denyAccess(["show","update","create"]);
+        $this->crud->addButtonFromModelFunction("line","shows","shows","top");
     }
 
     /**
@@ -82,5 +84,9 @@ class ContactCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+    public function showFeedback($id=1){
+
+        return view("admin.feedback",["contact"=>Contact::find($id)]);
     }
 }

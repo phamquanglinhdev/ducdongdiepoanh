@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactCrudController;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -19,4 +20,5 @@ Route::group([
     Route::crud('category', 'CategoryCrudController');
     Route::crud('product', 'ProductCrudController');
     Route::crud('contact', 'ContactCrudController');
+    Route::get('/feedback/{id}',[ContactCrudController::class,"showFeedback","id"])->where(["id"])->name("feedback");
 }); // this should be the absolute last line of this file

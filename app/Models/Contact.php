@@ -28,7 +28,9 @@ class Contact extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
+    public function shows(){
+        return view("components.show",['route'=>'feedback','slug'=>$this->id]);
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
