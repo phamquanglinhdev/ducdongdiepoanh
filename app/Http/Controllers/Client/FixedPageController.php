@@ -23,4 +23,7 @@ class FixedPageController extends Controller
         Contact::create($data);
         return redirect()->back()->with("success","OK");
     }
+    public function about(){
+        return view("clients.about");
+    }
 }
