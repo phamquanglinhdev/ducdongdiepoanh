@@ -192,7 +192,7 @@
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 p-2">
                     <h1 class="text-main font-weight-bold">VIDEO</h1>
                     <div class="embed-responsive embed-responsive-4by3 rounded-20 shadow-lg my-4">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/x13fvMdEGs4"
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$SETTING["indexVideo"]}}"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>

@@ -22,4 +22,5 @@ Route::group([
     Route::crud('contact', 'ContactCrudController');
     Route::get('/feedback/{id}',[ContactCrudController::class,"showFeedback","id"])->where(["id"])->name("feedback");
     Route::crud('post', 'PostCrudController');
+    Route::crud('option', 'OptionCrudController');
 }); // this should be the absolute last line of this file

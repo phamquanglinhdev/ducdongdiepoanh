@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{{$title??"Đồ đồng Điệp Oanh"}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{$SETTING["description"]}}">
+    <meta name="keywords" content="{{$SETTING["keywords"]}}">
     <link rel="stylesheet" href="{{asset("assets/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/owl.carousel.min.css")}}">
@@ -11,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="icon" type="image/x-icon" href="{{asset("assets/images/favicon.ico")}}">
+
     @yield("css")
 </head>
 <body>
@@ -25,20 +29,24 @@
         <div class="container mx-auto">
             <div class="row align-items-center">
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
-                   <a href="{{route("index")}}">
-                       <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
-                   </a>
+                    <a href="{{route("index")}}">
+                        <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                    </a>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 w-100">
                     <div class="row d-flex justify-content-around align-items-center h-100">
                         <div class="d-none d-md-block col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                            <form action="">
-                                <input type="search" name="" class="px-2 py-1 border-0 rounded w-100"
-                                       id="header-search-input">
-                            </form>
+                            <div class="input-group border-white border rounded">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm tất cả ở đây">
+                                <div class="input-group-append">
+                                    <button class="btn text-white" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-12 col-sm-12 pb-sm-0 col-md-6 col-lg-6 col-xl-6">
-                            <ul class="d-flex list-social-icon justify-content-end px-2 justify-content-sm-end justify-content-md-center align-items-center list-unstyled">
+                            <ul class="m-0 d-flex list-social-icon justify-content-end px-2 justify-content-sm-end justify-content-md-center align-items-center list-unstyled">
                                 <li class="d-none  d-md-inline">
                                     <span class="fa-stack">
                                         <i class="fas fa-circle text-white fa-stack-2x"></i>
@@ -91,23 +99,31 @@
                         <li class="nav-item px-2 py-md-0 py-2 d-block d-md-none">
                             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}" class="nav-link text-white">TRANG CHỦ</a>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}" class="nav-link text-white">TRANG
+                                CHỦ</a>
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("about")}}" class="nav-link text-white">GIỚI THIỆU</a>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("about")}}" class="nav-link text-white">GIỚI
+                                THIỆU</a>
                         </li>
-{{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
-{{--                        </li>--}}
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}" class="nav-link text-white">SẢN PHẨM</a></li>
-{{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
-{{--                                BIỂU</a></li>--}}
+                        {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
+                        {{--                        </li>--}}
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}"
+                                                                  class="nav-link text-white">SẢN PHẨM</a></li>
+                        {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
+                        {{--                                BIỂU</a></li>--}}
                         <li class="nav-item px-2 py-md-0 py-2"><a href="" class="nav-link text-white">TIN TỨC</a></li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}" class="nav-link text-white">LIÊN HỆ</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}"
+                                                                  class="nav-link text-white">LIÊN HỆ</a></li>
                         <li class="nav-item px-2 py-md-0 py-2">
                             <div class="d-block d-md-none">
-                                <form action="">
-                                    <input type="search" name="" class="px-2 border-0 rounded w-100"
-                                           id="header-search-input">
-                                </form>
+                                <div class="input-group border-white border rounded">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm tất cả ở đây">
+                                    <div class="input-group-append">
+                                        <button class="btn text-white" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -187,9 +203,10 @@
     <i class="fas fa-arrow-up w-100 fa-2x text-white "></i>
 </a>
 <style>
-    .fb_dialog_content iframe{
-        right: 25px!important;
+    .fb_dialog_content iframe {
+        right: 25px !important;
     }
+
     #back-top-top {
         display: inline-block;
         background-color: #FF9800;
@@ -206,14 +223,17 @@
         visibility: hidden;
         z-index: 1000;
     }
+
     #back-top-top:hover {
         cursor: pointer;
         background-color: #333;
         text-decoration: none;
     }
+
     #back-top-top:active {
         background-color: #555;
     }
+
     #back-top-top.show {
         opacity: 1;
         visibility: visible;
@@ -229,19 +249,23 @@
         color: #6c767a;
         line-height: 1.9;
     }
+
     @media (min-width: 500px) {
         .content {
             width: 43%;
         }
+
         #button {
             margin: 30px;
         }
     }
+
     .content h1 {
         margin-bottom: -10px;
         color: #03a9f4;
         line-height: 1.5;
     }
+
     .content h3 {
         font-style: italic;
         color: #96a2a7;
@@ -254,7 +278,7 @@
 <script>
     var btn = $('#back-top-top');
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(window).scrollTop() > 300) {
             btn.addClass('show');
         } else {
@@ -262,9 +286,9 @@
         }
     });
 
-    btn.on('click', function(e) {
+    btn.on('click', function (e) {
         e.preventDefault();
-        $('html, body').animate({scrollTop:0}, '300');
+        $('html, body').animate({scrollTop: 0}, '300');
     });
 </script>
 @yield("js")
