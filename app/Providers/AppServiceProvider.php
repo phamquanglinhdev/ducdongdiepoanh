@@ -27,12 +27,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $global = [];
-        $options = Option::where("isActive","=",true)->get();
-        foreach ($options as $option){
-            $global[$option->alias] =  $option->value;
+        try {
+            $global = [];
+            $options = Option::where("isActive", "=", true)->get();
+            foreach ($options as $option) {
+                $global[$option->alias] = $option->value;
+            }
+            View::share("SETTING", $global);
+        } catch (\Exception) {
+
         }
-        View::share("SETTING",$global);
         Schema::defaultStringLength(191);
 
     }
