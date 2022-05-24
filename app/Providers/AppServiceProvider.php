@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Option;
+use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +36,12 @@ class AppServiceProvider extends ServiceProvider
             }
             View::share("SETTING", $global);
         } catch (\Exception) {
+
+        }
+        try {
+            $hotProducts = Product::limit(16)->get();
+            View::share("HOT_PRODUCTS", $hotProducts);
+        }catch (\Exception){
 
         }
         Schema::defaultStringLength(191);
