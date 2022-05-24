@@ -55,32 +55,7 @@
     <!-- start gioi thieu nghe nhan -->
     <section class="introduce-artis">
         <div class="container mx-auto p-5">
-            <div class="row">
-                <div
-                    class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
-                    <div>
-                        <div class="pt-4 pb-1 text-main font-weight-bold h2">ĐÚC ĐỒNG DIỆP OANH</div>
-                        <h2 class="sub-title pb-4 text-main">ĐÚC ĐỒNG GIA TRUYỀN</h2>
-                        <p class="desc pb-2 pt-4">Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và
-                            chế
-                            tác đồ
-                            đồng lớn của làng nghề tại TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân
-                            xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội ngũ các thợ giỏi và nghệ nhân
-                            xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm bằng
-                            đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
-                            tượng đồng chân dung, tượng đài, tượng phật, tranh đồng, trống đồng, chuông, chiêng
-                            và các sản phẩm phong thủy, mỹ nghệ trang trí nộ ngoại thất cao cấp, được kiểm soát
-                            từ đầu vào nguyên liệu cho đến đầu ra thành phẩm, đảm bảo sản phẩm khi đưa ra thị
-                            trường đến tay người dùng phải đạt tiêu chuẩn cả về thẩm mỹ và kỹ thuật... </p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-sm-5 md-order-first px-0">
-                    <div class="avatar-wraper my-3 text-center mx-auto">
-                        <img src="{{asset("assets/images/paris.jpg")}}" class="img-fluid avatar " alt="">
-                    </div>
-                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
-                </div>
-            </div>
+
             <div class="row py-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
                     <div class="product-card bg-product-card text-center p-4">
@@ -160,31 +135,63 @@
                 Đây là các sản phẩm thủ công mỹ nghệ rất độc đáo , đồi hỏi kỹ nghệ cao.
             </p>
             <div class="row pt-5 py-2">
-                @for($i=0;$i<16;$i++)
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-3">
-                        <div class="product-card shadow-lg rounded-20 text-center p-2 mb-3">
-                            <img src="{{asset("assets/images/product.png")}}" class="img-fluid pb-2" alt="">
-                            <div class="d-flex justify-content-center align-items-center pb-4">
-                                <i class="small fas mx-1 fa-star text-warning"></i>
-                                <i class="small fas mx-1 fa-star text-warning"></i>
-                                <i class="small fas mx-1 fa-star text-warning"></i>
-                                <i class="small far mx-1 fa-star text-warning"></i>
-                                <i class="small far mx-1 fa-star text-warning"></i>
-                            </div>
+                @if(isset($HOT_PRODUCTS))
+                    @foreach($HOT_PRODUCTS as $product)
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-3">
+                            <a href="{{route("product",$product->slug)}}" style="text-decoration: none;color: inherit">
+                                <div class="product-card shadow-lg rounded-20 text-center p-2 mb-3">
+                                    <img src="{{$product->first_thumbnail}}" class="img-fluid pb-2" alt="">
+                                    <div class="d-flex justify-content-center align-items-center pb-4">
+                                        <i class="small fas mx-1 fa-star text-warning"></i>
+                                        <i class="small fas mx-1 fa-star text-warning"></i>
+                                        <i class="small fas mx-1 fa-star text-warning"></i>
+                                        <i class="small far mx-1 fa-star text-warning"></i>
+                                        <i class="small far mx-1 fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                                <div class="text-main font-weight-bold h5 ">{{$product->name}}</div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <p class="small">{{$product->Category()->first()->name}}</p>
+                                    <h5 class="text-warning font-weight-bold">{{number_format($product->price)}} đ</h5>
+                                </div>
+                            </a>
                         </div>
-                        <div class="text-main font-weight-bold h5 ">Tượng phật Thích Ca</div>
-                        <div class="d-flex justify-content-between align-items-end">
-                            <p class="small">Tượng phật dát vàng</p>
-                            <h5 class="text-warning font-weight-bold">1.680.000đ</h5>
-                        </div>
-
-                    </div>
-                @endfor
+                    @endforeach
+                @endif
             </div>
 
         </div>
     </section>
     <!-- ket thuc phan san pham -->
+    <section id="about">
+        <div class="container">
+            <div class="row px-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
+                    <div>
+                        <div class="pt-4 pb-1 text-main font-weight-bold h2">ĐÚC ĐỒNG DIỆP OANH</div>
+                        <h2 class="sub-title pb-4 text-main">ĐÚC ĐỒNG GIA TRUYỀN</h2>
+                        <p class="desc pb-2 pt-4">Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và
+                            chế
+                            tác đồ
+                            đồng lớn của làng nghề tại TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân
+                            xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội ngũ các thợ giỏi và nghệ nhân
+                            xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm bằng
+                            đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
+                            tượng đồng chân dung, tượng đài, tượng phật, tranh đồng, trống đồng, chuông, chiêng
+                            và các sản phẩm phong thủy, mỹ nghệ trang trí nộ ngoại thất cao cấp, được kiểm soát
+                            từ đầu vào nguyên liệu cho đến đầu ra thành phẩm, đảm bảo sản phẩm khi đưa ra thị
+                            trường đến tay người dùng phải đạt tiêu chuẩn cả về thẩm mỹ và kỹ thuật... </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 md-order-first px-0">
+                    <div class="avatar-wraper my-3 text-center mx-auto">
+                        <img src="{{asset("assets/images/paris.jpg")}}" class="img-fluid avatar " alt="">
+                    </div>
+                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- bat dau phan video  -->
     <section class="introduce-product">
         <div class="container p-5 m-auto">
@@ -192,7 +199,8 @@
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 p-2">
                     <h1 class="text-main font-weight-bold">VIDEO</h1>
                     <div class="embed-responsive embed-responsive-4by3 rounded-20 shadow-lg my-4">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$SETTING["indexVideo"]}}"
+                        <iframe class="embed-responsive-item"
+                                src="https://www.youtube.com/embed/{{$SETTING["indexVideo"]}}"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>

@@ -14,10 +14,14 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="icon" type="image/x-icon" href="{{asset("assets/images/favicon.ico")}}">
-
+    <script charset="UTF-8" src="//web.webpushs.com/js/push/01724ff6fb766482719dd123d6a97454_0.js" async></script>
     @yield("css")
 </head>
 <body>
+<!--Start of WebPush.vn-->
+
+<!--End of WebPush.vn-->
+
 <!-- Messenger Plugin chat Code -->
 
 <x-zalo-chat></x-zalo-chat>

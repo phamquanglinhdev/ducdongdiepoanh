@@ -1,5 +1,6 @@
 @extends("layouts.client")
-@section("css")
+
+@section("content")
     <style>
         .slider-score {
             -webkit-appearance: none;
@@ -76,8 +77,6 @@
             display: inline-block;
         }
     </style>
-@endsection
-@section("content")
     <style>
         .ajax-load {
             margin: auto;
@@ -114,28 +113,28 @@
                                 @endforeach
                             @endif
                         </ul>
-                        <ul class="list-unstyled list-type-product">
-                            <li>
-                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>
-                            </li>
-                            <li class="nav-item my-1">
-                                <input type="checkbox" id="input_product_type_6"/>
-                                <label class="small" for="input_product_type_6">Tượng thờ</label>
-                            </li>
-                            <li class="nav-item my-1">
-                                <input type="checkbox" id="input_product_type_7"/>
-                                <label class="small" for="input_product_type_7">Đồ thờ cúng</label>
-                            </li>
-                            <li class="nav-item my-1">
-                                <input type="checkbox" id="input_product_type_8"/>
-                                <label class="small" for="input_product_type_8">Đồ phong thủy</label>
-                            </li>
-                            <li class="nav-item my-1">
-                                <input type="checkbox" id="input_product_type_9"/>
-                                <label class="small" for="input_product_type_9">Đồ trang trí</label>
-                            </li>
+{{--                        <ul class="list-unstyled list-type-product">--}}
+{{--                            <li>--}}
+{{--                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item my-1">--}}
+{{--                                <input type="checkbox" id="input_product_type_6"/>--}}
+{{--                                <label class="small" for="input_product_type_6">Tượng thờ</label>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item my-1">--}}
+{{--                                <input type="checkbox" id="input_product_type_7"/>--}}
+{{--                                <label class="small" for="input_product_type_7">Đồ thờ cúng</label>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item my-1">--}}
+{{--                                <input type="checkbox" id="input_product_type_8"/>--}}
+{{--                                <label class="small" for="input_product_type_8">Đồ phong thủy</label>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item my-1">--}}
+{{--                                <input type="checkbox" id="input_product_type_9"/>--}}
+{{--                                <label class="small" for="input_product_type_9">Đồ trang trí</label>--}}
+{{--                            </li>--}}
 
-                        </ul>
+{{--                        </ul>--}}
                         <ul class="list-group text-left">
                             <div class="form-group">
                                 <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>
