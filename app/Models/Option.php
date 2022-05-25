@@ -35,15 +35,24 @@ class Option extends Model
                 return [
                     "name" => "value",
                     "type" => "image",
-                    "crop"=>true,
-                    "aspect_ratio"=>241/83
+                    "crop" => true,
+                    "aspect_ratio" => 241 / 83
                 ];
             case "portrait":
                 return [
                     "name" => "value",
                     "type" => "image",
-                    "crop"=>true,
-                    "aspect_ratio"=>9/16
+                    "crop" => true,
+                    "aspect_ratio" => 9 / 16
+
+                ];
+            case "iframe":
+                return [
+                    'name' => 'value',
+                    'label' => 'Giá trị',
+                    'type' => 'textarea',
+
+                    'attributes' => ['required' => true,'rows'=>30,"placeholder"=>"Code here"]
 
                 ];
             default:

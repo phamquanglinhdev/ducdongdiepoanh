@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="icon" type="image/x-icon" href="{{asset("assets/images/favicon.ico")}}">
-    <script charset="UTF-8" src="//web.webpushs.com/js/push/01724ff6fb766482719dd123d6a97454_0.js" async></script>
+
     @yield("css")
 </head>
 <body>
@@ -144,22 +144,22 @@
         <div class="d-flex justify-content-center align-items-center">
             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
         </div>
-        <p class="text-center small  text-white my-3">
+        <p class="text-center text-white my-3">
             Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
             TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội
             ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm
             bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
         </p>
         <div class="row">
-            <div class="col">
+            <div class="col-md-6 col-12">
                 <h5 class="text-center text-warning">Hệ thống showroom</h5>
-                <h6 class="text-center text-white small py-2">Điện thoại : (+84) 376658437</h6>
-                <h6 class="text-center text-white small">Email : đucongdiepoanh@gmail.com</h6>
+                <h6 class="text-center text-white  py-2">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white ">Email : {{$SETTING["email"]}}</h6>
             </div>
-            <div class="col text-center">
+            <div class="col-md-6 col-12 text-center">
                 <h5 class="text-center text-warning">Liên hệ</h5>
-                <h6 class="text-center text-white py-2 small">Điện thoại : (+84) 376658437</h6>
-                <h6 class="text-center text-white small">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
+                <h6 class="text-center text-white py-2 ">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white ">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
             </div>
         </div>
         <div class="row py-3">
@@ -200,7 +200,7 @@
         </div>
     </div>
     <div class="container-fluid bg-footer py-3">
-        <h6 class="text-center text-white small">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
+        <h6 class="text-center text-white ">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
     </div>
 </footer>
 <a id="back-top-top" class="d-flex align-items-center">

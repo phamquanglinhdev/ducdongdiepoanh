@@ -36,7 +36,7 @@
                     </div>
                     <div class="">
                         <div class="text-main font-weight-bold">Email</div>
-                        <div>ducdongdiepoanh@gmail.com</div>
+                        <div>{{$SETTING["email"]}}</div>
                     </div>
                     <div class="">
                         <div class="text-main font-weight-bold">Điện thoại</div>

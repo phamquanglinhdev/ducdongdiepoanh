@@ -44,7 +44,7 @@ class OptionCrudController extends CrudController
         CRUD::column('name')->label("Tên thuộc tinh");
         CRUD::column('alias')->label("Alias");
         CRUD::column('type')->label("Loại");
-        CRUD::column('isActive')->type("boolean");
+        CRUD::column('isActive')->type("select_from_array")->options(["Ngưng hoạt động","Hoạt động"])->label("Trạng thái");
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
