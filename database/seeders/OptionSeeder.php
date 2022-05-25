@@ -73,7 +73,7 @@ class OptionSeeder extends Seeder
             'name'=>'Plugin Chat Facebook',
             'alias'=>'fb-plugin',
             'type'=>'iframe',
-            'value'=>"null",
+            'value'=>"<div></div>",
         ];
         Option::create($facebookPlugin);
     }

@@ -118,6 +118,20 @@
                         <li class="nav-item px-2 py-md-0 py-2"><a href="" class="nav-link text-white">TIN TỨC</a></li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}"
                                                                   class="nav-link text-white">LIÊN HỆ</a></li>
+                        @if(backpack_auth()->check())
+                            <li class="nav-item dropdown px-2 py-md-0 py-2 text-uppercase text-white">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{backpack_user()->name}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route("client.cart")}}">GIỎ HÀNG</a>
+                                    <a class="dropdown-item" href="{{route("client.logout")}}">ĐĂNG XUẤT</a>
+                                </div>
+                            </li>
+                        @else
+                            <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("client.login")}}"
+                                                                      class="nav-link text-white">ĐĂNG NHẬP</a></li>
+                        @endif
                         <li class="nav-item px-2 py-md-0 py-2">
                             <div class="d-block d-md-none">
                                 <div class="input-group border-white border rounded">

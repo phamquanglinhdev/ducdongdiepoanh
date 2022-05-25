@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\FixedPageController;
 use App\Http\Controllers\Client\PostController;
 use App\Http\Controllers\Client\ProductController;
@@ -27,3 +29,15 @@ Route::get("/lien-he/",[FixedPageController::class,'contact'])->name("contact");
 Route::post("/lien-he/",[FixedPageController::class,'saveFeedback'])->name("contact.save");
 Route::get("/gioi-thieu-nghe-nhan/",[FixedPageController::class,'about'])->name("about");
 Route::get("/tin-tuc/{id}",[PostController::class,'render',"id"])->where(["id"])->name("post");
+
+Route::middleware(['client'])->prefix("user")->group(function () {
+    Route::get('/cart', [CartController::class,"showCart"])->name("client.cart");
+
+    Route::get('/add-cart/{id?}', [CartController::class,"addToCard","id"])->where(["id"])->name("client.cart.addItem");
+    Route::post("/change-quantity",[CartController::class,"chanegQuantity"])->name("change.quantity");
+    Route::post("/make-order",[CartController::class,"makeOrder"])->name("make.order");
+});
+
+Route::get("/login",[ClientController::class,"login"])->name("client.login");
+Route::post("/login",[ClientController::class,"logged"])->name("client.login.check");
+Route::get("/logout",[ClientController::class,"logout"])->name("client.logout");
