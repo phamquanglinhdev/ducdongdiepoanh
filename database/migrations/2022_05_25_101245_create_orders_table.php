@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string("email");
+            $table->string("name");
+            $table->string("address");
+            $table->string("payment_method");
+            $table->longText("message")->nullable();
+            $table->integer("status")->default(0);
             $table->timestamps();
         });
     }

@@ -1,10 +1,6 @@
 @extends("layouts.client")
 @section("content")
-    <style>
-        input[type=number]::-webkit-inner-spin-button {
-            opacity: 1
-        }
-    </style>
+
     <div class="bg-white">
         <div class="container">
             <div class="p-5">
@@ -102,6 +98,38 @@
                 },
                 success: function (response) {
                     $("#packs").html(response);
+                    $(".loading").html("");
+                    if(response==="empty"){
+                        location.reload();
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+        function removePack(id){
+            $.ajax({
+                url: "{{route("client.cart.removeItem")}}",
+                type: "POST",
+                data: {
+                    id: id,
+                    _token: "{{csrf_token()}}"
+                },
+                beforeSend: function () {
+                    $(".loading").html(
+                        '<img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" class="w-25"/>'
+                    )
+                },
+                success: function (response) {
+                    Swal.fire({
+                        text: 'Xóa thành công',
+                        icon: 'success',
+                    })
+                    if(response==="empty"){
+                        location.reload();
+                    }
+                    $("#packs").html(response);
                     $(".loading").html("")
                 },
                 error: function (error) {
@@ -115,6 +143,10 @@
         // });
         $(document).on('change', '.pack', function() {
             changeQuantity(this.id,this.value)
+        });
+        $(document).on('click', '.remove-pack', function() {
+            console.log(this.id);
+            removePack(this.id)
         });
 
     </script>

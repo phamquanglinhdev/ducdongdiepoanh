@@ -1,6 +1,7 @@
 @extends("layouts.client")
 
 @section("content")
+
     <style>
         .slider-score {
             -webkit-appearance: none;
@@ -113,32 +114,33 @@
                                 @endforeach
                             @endif
                         </ul>
-{{--                        <ul class="list-unstyled list-type-product">--}}
-{{--                            <li>--}}
-{{--                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item my-1">--}}
-{{--                                <input type="checkbox" id="input_product_type_6"/>--}}
-{{--                                <label class="small" for="input_product_type_6">Tượng thờ</label>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item my-1">--}}
-{{--                                <input type="checkbox" id="input_product_type_7"/>--}}
-{{--                                <label class="small" for="input_product_type_7">Đồ thờ cúng</label>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item my-1">--}}
-{{--                                <input type="checkbox" id="input_product_type_8"/>--}}
-{{--                                <label class="small" for="input_product_type_8">Đồ phong thủy</label>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item my-1">--}}
-{{--                                <input type="checkbox" id="input_product_type_9"/>--}}
-{{--                                <label class="small" for="input_product_type_9">Đồ trang trí</label>--}}
-{{--                            </li>--}}
+                        {{--                        <ul class="list-unstyled list-type-product">--}}
+                        {{--                            <li>--}}
+                        {{--                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>--}}
+                        {{--                            </li>--}}
+                        {{--                            <li class="nav-item my-1">--}}
+                        {{--                                <input type="checkbox" id="input_product_type_6"/>--}}
+                        {{--                                <label class="small" for="input_product_type_6">Tượng thờ</label>--}}
+                        {{--                            </li>--}}
+                        {{--                            <li class="nav-item my-1">--}}
+                        {{--                                <input type="checkbox" id="input_product_type_7"/>--}}
+                        {{--                                <label class="small" for="input_product_type_7">Đồ thờ cúng</label>--}}
+                        {{--                            </li>--}}
+                        {{--                            <li class="nav-item my-1">--}}
+                        {{--                                <input type="checkbox" id="input_product_type_8"/>--}}
+                        {{--                                <label class="small" for="input_product_type_8">Đồ phong thủy</label>--}}
+                        {{--                            </li>--}}
+                        {{--                            <li class="nav-item my-1">--}}
+                        {{--                                <input type="checkbox" id="input_product_type_9"/>--}}
+                        {{--                                <label class="small" for="input_product_type_9">Đồ trang trí</label>--}}
+                        {{--                            </li>--}}
 
-{{--                        </ul>--}}
+                        {{--                        </ul>--}}
                         <ul class="list-group text-left">
                             <div class="form-group">
                                 <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>
-                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0" max="19999999"
+                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0"
+                                       max="19999999"
                                        value="0" id="sliderRange">
                                 <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>
                             </div>
@@ -167,6 +169,24 @@
 
 @endsection
 @section("js")
+    @if(session("cart-empty"))
+        <script>
+            Swal.fire({
+                // title: 'Đã đến trang cuối',
+                text: 'Giỏ hàng trống, thêm sản phẩm vào giỏ hàng nào !',
+                icon: 'warning',
+            })
+        </script>
+    @endif
+    @if(session("success-order"))
+        <script>
+            Swal.fire({
+                // title: 'Đã đến trang cuối',
+                text: 'Tuyệt vời, đơn hàng của bạn đã được xác nhận',
+                icon: 'success',
+            })
+        </script>
+    @endif
     <script>
         let categories = "";
         let limit = 1;
@@ -181,7 +201,7 @@
                 data: {
                     limit: limit,
                     categories: categories,
-                    price:price,
+                    price: price,
                     _token: "{{csrf_token()}}"
                 },
                 beforeSend: function () {
@@ -214,7 +234,7 @@
             $('input[name="categories"]:checked').each(function (e) {
                 categories += this.value + ",";
             });
-            price=$('input[name="price"]').val()
+            price = $('input[name="price"]').val()
             console.log(price)
             loadData()
         })
@@ -234,7 +254,7 @@
                     categories += this.value + ",";
                 });
                 loadData()
-            }else {
+            } else {
                 Swal.fire({
                     // title: 'Đã đến trang cuối',
                     text: 'Đã ở trang đầu',

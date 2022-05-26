@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ContactCrudController;
+use App\Http\Controllers\Admin\OrderCrudController;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -21,6 +22,12 @@ Route::group([
     Route::crud('product', 'ProductCrudController');
     Route::crud('contact', 'ContactCrudController');
     Route::get('/feedback/{id}',[ContactCrudController::class,"showFeedback","id"])->where(["id"])->name("feedback");
+    Route::get('/show-order/{id}',[OrderCrudController::class,"showOrder","id"])->where(["id"])->name("show-order");
     Route::crud('post', 'PostCrudController');
     Route::crud('option', 'OptionCrudController');
+    Route::crud('order', 'OrderCrudController');
 }); // this should be the absolute last line of this file
+
+Route::get("/admin",function (){
+    return redirect("/admin/dashboard");
+});

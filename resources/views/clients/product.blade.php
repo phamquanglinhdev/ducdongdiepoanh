@@ -122,36 +122,42 @@
                 <p><span class="font-weight-bold">Kích thước : </span> {{$product->size}}</p>
                 <p><span class="font-weight-bold">Chất liệu : </span> Đồng mạ vàng</p>
                 <br>
-                <button class="btn rounded px-5 py-2 bg-main text-warning"><h4>Liên hệ</h4></button>
-            </div>
-        </div>
-        <div class="row my-5">
-            <div class="col-12 text-center">
-                <h3 class="text-main font-weight-bold">Sản phẩm liên quan</h3>
-                <img src="{{asset("assets/images/good_projects_stiker.png")}}">
-            </div>
-        </div>
-        <div class=" owl-carousel p-1 p-sm-2 p-md-3 p-lg-4">
-            <div class="p-3 p-sm-2 p-md-3 p-lg-4">
-                <div class="product-card shadow rounded-20 text-center p-2 mb-3">
-                    <img src="https://grandart.vn/uploads/danh-muc-san-pham/danhmuc-6.png" class="w-100 pb-2" alt="">
-                    <div class="d-flex justify-content-center align-items-center pb-4 product-rating">
-                        <i class="small fas mx-1 fa-star text-warning" data-star="1"></i>
-                        <i class="small fas mx-1 fa-star text-warning" data-star="2"></i>
-                        <i class="small fas mx-1 fa-star text-warning" data-star="3"></i>
-                        <i class="small far mx-1 fa-star text-warning" data-star="4"></i>
-                        <i class="small far mx-1 fa-star text-warning" data-star="5"></i>
-                    </div>
-                </div>
-                <a href="#" class="nav-link text-dark">
-                    <h6 class="text-main">Tượng phật Thích Ca</h6>
+                <a class="h4 text btn rounded px-5 py-2 btn-warning text-white text-uppercase" id="add-cart">
+                    Thêm vào giỏ hàng
                 </a>
-                <div class="d-flex justify-content-between align-items-end">
-                    <strong class="small font-weight-normal">Tượng phật dát vàng</strong>
-                    <h6 class="text-warning text-monospace">1.680.000đ</h6>
-                </div>
+                <a class="h4 text btn rounded px-5 py-2 bg-main text-warning text-uppercase"
+                   href="{{route("client.cart.buyItem",$product->id)}}">
+                    Mua ngay
+                </a>
             </div>
         </div>
+{{--        <div class="row my-5">--}}
+{{--            <div class="col-12 text-center">--}}
+{{--                <h3 class="text-main font-weight-bold">Sản phẩm liên quan</h3>--}}
+{{--                <img src="{{asset("assets/images/good_projects_stiker.png")}}">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class=" owl-carousel p-1 p-sm-2 p-md-3 p-lg-4">--}}
+{{--            <div class="p-3 p-sm-2 p-md-3 p-lg-4">--}}
+{{--                <div class="product-card shadow rounded-20 text-center p-2 mb-3">--}}
+{{--                    <img src="https://grandart.vn/uploads/danh-muc-san-pham/danhmuc-6.png" class="w-100 pb-2" alt="">--}}
+{{--                    <div class="d-flex justify-content-center align-items-center pb-4 product-rating">--}}
+{{--                        <i class="small fas mx-1 fa-star text-warning" data-star="1"></i>--}}
+{{--                        <i class="small fas mx-1 fa-star text-warning" data-star="2"></i>--}}
+{{--                        <i class="small fas mx-1 fa-star text-warning" data-star="3"></i>--}}
+{{--                        <i class="small far mx-1 fa-star text-warning" data-star="4"></i>--}}
+{{--                        <i class="small far mx-1 fa-star text-warning" data-star="5"></i>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <a href="#" class="nav-link text-dark">--}}
+{{--                    <h6 class="text-main">Tượng phật Thích Ca</h6>--}}
+{{--                </a>--}}
+{{--                <div class="d-flex justify-content-between align-items-end">--}}
+{{--                    <strong class="small font-weight-normal">Tượng phật dát vàng</strong>--}}
+{{--                    <h6 class="text-warning text-monospace">1.680.000đ</h6>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 @endsection
 @section("js")
@@ -165,5 +171,35 @@
                 }
             })
         })
+        $("#add-cart").click(function (){
+            addCart({{$product->id}})
+        })
+        function addCart(id) {
+            $.ajax({
+                url: "{{route("client.cart.addItem",$product->id)}}",
+                type: "GET",
+                beforeSend: function () {
+                    $("#add-cart").html('<img style="width: 20px" src="https://media2.giphy.com/media/IgQ8E05Dpg2ze/giphy.gif"/>')
+                },
+                success: function (response) {
+                    Swal.fire({
+                        title: 'Thành công',
+                        text: 'Đã thêm vào giỏ hàng',
+                        icon: 'success',
+                    })
+                    $("#add-cart").html("Thêm vào giỏ hàng")
+                    removePack(-1);
+
+                },
+                error: function (error) {
+                    Swal.fire({
+                        title: 'Lỗi',
+                        text: error.message,
+                        icon: 'warning',
+                    })
+                    $("#add-cart").html("Thêm vào giỏ hàng")
+                }
+            });
+        }
     </script>
 @endsection

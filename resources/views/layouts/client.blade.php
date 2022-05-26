@@ -309,6 +309,7 @@
         $('html, body').animate({scrollTop: 0}, '300');
     });
 </script>
+<x-cart-modal></x-cart-modal>
 @yield("js")
 </body>
 </html>

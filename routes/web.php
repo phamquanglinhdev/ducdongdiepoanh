@@ -31,9 +31,11 @@ Route::get("/gioi-thieu-nghe-nhan/",[FixedPageController::class,'about'])->name(
 Route::get("/tin-tuc/{id}",[PostController::class,'render',"id"])->where(["id"])->name("post");
 
 Route::middleware(['client'])->prefix("user")->group(function () {
-    Route::get('/cart', [CartController::class,"showCart"])->name("client.cart");
+    Route::get('/gio-hang', [CartController::class,"showCart"])->name("client.cart");
 
     Route::get('/add-cart/{id?}', [CartController::class,"addToCard","id"])->where(["id"])->name("client.cart.addItem");
+    Route::get('/buy-now/{id?}', [CartController::class,"buyNow","id"])->where(["id"])->name("client.cart.buyItem");
+    Route::post('/remove-item/', [CartController::class,"removePack"])->name("client.cart.removeItem");
     Route::post("/change-quantity",[CartController::class,"chanegQuantity"])->name("change.quantity");
     Route::post("/make-order",[CartController::class,"makeOrder"])->name("make.order");
 });
