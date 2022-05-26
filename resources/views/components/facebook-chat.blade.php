@@ -5,8 +5,15 @@
 <style>
     .fb_dialog_content iframe {
         margin: 0 !important;
+        right: 5px!important;
+    }
+    #fb-customer-chat{
+        display: none;
     }
 </style>
+<script>
+
+</script>
 {{--<script>--}}
 {{--    var chatbox = document.getElementById('fb-customer-chat');--}}
 {{--    chatbox.setAttribute("page_id", "104416362062991");--}}

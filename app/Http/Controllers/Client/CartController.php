@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderNotification;
 use App\Models\Order;
 use App\Models\Pack;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 class CartController extends Controller
@@ -111,6 +114,12 @@ class CartController extends Controller
         foreach ($packs as $pack) {
             $pack->update(["order_id" => $orderCreate->id]);
         }
+        $pdf = Pdf::loadView("mails.printOrder",["order"=>$orderCreate,"packs"=>Pack::where("order_id","=",$orderCreate->id)->get()]);
+        Mail::send('mails.test', (array)$request, function($message)use($request, $pdf,$orderCreate) {
+            $message->to($request["email"])
+                ->subject("Thông tin đơn hàng #".$orderCreate->id)
+                ->attachData($pdf->output(), "bill.pdf");
+        });
         return redirect("/tat-ca-san-pham")->with("success-order", "Thanh toán thành công");
     }
 }

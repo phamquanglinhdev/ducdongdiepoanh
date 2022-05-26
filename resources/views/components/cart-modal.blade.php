@@ -3,13 +3,14 @@
     <style>
         .show-cart{
             position: fixed;
-            bottom: 193px!important;
-            right: 28px!important;
+            bottom: 17vh!important;
+            right: 5px!important;
             z-index: 9;
+            padding: 10px;
         }
     </style>
     <div>
-        <button type="button" class="btn btn-outline-danger show-cart rounded" data-toggle="modal" data-target="#cart">
+        <button type="button" class="btn btn-success show-cart rounded-pill" data-toggle="modal" data-target="#cart">
             <i class="fas fa-shopping-cart fa-2x"></i>
         </button>
     </div>

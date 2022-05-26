@@ -23,9 +23,10 @@
 <!--End of WebPush.vn-->
 
 <!-- Messenger Plugin chat Code -->
+<style>
 
-<x-zalo-chat></x-zalo-chat>
-<x-facebook-chat></x-facebook-chat>
+</style>
+
 
 <header>
     <!-- top banner -->
@@ -221,10 +222,6 @@
     <i class="fas fa-arrow-up w-100 fa-2x text-white "></i>
 </a>
 <style>
-    .fb_dialog_content iframe {
-        right: 25px !important;
-    }
-
     #back-top-top {
         display: inline-block;
         background-color: #FF9800;
@@ -309,7 +306,11 @@
         $('html, body').animate({scrollTop: 0}, '300');
     });
 </script>
-<x-cart-modal></x-cart-modal>
+<div class="pill-fix d-md-block d-none">
+    <x-zalo-chat></x-zalo-chat>
+    <x-facebook-chat></x-facebook-chat>
+    <x-cart-modal></x-cart-modal>
+</div>
 @yield("js")
 </body>
 </html>

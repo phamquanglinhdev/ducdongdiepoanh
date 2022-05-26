@@ -3,8 +3,8 @@
 @endphp
 @extends(backpack_view('blank'))
 @section("content")
-    <ul class="list-group list-group-flush mb-5">
-        <div class="mt-4 mb-2">Đơn hàng của khách hàng: {{$order->name}}</div>
+    <ul class="list-group list-group-flush mb-5 orders">
+        <div class="mt-4 mb-2 ">Đơn hàng của khách hàng: {{$order->name}}</div>
         <li class="list-group-item">
             <div>Mã vận đơn : #{{$order->id}}</div>
             <div>Địa Chỉ Giao Hàng : {{$order->address}}</div>
@@ -39,4 +39,18 @@
         </li>
     </ul>
     <a href="{{route("order.index")}}"><i class="las la-chevron-circle-left"></i> Trở về</a>
+    <style>
+        @media print {
+            nav,a,
+            div > div:not(.to-print),
+            div + div:not(.to-print) {
+                display: none;
+            }
+        }
+    </style>
+    <script src="{{asset("assets/js/jquery.slim.min.js")}}"></script>
+    <script>
+        $(".orders div").addClass("to-print")
+    </script>
 @endsection
+
