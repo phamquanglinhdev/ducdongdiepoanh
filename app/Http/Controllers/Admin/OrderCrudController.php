@@ -33,6 +33,7 @@ class OrderCrudController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/order');
         CRUD::setEntityNameStrings('Đơn hàng', 'Các đơn hàng');
         $this->crud->addButtonFromModelFunction("line","shows","shows","top");
+        $this->crud->denyAccess(["create","show","delete"]);
     }
 
     /**
@@ -65,15 +66,7 @@ class OrderCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(OrderRequest::class);
-
-        CRUD::field('id');
-        CRUD::field('email');
-        CRUD::field('name');
-        CRUD::field('address');
-        CRUD::field('payment_method');
-        CRUD::field('message');
-        CRUD::field('created_at');
-        CRUD::field('updated_at');
+        CRUD::field('status')->label("Trạng thái")->type("select_from_array")->options(["Chưa hoàn thành","Hoàn thành"]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
