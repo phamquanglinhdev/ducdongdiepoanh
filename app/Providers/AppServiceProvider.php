@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\Option;
 use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
@@ -44,6 +45,10 @@ class AppServiceProvider extends ServiceProvider
         }catch (\Exception){
 
         }
+        try {
+            $local_category = Category::all();
+            View::share("LOCAL_CATEGORIES", $local_category);
+        }catch (\Exception ){}
         Schema::defaultStringLength(191);
 
     }

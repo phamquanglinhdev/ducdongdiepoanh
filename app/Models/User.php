@@ -45,4 +45,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function checkByEmail($email){
+        $check = User::where("email","=",$email)->count();
+        if($check>0){
+            return false;
+        }
+        return true;
+    }
+    public static function getUserByEmail($email){
+        return User::where("email","=",$email)->first();
+    }
 }

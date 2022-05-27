@@ -10,10 +10,16 @@ use Prologue\Alerts\Facades\Alert;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index($category=null)
     {
+        $find = Category::find($category);
+        if(($category==null)||($find==null)){
+            $products = Product::orderBy("updated_at", "DESC")->where("active", "=", true)->where("active", "=", true)->limit(6)->get();
+        }else{
+            $products = Product::orderBy("updated_at", "DESC")->where("category_id","=",$category)->where("active", "=", true)->where("active", "=", true)->limit(6)->get();
+        }
         $data = null;
-        $products = Product::orderBy("updated_at", "DESC")->where("active", "=", true)->where("active", "=", true)->limit(6)->get();
+
 
         $categories = Category::where("active","=",true)->get();
         foreach ($products as $product) {

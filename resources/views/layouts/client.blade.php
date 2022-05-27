@@ -306,7 +306,7 @@
         $('html, body').animate({scrollTop: 0}, '300');
     });
 </script>
-<div class="pill-fix d-md-block d-none">
+<div class="pill-fix">
     <x-zalo-chat></x-zalo-chat>
     <x-facebook-chat></x-facebook-chat>
     <x-cart-modal></x-cart-modal>

@@ -23,6 +23,8 @@ return new class extends Migration
             $table->longText("description");
             $table->integer("price");
             $table->integer("rating");
+            $table->string("code");
+            $table->string("material")->nullable();
             $table->timestamps();
         });
     }

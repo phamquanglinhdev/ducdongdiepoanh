@@ -43,6 +43,7 @@ class ProductCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->addClause("where", "active", "=", true);
+        CRUD::column('code')->label("Mã sản phẩm");
         CRUD::column('name')->label("Tên sản phẩm");
         CRUD::column('slug')->label("URL");
         CRUD::addColumn([
@@ -75,7 +76,7 @@ class ProductCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ProductRequest::class);
-
+        CRUD::field('code')->label("Mã sản phẩm");
         CRUD::field('name')->label("Tên sản phẩm");
         CRUD::field('slug')->label("URL")->type("hidden");
         CRUD::addField([

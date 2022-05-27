@@ -10,8 +10,8 @@
         }
     </style>
     <div>
-        <button type="button" class="btn btn-success show-cart rounded-pill" data-toggle="modal" data-target="#cart">
-            <i class="fas fa-shopping-cart fa-2x"></i>
+        <button type="button" class="btn btn-primary show-cart rounded-pill" data-toggle="modal" data-target="#cart">
+            <i class="fas fa-cart-arrow-down fa-2x"></i>
         </button>
     </div>
     <!-- Modal -->

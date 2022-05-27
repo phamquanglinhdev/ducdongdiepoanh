@@ -40,7 +40,7 @@ class OptionSeeder extends Seeder
             'name' => "Video trang chủ",
             'alias' => 'indexVideo',
             'type' => "video",
-            'value' => "https://youtu.be/x13fvMdEGs4",
+            'value' => "x13fvMdEGs4",
         ];
         Option::create($video);
         for ($i = 0; $i < 4; $i++) {
@@ -56,10 +56,16 @@ class OptionSeeder extends Seeder
             'name' => 'Email',
             'alias' => 'email',
             'type' => 'text',
-            'value' => "dodongdiepoanh1976@gmail.com"
+            'value' => "dodongdiepoanh@gmail.com"
         ];
         Option::create($email);
-
+        $hotline = [
+            'name' => 'Hotline',
+            'alias' => 'hotline',
+            'type' => 'text',
+            'value' => "0949.806.083"
+        ];
+        Option::create($hotline);
         $zaloPlugin = [
             'name' => 'Pugin Chat Zalo',
             'alias' => 'zalo-plugin',

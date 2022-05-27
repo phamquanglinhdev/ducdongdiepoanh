@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('clients.index');
 })->name("index");
-Route::get("/tat-ca-san-pham",[ProductController::class,"index"])->name("products");
+Route::get("/tat-ca-san-pham/{category?}",[ProductController::class,"index","category"])->where(["category"])->name("products");
 Route::get("/products/delete/{id}",[ProductController::class,'hide',"id"])->where(["id"])->name("hide-product");
 Route::get("/categories/delete/{id}",[ProductController::class,'hideCategory',"id"])->where(["id"])->name("hide-category");
 Route::get("/san-pham/{slug}",[ProductController::class,'showProduct',"slug"])->where(["slug"])->name("product");
@@ -42,4 +42,9 @@ Route::middleware(['client'])->prefix("user")->group(function () {
 
 Route::get("/login",[ClientController::class,"login"])->name("client.login");
 Route::post("/login",[ClientController::class,"logged"])->name("client.login.check");
+Route::post("/register",[ClientController::class,"register"])->name("client.register.check");
 Route::get("/logout",[ClientController::class,"logout"])->name("client.logout");
+Route::get("/api/drive/google",[ClientController::class,"googleLogin"])->name("google.login");
+Route::get("/api/drive/facebook",[ClientController::class,"facebookLogin"])->name("facebook.login");
+Route::get("/api/google-login",[ClientController::class,"googleCallback"])->name("google.callback");
+Route::get("/api/facebook-login",[ClientController::class,"facebookCallback"])->name("google.callback");

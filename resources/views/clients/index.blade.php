@@ -54,34 +54,21 @@
     <!-- end header banner -->
     <!-- start gioi thieu nghe nhan -->
     <section class="introduce-artis">
+        <div class="h1 text-main text-center pt-lg-5 pt-3 font-weight-bold text-uppercase">Danh mục</div>
         <div class="container mx-auto p-5">
-
-            <div class="row py-5">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
-                    <div class="product-card bg-product-card text-center p-4">
-                        <img src="{{asset("assets/images/product.png")}}" class="img-fluid pb-2" alt="">
-                        <h3 class="text-main">Tượng phật</h3>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
-                    <div class="product-card bg-product-card text-center p-4">
-                        <img src="{{asset("assets/images/product.png")}}" class="img-fluid pb-2" alt="">
-                        <h3 class="text-main">Tượng phật</h3>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
-                    <div class="product-card bg-product-card text-center p-4">
-                        <img src="{{asset("assets/images/product.png")}}" class="img-fluid pb-2" alt="">
-                        <h3 class="text-main">Tượng phật</h3>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
-                    <div class="product-card bg-product-card text-center p-4">
-                        <img src="{{asset("assets/images/product.png")}}" class="img-fluid pb-2" alt="">
-                        <h3 class="text-main">Tượng phật</h3>
-
-                    </div>
-                </div>
+            <div class="row pb-5">
+                @if(isset($LOCAL_CATEGORIES))
+                    @foreach($LOCAL_CATEGORIES as $category)
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
+                            <a href="{{route("products",$category->id)}}" style="color: inherit;text-decoration: none!important;">
+                                <div class="product-card bg-product-card text-center p-4 rounded">
+                                    <img src="{{$category->thumbnail}}" class="img-fluid pb-3" alt="">
+                                    <h3 class="text-main">{{$category->name}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
@@ -92,13 +79,13 @@
             <h1 class="text-main text-center font-weight-bold">DỰ ÁN TIÊU BIỂU</h1>
             <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}"
                                           class="img-fluid py-2" alt=""></div>
-            <p class="text-center text-main">
+            <div class="text-center text-main">
                 Với kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
                 kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
                 kinh
                 nghiệp nhiều đời, Đúc đồng Điệp
                 Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....
-            </p>
+            </div>
             <div class="owl-carousel">
                 <div class="product-card text-center p-2 p-sm-4">
                     <img src="{{asset("assets/images/good-product.jpg")}}" class="img-fluid pb-3" alt="">
@@ -166,7 +153,8 @@
     <section id="about">
         <div class="container">
             <div class="row px-5">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
+                <div
+                    class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
                     <div>
                         <div class="pt-4 pb-1 text-main font-weight-bold h2">ĐÚC ĐỒNG DIỆP OANH</div>
                         <h2 class="sub-title pb-4 text-main">ĐÚC ĐỒNG GIA TRUYỀN</h2>
