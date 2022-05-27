@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Events\CreateNotification;
 use App\Http\Controllers\Controller;
 use App\Jobs\sendOrderMail;
 use App\Mail\AdminOrder;
@@ -122,6 +123,7 @@ class CartController extends Controller
         Mail::to($orderCreate->email)->send(new ClientOrder($orderCreate));
         $adminMail = Option::where("alias","=","email")->first()->value;
         Mail::to($adminMail)->send(new AdminOrder($orderCreate));
+        CreateNotification::dispatch();
 //        sendOrderMail::dispatch($orderCreate)->onQueue('high');
 //        Test::dispatch();
 //        Mail::to("phamquanglinhdev@gmail.com")->send(new TestQueue($orderCreate));
