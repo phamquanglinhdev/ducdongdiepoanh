@@ -109,7 +109,7 @@ class ClientController extends Controller
         if (User::checkByEmail($emailFB)) {
             $tmp = [
                 'name' => $user->getName(),
-                'email' => $user->emailFB,
+                'email' => $emailFB,
                 'google_id' => $user->getId(),
                 'password'=>Hash::make($user->getEmail().Str::random(4))
             ];
