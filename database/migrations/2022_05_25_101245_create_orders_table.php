@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("email");
             $table->string("name");
             $table->string("address");
+            $table->string("phone");
             $table->string("payment_method");
             $table->longText("message")->nullable();
             $table->integer("status")->default(0);

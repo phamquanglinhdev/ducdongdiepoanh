@@ -9,14 +9,19 @@
 
 <div class="container">
     <ul class="list-group list-group-flush mb-5 orders">
-        <div class="mt-4 mb-2 ">Đơn hàng của khách hàng: {{$order->name}}</div>
+        <div class="mt-4 mb-2 ">Đơn hàng của khách hàng</div>
+        <li class="list-group-item">
+            <div>Họ và tên : {{$order->name}}</div>
+            <div>Số điện thoại : {{$order->phone}}</div>
+            <div>Email : {{$order->email}}</div>
+        </li>
+        <div class="mt-4 mt-2">Thông tin đơn hàng</div>
         <li class="list-group-item">
             <div>Mã vận đơn : #{{$order->id}}</div>
             <div>Địa Chỉ Giao Hàng : {{$order->address}}</div>
             <div>Phương thức thanh toán
                 : {{$order->payment_method=="atm"?"Chuyển khoản":"Thanh toán khi nhận hàng"}}</div>
-            <div>Trạng thái : {{$order->status==0?"Chưa hoàn thành":"Hoàn thành"}}</div>
-            <div>Mã vận đơn : #{{$order->id}}</div>
+
         </li>
 
         <div class="mt-4 mt-2">Chi tiết đơn hàng</div>
