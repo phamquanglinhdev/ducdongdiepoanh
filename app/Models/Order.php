@@ -28,14 +28,20 @@ class Order extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    public function shows(){
-        return view("components.show",['route'=>'show-order','slug'=>$this->id]);
+    public function shows()
+    {
+        return view("components.show", ['route' => 'show-order', 'slug' => $this->id]);
     }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function Packs()
+    {
+        return $this->hasMany(Pack::class, "order_id", "id");
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -43,6 +49,16 @@ class Order extends Model
     |--------------------------------------------------------------------------
     */
 
+    public static function Income()
+    {
+        $orders = Order::where("status", "=", 1)->get();
+        $total = 0;
+        foreach ($orders as $order) {
+            $packs = $order->Packs()->get();
+            $total += Pack::Total($packs);
+        }
+        return $total;
+    }
     /*
     |--------------------------------------------------------------------------
     | ACCESSORS

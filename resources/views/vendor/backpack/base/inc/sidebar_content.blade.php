@@ -7,8 +7,10 @@
 <hr>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('contact') }}'><i class='nav-icon la la-address-book'></i> Liên hệ</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('post') }}'><i class='nav-icon la la-pager'></i> Bài viêt</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Khách hàng</a></li>
 <hr>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('option') }}'><i class='nav-icon la la-cog'></i> Thiết đặt</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>
 
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('device') }}'><i class='nav-icon la la-question'></i> Devices</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('device') }}'><i class='nav-icon la la-mobile'></i> Thiết bị</a></li>
+

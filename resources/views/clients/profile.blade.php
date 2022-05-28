@@ -82,7 +82,7 @@
             <div class="text-center h1 font-weight-bold py-5 text-main">Đơn hàng của bạn</div>
             <div style="overflow-x: scroll">
                 <ul class="list-group" style="min-width: 768px">
-                    <li class="list-group-item">
+                    <li class="list-group-item mb-5">
                         <div class="d-flex justify-content-between font-weight-bold">
                             <div>Mã vận đơn</div>
                             <div>Địa chỉ giao hàng</div>
@@ -92,9 +92,9 @@
                     </li>
                     @if(isset($orders))
                         @foreach($orders as $order)
-                            <li class="list-group-item">
+                            <li class="list-group-item mb-5">
                                 <div class="d-flex justify-content-between">
-                                    <div>Mã vận đơn #{{$order->id}}</div>
+                                    <div class="h5 font-weight-bold text-main">Mã vận đơn #{{$order->id}}</div>
                                     <div>{{$order->address}}</div>
                                     <div>{{$order->payment_method == "atm"?"Chuyển khoản ngân hàng":"Thanh toán khi nhận hàng."}}</div>
                                     <div>
@@ -105,6 +105,21 @@
                                         @endif
                                     </div>
                                 </div>
+                                <hr>
+                                @foreach($order->Packs()->get() as $pack)
+                                    <div>
+                                        <a class="text-main font-weight-bold" href="{{route("product",$pack->Product()->first()->slug)}}">{{$pack->Product()->first()->name}}</a>
+                                        <span> ( </span>
+                                        <span class="font-italic"> {{number_format($pack->Product()->first()->price)}} đ</span>
+                                        <span>)</span>
+                                        <span> x </span>
+                                        <span>{{$pack->quantity}}</span>
+                                        <span> = </span>
+                                        <span>{{number_format($pack->quantity*$pack->Product()->first()->price)}} đ</span>
+                                    </div>
+                                @endforeach
+                                <hr>
+                                <div class="font-weight-bold">Tổng: {{number_format(\App\Models\Pack::Total($order->Packs()->get()))}} đ</div>
                             </li>
                         @endforeach
                     @endif
