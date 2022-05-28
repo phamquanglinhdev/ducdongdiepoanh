@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string("fb-token")->nullable();
-            $table->string("gg-token")->nullable();
+            $table->string("fb")->nullable();
+            $table->string("gg")->nullable();
             $table->string("phone")->nullable();
             $table->integer("role")->default(1);
             $table->rememberToken();

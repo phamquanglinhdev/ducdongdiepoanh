@@ -125,6 +125,7 @@
                                     {{backpack_user()->name}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route("profile")}}">THÔNG TIN & LỊCH SỬ</a>
                                     <a class="dropdown-item" href="{{route("client.cart")}}">GIỎ HÀNG</a>
                                     <a class="dropdown-item" href="{{route("client.logout")}}">ĐĂNG XUẤT</a>
                                 </div>

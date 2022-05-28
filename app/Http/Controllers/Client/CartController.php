@@ -132,7 +132,4 @@ class CartController extends Controller
 //        Mail::to("phamquanglinhdev@gmail.com")->send(new TestQueue($orderCreate));
         return redirect("/tat-ca-san-pham")->with("success-order", "Thanh toán thành công");
     }
-    public function showHistory(){
-
-    }
 }

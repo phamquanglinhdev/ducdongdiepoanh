@@ -5,6 +5,7 @@ use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\FixedPageController;
 use App\Http\Controllers\Client\PostController;
 use App\Http\Controllers\Client\ProductController;
+use App\Http\Controllers\Client\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,12 +33,16 @@ Route::get("/tin-tuc/{id}",[PostController::class,'render',"id"])->where(["id"])
 
 Route::middleware(['client'])->prefix("user")->group(function () {
     Route::get('/gio-hang', [CartController::class,"showCart"])->name("client.cart");
-
     Route::get('/add-cart/{id?}', [CartController::class,"addToCard","id"])->where(["id"])->name("client.cart.addItem");
     Route::get('/buy-now/{id?}', [CartController::class,"buyNow","id"])->where(["id"])->name("client.cart.buyItem");
     Route::post('/remove-item/', [CartController::class,"removePack"])->name("client.cart.removeItem");
     Route::post("/change-quantity",[CartController::class,"chanegQuantity"])->name("change.quantity");
     Route::post("/make-order",[CartController::class,"makeOrder"])->name("make.order");
+    Route::get("/thong-tin-ca-nhan",[UserController::class,"show"])->name("profile");
+    Route::post("/change-name",[UserController::class,"changeName"])->name("change.name");
+    Route::post("/change-email",[UserController::class,"changeEmail"])->name("change.email");
+    Route::post("/change-phone",[UserController::class,"changePhone"])->name("change.phone");
+    Route::post("/change-password",[UserController::class,"changePassword"])->name("change.password");
 });
 
 Route::get("/login",[ClientController::class,"login"])->name("client.login");

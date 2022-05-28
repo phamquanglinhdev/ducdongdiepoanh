@@ -91,13 +91,12 @@ class ClientController extends Controller
             $tmp = [
                 'name' => $user->getName(),
                 'email' => $user->getEmail(),
-                'google_id' => $user->getId(),
+                'gg' => $user->getId(),
                 'password'=>Hash::make($user->getEmail().Str::random(4))
             ];
             $account = User::create($tmp);
         } else {
             $account = User::getUserByEmail($email);
-
         }
         backpack_auth()->loginUsingId($account->id);
         return redirect("/");
@@ -110,7 +109,7 @@ class ClientController extends Controller
             $tmp = [
                 'name' => $user->getName(),
                 'email' => $emailFB,
-                'google_id' => $user->getId(),
+                'fb' => $user->getId(),
                 'password'=>Hash::make($user->getEmail().Str::random(4))
             ];
             $account = User::create($tmp);
