@@ -29,7 +29,7 @@ class CreateNotification
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @return \Illuminate\Http\Client\Response
      */
     public function broadcastOn()
     {
@@ -40,6 +40,7 @@ class CreateNotification
             'c'=>'...',
             'u'=>env("APP_URL"),
         ]);
-        return new PrivateChannel('push');
+//        return new PrivateChannel('push');
+        return $response;
     }
 }

@@ -12,8 +12,10 @@ use App\Models\Option;
 use App\Models\Order;
 use App\Models\Pack;
 use App\Models\Product;
+use App\Models\PushNotification;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -123,10 +125,14 @@ class CartController extends Controller
         Mail::to($orderCreate->email)->send(new ClientOrder($orderCreate));
         $adminMail = Option::where("alias","=","email")->first()->value;
         Mail::to($adminMail)->send(new AdminOrder($orderCreate));
-        CreateNotification::dispatch();
+        PushNotification::sendPushOrder($orderCreate);
+//        CreateNotification::dispatch();
 //        sendOrderMail::dispatch($orderCreate)->onQueue('high');
 //        Test::dispatch();
 //        Mail::to("phamquanglinhdev@gmail.com")->send(new TestQueue($orderCreate));
         return redirect("/tat-ca-san-pham")->with("success-order", "Thanh toán thành công");
+    }
+    public function showHistory(){
+
     }
 }

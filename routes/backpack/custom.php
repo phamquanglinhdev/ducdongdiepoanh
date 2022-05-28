@@ -26,8 +26,8 @@ Route::group([
     Route::crud('post', 'PostCrudController');
     Route::crud('option', 'OptionCrudController');
     Route::crud('order', 'OrderCrudController');
+    Route::crud('device', 'DeviceCrudController');
 }); // this should be the absolute last line of this file
-
 Route::get("/admin",function (){
     return redirect("/admin/dashboard");
 });
