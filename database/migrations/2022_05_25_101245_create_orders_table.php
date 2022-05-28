@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string("payment_method");
             $table->longText("message")->nullable();
             $table->integer("status")->default(0);
+            $table->unsignedBigInteger("customer_id");
+            $table->foreign("customer_id")->references("id")->on("users");
             $table->timestamps();
         });
     }

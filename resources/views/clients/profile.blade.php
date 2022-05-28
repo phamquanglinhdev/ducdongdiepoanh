@@ -1,6 +1,12 @@
 @extends("layouts.client")
 @section("content")
+    <style>
+        #profile, #order-history {
+            background: url("{{asset("assets/images/backchitiettintuc.png")}}");
+        }
+    </style>
     <section id="profile">
+        <div class="text-center h1 font-weight-bold pt-5 text-main">Thông tin cá nhân</div>
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-6">
@@ -72,14 +78,46 @@
 
     </section>
     <section id="order-history">
-
+        <div class="container">
+            <div class="text-center h1 font-weight-bold py-5 text-main">Đơn hàng của bạn</div>
+            <div style="overflow-x: scroll">
+                <ul class="list-group" style="min-width: 768px">
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between font-weight-bold">
+                            <div>Mã vận đơn</div>
+                            <div>Địa chỉ giao hàng</div>
+                            <div>Hình thức thanh toán</div>
+                            <div>Trạng thái</div>
+                        </div>
+                    </li>
+                    @if(isset($orders))
+                        @foreach($orders as $order)
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>Mã vận đơn #{{$order->id}}</div>
+                                    <div>{{$order->address}}</div>
+                                    <div>{{$order->payment_method == "atm"?"Chuyển khoản ngân hàng":"Thanh toán khi nhận hàng."}}</div>
+                                    <div>
+                                        @if($order->status == 0)
+                                            <div class="badge badge-warning p-2">Chưa giao hàng</div>
+                                        @else
+                                            <div class="badge badge-success p-2">Đã giao hàng</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+            </div>
+        </div>
     </section>
 @endsection
 @section("js")
     <script>
         let nameState = 1;
         $("#change-name").click(function () {
-            if (nameState == 1) {
+            if (nameState === 1) {
                 $("#name").attr("readonly", false);
                 $("#name").focus();
                 $("#change-name").html('<i class="fas fa-check-circle"></i>');
@@ -111,7 +149,7 @@
 
         let phoneState = 1;
         $("#change-phone").click(function () {
-            if (phoneState == 1) {
+            if (phoneState === 1) {
                 $("#phone").attr("readonly", false);
                 $("#phone").focus();
                 $("#change-phone").html('<i class="fas fa-check-circle"></i>');
@@ -144,7 +182,7 @@
 
         let emailState = 1;
         $("#change-email").click(function () {
-            if (emailState == 1) {
+            if (emailState === 1) {
                 $("#email").attr("readonly", false);
                 $("#email").focus();
                 $("#change-email").html('<i class="fas fa-check-circle"></i>');

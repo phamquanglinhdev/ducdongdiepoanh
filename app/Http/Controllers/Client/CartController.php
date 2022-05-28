@@ -115,6 +115,7 @@ class CartController extends Controller
             "address" => $request->address,
             "message" => $request->message,
             "payment_method" => $request->payment_method,
+            "customer_id"=>backpack_user()->id,
         ];
         $orderCreate = Order::create($order);
         $packs = Pack::where("customer_id", "=", backpack_user()->id)->where("order_id", "=", null)->orderBy("created_at", "DESC")->get();

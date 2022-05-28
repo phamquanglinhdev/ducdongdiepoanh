@@ -3,15 +3,18 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
     public function show()
     {
-        return view("clients.profile");
+        $orders = Order::where("customer_id","=",backpack_user()->id)->orderBy("created_at","DESC")->get();
+        return view("clients.profile",["orders"=>$orders]);
     }
 
     public function changeName(Request $request): bool
