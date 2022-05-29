@@ -6,6 +6,7 @@
     .fb_dialog_content iframe {
         margin: 0 !important;
         right: 5px!important;
+        bottom: 2em;
     }
     #fb-customer-chat{
         display: none;

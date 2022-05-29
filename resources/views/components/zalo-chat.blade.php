@@ -1,6 +1,6 @@
 <style>
     .zalo-chat-widget{
-        bottom:10vh!important;
+        bottom:6em!important;
         right: 5px!important;
     }
 </style>

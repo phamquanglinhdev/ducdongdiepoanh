@@ -3,7 +3,7 @@
     <style>
         .show-cart{
             position: fixed;
-            bottom: 17vh!important;
+            bottom: 10em!important;
             right: 5px!important;
             z-index: 9;
             padding: 10px;
