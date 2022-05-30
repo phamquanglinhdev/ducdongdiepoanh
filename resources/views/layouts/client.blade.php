@@ -32,7 +32,7 @@
     <!-- top banner -->
     <div class="banner-wrap">
         <div class="container mx-auto">
-            <div class="row align-items-center">
+            <div class="row m-0 align-items-center">
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
                     <a href="{{route("index")}}">
                         <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
@@ -94,7 +94,7 @@
     <!-- main nav -->
     <div class="bg-main main-nav">
         <div class="container m-auto">
-            <nav class="navbar navbar-expand-md navbar-dark px-5 py-2 py-md-2" id="main-nav">
+            <nav class="navbar navbar-expand-md navbar-dark py-2 py-md-2" id="main-nav">
 
                 <i class="d-block d-md-none fas fa-times text-dark" id="toggler-close-btn" data-hide="1"></i>
 

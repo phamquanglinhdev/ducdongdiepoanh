@@ -59,11 +59,12 @@
             <div class="row pb-5">
                 @if(isset($LOCAL_CATEGORIES))
                     @foreach($LOCAL_CATEGORIES as $category)
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-2">
-                            <a href="{{route("products",$category->id)}}" style="color: inherit;text-decoration: none!important;">
-                                <div class="product-card bg-product-card text-center p-4 rounded">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-3 p-2">
+                            <a href="{{route("products",$category->id)}}"
+                               style="color: inherit;text-decoration: none!important;">
+                                <div class="product-card bg-product-card text-center p-md-3 pb-2 rounded">
                                     <img src="{{$category->thumbnail}}" class="img-fluid pb-3" alt="">
-                                    <h3 class="text-main">{{$category->name}}</h3>
+                                    <div class="text-main font-weight-bold">{{$category->name}}</div>
                                 </div>
                             </a>
                         </div>
@@ -114,32 +115,35 @@
     <!-- bat dau phan san pham -->
     <section class="products">
         <div class="container p-md-5 p-1 mx-auto">
-            <h1 class="text-main text-center font-weight-bold">SẢN PHẨM</h1>
+            <h1 class="text-main text-center font-weight-bold">SẢN PHẨM NỔI BẬT</h1>
             <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
                                           alt=""></div>
-            <p class="text-center text-main">
+            <p class="text-center text-main h5">
                 Đồ đồng Điệp Oanh được nghiên cứu và sáng tao như một tác phẩm nghệ thuật thật sự. <br>
                 Đây là các sản phẩm thủ công mỹ nghệ rất độc đáo , đồi hỏi kỹ nghệ cao.
             </p>
-            <div class="row pt-5 py-2">
+            <div class="row  m-0 pt-5 py-2">
                 @if(isset($HOT_PRODUCTS))
                     @foreach($HOT_PRODUCTS as $product)
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-3">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-3 pl-3 p-1">
                             <a href="{{route("product",$product->slug)}}" style="text-decoration: none;color: inherit">
                                 <div class="product-card shadow-lg rounded-20 text-center p-2 mb-3">
                                     <img src="{{$product->first_thumbnail}}" class="img-fluid pb-2" alt="">
                                     <div class="d-flex justify-content-center align-items-center pb-4">
-                                        <i class="small fas mx-1 fa-star text-warning"></i>
-                                        <i class="small fas mx-1 fa-star text-warning"></i>
-                                        <i class="small fas mx-1 fa-star text-warning"></i>
-                                        <i class="small far mx-1 fa-star text-warning"></i>
-                                        <i class="small far mx-1 fa-star text-warning"></i>
+                                        @for($i =1;$i<=5;$i++)
+                                            @if($product->rating >= $i)
+                                                <i class="small fas mx-1 fa-star text-warning"></i>
+                                            @else
+                                                <i class="small far mx-1 fa-star text-warning"></i>
+                                            @endif
+                                        @endfor
                                     </div>
                                 </div>
-                                <div class="text-main font-weight-bold h5 ">{{$product->name}}</div>
-                                <div class="d-flex justify-content-between align-items-end">
-                                    <p class="small">{{$product->Category()->first()->name}}</p>
-                                    <h5 class="text-warning font-weight-bold">{{number_format($product->price)}} đ</h5>
+                                <div class="text-main font-weight-bold ">{{$product->name}}</div>
+                                <div class="d-md-flex justify-content-between align-items-end">
+                                    <div class="text-main">{{$product->Category()->first()->name}}</div>
+                                    <div class="text-warning font-weight-bold h5">{{number_format($product->price)}}đ
+                                    </div>
                                 </div>
                             </a>
                         </div>

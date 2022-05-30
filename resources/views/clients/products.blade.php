@@ -95,10 +95,10 @@
         </div>
     </section>
     <section class="products">
-        <div class="container px-5 m-auto">
+        <div class="container px-lg-5 m-auto">
             <div class="row justify-content-end">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 px-1 px-md-3 py-sm-3 d-none d-md-block">
-                    <h5 class="bg-main w-100 px-4 py-2 text-white text-center ">Sản phẩm</h5>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 px-1 px-md-3 py-sm-3 d-block d-md-block">
+                    <div class="bg-main w-100 px-lg-4 h5 py-2 text-white text-center ">Sản phẩm</div>
                     <div id="large-filter">
                         <ul class="list-unstyled list-type-product">
                             <li>
@@ -145,7 +145,7 @@
                                 <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>
                             </div>
                         </ul>
-                        <div class="row justify-content-between py-2">
+                        <div class="row m-0 justify-content-between py-2">
                             <div class="col-6">
                                 <a class="btn bg-main p-2 text-white w-100" id="previous">Trang trước</a>
                             </div>

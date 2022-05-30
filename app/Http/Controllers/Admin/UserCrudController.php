@@ -45,11 +45,11 @@ class UserCrudController extends CrudController
         CRUD::column('name');
         CRUD::column('email');
         CRUD::column('phone')->label("Số điện thoại");
-        CRUD::addColumn([
-            'name' => 'address',
-            'type' => 'last-address',
-            'label'=>"Địa chỉ gần nhất"
-        ]);
+//        CRUD::addColumn([
+//            'name' => 'address',
+//            'type' => 'last-address',
+////            'label'=>"Địa chỉ gần nhất"
+//        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
