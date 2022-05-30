@@ -146,10 +146,10 @@
                             </div>
                         </ul>
                         <div class="row m-0 justify-content-between py-2">
-                            <div class="col-6">
+                            <div class="col-6 p-lg-1">
                                 <a class="btn bg-main p-2 text-white w-100" id="previous">Trang trước</a>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6 p-lg-1">
                                 <a class="btn bg-main p-2 text-white w-100" id="next">Trang kế</a>
                             </div>
                         </div>
