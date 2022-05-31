@@ -160,7 +160,7 @@
 </header>
 @yield("content")
 <footer class="bg-main container-fluid">
-    <div class="container m-auto py-3 px-5">
+    <div class="container m-auto py-3 px-md-5">
         <div class="d-flex justify-content-center align-items-center">
             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
         </div>

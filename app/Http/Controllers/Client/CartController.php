@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Events\CreateNotification;
 use App\Http\Controllers\Controller;
-use App\Jobs\sendOrderMail;
 use App\Mail\AdminOrder;
 use App\Mail\ClientOrder;
-use App\Mail\TestQueue;
 use App\Models\Option;
 use App\Models\Order;
 use App\Models\Pack;
 use App\Models\Product;
 use App\Models\PushNotification;
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Notifications\HasOrder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 
 class CartController extends Controller
@@ -127,6 +124,8 @@ class CartController extends Controller
         $adminMail = Option::where("alias","=","email")->first()->value;
         Mail::to($adminMail)->send(new AdminOrder($orderCreate));
         PushNotification::sendPushOrder($orderCreate);
+        Notification::route('slack', "https://dldevs.slack.com/archives/C03HZ4VMQPK/p1653988244762999")
+            ->notify(new HasOrder($orderCreate));
 //        CreateNotification::dispatch();
 //        sendOrderMail::dispatch($orderCreate)->onQueue('high');
 //        Test::dispatch();
