@@ -119,17 +119,12 @@ class CartController extends Controller
         foreach ($packs as $pack) {
             $pack->update(["order_id" => $orderCreate->id]);
         }
-
         Mail::to($orderCreate->email)->send(new ClientOrder($orderCreate));
         $adminMail = Option::where("alias","=","email")->first()->value;
         Mail::to($adminMail)->send(new AdminOrder($orderCreate));
         PushNotification::sendPushOrder($orderCreate);
-        Notification::route('slack', "https://dldevs.slack.com/archives/C03HZ4VMQPK/p1653988244762999")
+        Notification::route('slack', "https://hooks.slack.com/services/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")
             ->notify(new HasOrder($orderCreate));
-//        CreateNotification::dispatch();
-//        sendOrderMail::dispatch($orderCreate)->onQueue('high');
-//        Test::dispatch();
-//        Mail::to("phamquanglinhdev@gmail.com")->send(new TestQueue($orderCreate));
         return redirect("/tat-ca-san-pham")->with("success-order", "Thanh toán thành công");
     }
 }
