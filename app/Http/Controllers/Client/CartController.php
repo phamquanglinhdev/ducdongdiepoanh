@@ -123,7 +123,7 @@ class CartController extends Controller
         $adminMail = Option::where("alias","=","email")->first()->value;
         Mail::to($adminMail)->send(new AdminOrder($orderCreate));
         PushNotification::sendPushOrder($orderCreate);
-        Notification::route('slack', "https://hooks.slack.com/services/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")
+        Notification::route('slack', env("SLACK_WEBHOOK"))
             ->notify(new HasOrder($orderCreate));
         return redirect("/tat-ca-san-pham")->with("success-order", "Thanh toán thành công");
     }
