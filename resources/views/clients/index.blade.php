@@ -176,8 +176,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 md-order-first px-0">
-                    <div class="avatar-wraper my-3 text-center mx-auto">
-                        <img src="{{asset("assets/images/paris.jpg")}}" class="img-fluid avatar " alt="">
+                    <div class=" rounded-circle border my-3 text-center mx-auto">
+                        <img src="https://vn-test-11.slatic.net/p/b3b9500f02c50eafee01a1291abbfed2.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
                     </div>
                     <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
                 </div>
@@ -185,68 +185,68 @@
         </div>
     </section>
     <!-- bat dau phan video  -->
-    <section class="introduce-product">
-        <div class="container p-5 m-auto">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8 p-2">
-                    <h1 class="text-main font-weight-bold">VIDEO</h1>
-                    <div class="embed-responsive embed-responsive-4by3 rounded-20 shadow-lg my-4">
-                        <iframe class="embed-responsive-item"
-                                src="https://www.youtube.com/embed/{{$SETTING["indexVideo"]}}"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-2">
-                    <h1 class="text-main text-left text-uppercase font-weight-bold">Ảnh</h1>
-                    <div class="row py-4">
-                        <div class="col-6 px-1 px-sm-3 px-md-1">
-                            <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
-                                     alt="...">
-                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
-                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
+{{--    <section class="introduce-product">--}}
+{{--        <div class="container p-5 m-auto">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12 col-sm-12 col-md-8 col-lg-8 p-2">--}}
+{{--                    <h1 class="text-main font-weight-bold">VIDEO</h1>--}}
+{{--                    <div class="embed-responsive embed-responsive-4by3 rounded-20 shadow-lg my-4">--}}
+{{--                        <iframe class="embed-responsive-item"--}}
+{{--                                src="https://www.youtube.com/embed/{{$SETTING["indexVideo"]}}"--}}
+{{--                                title="YouTube video player" frameborder="0"--}}
+{{--                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"--}}
+{{--                                allowfullscreen></iframe>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-2">--}}
+{{--                    <h1 class="text-main text-left text-uppercase font-weight-bold">Ảnh</h1>--}}
+{{--                    <div class="row py-4">--}}
+{{--                        <div class="col-6 px-1 px-sm-3 px-md-1">--}}
+{{--                            <div class="card image-card rounded-20 shadow-lg text-white">--}}
+{{--                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"--}}
+{{--                                     alt="...">--}}
+{{--                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">--}}
+{{--                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>--}}
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1 px-sm-3 px-md-1">
-                            <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
-                                     alt="...">
-                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
-                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 px-1 px-sm-3 px-md-1">--}}
+{{--                            <div class="card image-card rounded-20 shadow-lg text-white">--}}
+{{--                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"--}}
+{{--                                     alt="...">--}}
+{{--                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">--}}
+{{--                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>--}}
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-1 py-lg-3 py-xl-4">
-                        <div class="col-6 px-1 px-sm-3 px-md-1">
-                            <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
-                                     alt="...">
-                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
-                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="row py-1 py-lg-3 py-xl-4">--}}
+{{--                        <div class="col-6 px-1 px-sm-3 px-md-1">--}}
+{{--                            <div class="card image-card rounded-20 shadow-lg text-white">--}}
+{{--                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"--}}
+{{--                                     alt="...">--}}
+{{--                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">--}}
+{{--                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>--}}
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1 px-sm-3 px-md-1">
-                            <div class="card image-card rounded-20 shadow-lg text-white">
-                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"
-                                     alt="...">
-                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">
-                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 px-1 px-sm-3 px-md-1">--}}
+{{--                            <div class="card image-card rounded-20 shadow-lg text-white">--}}
+{{--                                <img src="{{asset("assets/images/card-image.jpg")}}" class="w-100 rounded-20"--}}
+{{--                                     alt="...">--}}
+{{--                                <div class="card-img-overlay d-flex justify-content-center align-items-end py-2">--}}
+{{--                                    <p class="card-title text-center bottom-0 small">Linh vật nghê đúc đồng</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- ket thuc phan video -->
 @endsection
 @section("css")
