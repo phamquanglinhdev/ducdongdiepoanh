@@ -21,6 +21,14 @@ class UserSeeder extends Seeder
                 "name"=>"Admin",
                 "email"=>"Admin@adonis.com",
                 "password"=>Hash::make("password"),
+                "role"=>0,
+            ]
+        );
+        User::create(
+            [
+                "name"=>"Phạm Quang Linh",
+                "email"=>"phamquanglinhdev@gmail.com",
+                "password"=>Hash::make("Linhz123@"),
             ]
         );
     }

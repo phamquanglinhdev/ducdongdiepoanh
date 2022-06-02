@@ -43,6 +43,7 @@ class ProductCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->addClause("where", "active", "=", true);
+        CRUD::column('code')->label("Mã sản phẩm");
         CRUD::column('name')->label("Tên sản phẩm");
         CRUD::column('slug')->label("URL");
         CRUD::addColumn([
@@ -75,7 +76,7 @@ class ProductCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ProductRequest::class);
-
+        CRUD::field('code')->label("Mã sản phẩm");
         CRUD::field('name')->label("Tên sản phẩm");
         CRUD::field('slug')->label("URL")->type("hidden");
         CRUD::addField([
@@ -97,7 +98,7 @@ class ProductCrudController extends CrudController
         CRUD::field('four_thumbnail')->label("Ảnh sản phẩm (4)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('five_thumbnail')->label("Ảnh sản phẩm (5)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('rating')->label("Chất lượng (1->5)");
-        CRUD::field('description')->label("Giới thiệu")->type("wysiwyg");
+        CRUD::field('description')->label("Giới thiệu")->type("textarea");
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

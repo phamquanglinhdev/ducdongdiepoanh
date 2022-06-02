@@ -2,8 +2,13 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Models\Option;
+use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +29,27 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        try {
+            $global = [];
+            $options = Option::where("isActive", "=", true)->get();
+            foreach ($options as $option) {
+                $global[$option->alias] = $option->value;
+            }
+            View::share("SETTING", $global);
+        } catch (\Exception) {
+
+        }
+        try {
+            $hotProducts = Product::limit(16)->get();
+            View::share("HOT_PRODUCTS", $hotProducts);
+        }catch (\Exception){
+
+        }
+        try {
+            $local_category = Category::all();
+            View::share("LOCAL_CATEGORIES", $local_category);
+        }catch (\Exception ){}
         Schema::defaultStringLength(191);
+
     }
 }

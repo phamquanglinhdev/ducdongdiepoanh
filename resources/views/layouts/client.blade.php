@@ -1,34 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{$title??"Đồ đồng Điệp Oanh"}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{$SETTING["description"]}}">
+    <meta name="keywords" content="{{$SETTING["keywords"]}}">
     <link rel="stylesheet" href="{{asset("assets/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/owl.carousel.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/owl.theme.default.min.css")}}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="icon" type="image/x-icon" href="{{asset("assets/images/favicon.ico")}}">
+
+    @yield("css")
 </head>
 <body>
+<!--Start of WebPush.vn-->
+
+<!--End of WebPush.vn-->
+
+<!-- Messenger Plugin chat Code -->
+<style>
+
+</style>
+
+
 <header>
     <!-- top banner -->
     <div class="banner-wrap">
         <div class="container mx-auto">
-            <div class="row align-items-center">
+            <div class="row m-0 align-items-center">
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
-                    <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                    <a href="{{route("index")}}">
+                        <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                    </a>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 w-100">
                     <div class="row d-flex justify-content-around align-items-center h-100">
                         <div class="d-none d-md-block col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                            <form action="">
-                                <input type="search" name="" class="px-2 py-1 border-0 rounded w-100"
-                                       id="header-search-input">
-                            </form>
+                            <div class="input-group border-white border rounded">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm tất cả ở đây">
+                                <div class="input-group-append">
+                                    <button class="btn text-white" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-12 col-sm-12 pb-sm-0 col-md-6 col-lg-6 col-xl-6">
-                            <ul class="d-flex list-social-icon justify-content-end px-2 justify-content-sm-end justify-content-md-center align-items-center list-unstyled">
+                            <ul class="m-0 d-flex list-social-icon justify-content-end px-2 justify-content-sm-end justify-content-md-center align-items-center list-unstyled">
                                 <li class="d-none  d-md-inline">
                                     <span class="fa-stack">
                                         <i class="fas fa-circle text-white fa-stack-2x"></i>
@@ -71,7 +94,7 @@
     <!-- main nav -->
     <div class="bg-main main-nav">
         <div class="container m-auto">
-            <nav class="navbar navbar-expand-md navbar-dark px-5 py-2 py-md-2" id="main-nav">
+            <nav class="navbar navbar-expand-md navbar-dark py-2 py-md-2" id="main-nav">
 
                 <i class="d-block d-md-none fas fa-times text-dark" id="toggler-close-btn" data-hide="1"></i>
 
@@ -81,23 +104,50 @@
                         <li class="nav-item px-2 py-md-0 py-2 d-block d-md-none">
                             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">TRANG CHỦ</a>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}" class="nav-link text-white">TRANG
+                                CHỦ</a>
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">GIỚI THIỆU</a>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("about")}}" class="nav-link text-white">GIỚI
+                                THIỆU</a>
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>
-                        </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">SẢN PHẨM</a></li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU
-                                BIỂU</a></li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">TIN TỨC</a></li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">LIÊN HỆ</a></li>
+                        {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
+                        {{--                        </li>--}}
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}"
+                                                                  class="nav-link text-white">SẢN PHẨM</a></li>
+                        {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
+                        {{--                                BIỂU</a></li>--}}
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="" class="nav-link text-white">TIN TỨC</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}"
+                                                                  class="nav-link text-white">LIÊN HỆ</a></li>
+                        @if(backpack_auth()->check())
+                            <li class="nav-item dropdown px-2 py-md-0 py-2 text-uppercase text-white">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{backpack_user()->name}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @if(backpack_user()->role==0)
+                                        <a class="dropdown-item" href="{{backpack_url("dashboard")}}">BẢNG ĐIỀU KHIỂN (ADMIN)</a>
+                                    @endif
+                                    <a class="dropdown-item" href="{{route("profile")}}">THÔNG TIN & LỊCH SỬ</a>
+                                    <a class="dropdown-item" href="{{route("client.cart")}}">GIỎ HÀNG</a>
+                                    <a class="dropdown-item" href="{{route("client.logout")}}">ĐĂNG XUẤT</a>
+                                </div>
+                            </li>
+                        @else
+                            <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("client.login")}}"
+                                                                      class="nav-link text-white">ĐĂNG NHẬP</a></li>
+                        @endif
                         <li class="nav-item px-2 py-md-0 py-2">
                             <div class="d-block d-md-none">
-                                <form action="">
-                                    <input type="search" name="" class="px-2 border-0 rounded w-100"
-                                           id="header-search-input">
-                                </form>
+                                <div class="input-group border-white border rounded">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm tất cả ở đây">
+                                    <div class="input-group-append">
+                                        <button class="btn text-white" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -107,32 +157,29 @@
     </div>
     <!-- end main nav -->
     <!-- start header banner -->
-    <section class="container-fluid">
-        <img src="{{asset("assets/images/header_banner.jpg")}}" class="img-fluid" alt="">
-    </section>
 </header>
 @yield("content")
 <footer class="bg-main container-fluid">
-    <div class="container m-auto py-3 px-5">
+    <div class="container m-auto py-3 px-md-5">
         <div class="d-flex justify-content-center align-items-center">
             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
         </div>
-        <p class="text-center small  text-white my-3">
+        <p class="text-center text-white my-3">
             Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
             TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội
             ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm
             bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
         </p>
         <div class="row">
-            <div class="col">
+            <div class="col-md-6 col-12">
                 <h5 class="text-center text-warning">Hệ thống showroom</h5>
-                <h6 class="text-center text-white small py-2">Điện thoại : (+84) 376658437</h6>
-                <h6 class="text-center text-white small">Email : đucongdiepoanh@gmail.com</h6>
+                <h6 class="text-center text-white  py-2">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white ">Email : {{$SETTING["email"]}}</h6>
             </div>
-            <div class="col text-center">
+            <div class="col-md-6 col-12 text-center">
                 <h5 class="text-center text-warning">Liên hệ</h5>
-                <h6 class="text-center text-white py-2 small">Điện thoại : (+84) 376658437</h6>
-                <h6 class="text-center text-white small">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
+                <h6 class="text-center text-white py-2 ">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white ">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
             </div>
         </div>
         <div class="row py-3">
@@ -173,12 +220,102 @@
         </div>
     </div>
     <div class="container-fluid bg-footer py-3">
-        <h6 class="text-center text-white small">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
+        <h6 class="text-center text-white ">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
     </div>
 </footer>
+<a id="back-top-top" class="d-flex align-items-center">
+    <i class="fas fa-arrow-up w-100 fa-2x text-white "></i>
+</a>
+<style>
+    #back-top-top {
+        display: inline-block;
+        background-color: #FF9800;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 4px;
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        transition: background-color .3s,
+        opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+    }
+
+    #back-top-top:hover {
+        cursor: pointer;
+        background-color: #333;
+        text-decoration: none;
+    }
+
+    #back-top-top:active {
+        background-color: #555;
+    }
+
+    #back-top-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Styles for the content section */
+
+    .content {
+        width: 77%;
+        margin: 50px auto;
+        font-family: 'Merriweather', serif;
+        font-size: 17px;
+        color: #6c767a;
+        line-height: 1.9;
+    }
+
+    @media (min-width: 500px) {
+        .content {
+            width: 43%;
+        }
+
+        #button {
+            margin: 30px;
+        }
+    }
+
+    .content h1 {
+        margin-bottom: -10px;
+        color: #03a9f4;
+        line-height: 1.5;
+    }
+
+    .content h3 {
+        font-style: italic;
+        color: #96a2a7;
+    }
+</style>
 <script src="{{asset("assets/js/jquery.slim.min.js")}}"></script>
 <script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
 <script src="{{asset("assets/js/owl.carousel.min.js")}}"></script>
 <script src="{{asset("assets/js/custom.js")}}"></script>
+<script>
+    var btn = $('#back-top-top');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, '300');
+    });
+</script>
+<div class="pill-fix">
+    <x-zalo-chat></x-zalo-chat>
+    <x-facebook-chat></x-facebook-chat>
+    <x-cart-modal></x-cart-modal>
+</div>
+@yield("js")
 </body>
 </html>

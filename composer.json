@@ -6,10 +6,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "ext-curl": "*",
         "backpack/crud": "5.0",
-        "guzzlehttp/guzzle": "^7.2",
+        "backpack/filemanager": "^2.0",
+        "barryvdh/laravel-dompdf": "^1.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "ladumor/one-signal": "0.4.2",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
+        "laravel/slack-notification-channel": "^2.4",
+        "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7"
     },
     "require-dev": {

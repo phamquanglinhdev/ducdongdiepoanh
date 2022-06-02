@@ -16,18 +16,30 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<100;$i++){
-            $name = Str::random(12);
+        $image = [
+            "https://grandart.vn/uploads/danh-muc-san-pham/danhmuc-6.png",
+            "https://dongbaolong.com/media/avatar/baolongbrass/lu-dong-pc.png",
+            "https://baolongbrass.com/Uploads/images/avatar/avatar-do-dong-cao-cap.png",
+            "https://dongbaolong.com/media/avatar/baolongbrass/bo-ngu-su-bang-dong-avatar.png",
+            "https://vn-live-01.slatic.net/p/54903ebc82ea0c1dc26595f0e6c8b394.jpg",
+
+        ];
+        for ($i = 0; $i < 100; $i++) {
+            $name = "Sản phẩm mẫu ".Str::random(3);
             $product = [
-                "category_id"=>rand(1,4),
-                "name"=>$name,
-                "slug"=>$name,
-                "description"=>"<p>Xin chào</p>",
-                "price"=>rand(1900,2500)*1000,
-                "rating"=>rand(3,5),
-                "size"=>"Chưa cập nhật",
-                "first_thumbnail"=>"https://pbs.twimg.com/profile_images/1285655593592791040/HtwPZgej_400x400.jpg",
-                "second_thumbnail"=>"https://www.ubuy.vn/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNTFvNi1XWDBYR0wuX0FDX1NMMTUwMF8uanBn.jpg",
+                "category_id" => rand(1, 4),
+                "name" => $name,
+                "slug" => $name,
+                "description" => Str::random(200),
+                "price" => rand(1000, 20000) * 1000,
+                "rating" => rand(3, 5),
+                "code"=>Str::random(6),
+                "size" => rand(100,200)."x".rand(200,300)."x".rand(240,300),
+                "first_thumbnail" => $image[rand(0,4)],
+                "second_thumbnail" => $image[rand(0,4)],
+                "third_thumbnail" => $image[rand(0,4)],
+                "four_thumbnail" => $image[rand(0,4)],
+                "five_thumbnail" => $image[rand(0,4)],
             ];
             Product::create($product);
         }

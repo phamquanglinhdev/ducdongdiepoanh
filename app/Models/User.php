@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -21,6 +22,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'fb',
+        'role',
+        'gg',
+        'phone',
     ];
 
     /**
@@ -41,4 +46,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function checkByEmail($email){
+        $check = User::where("email","=",$email)->count();
+        if($check>0){
+            return false;
+        }
+        return true;
+    }
+    public static function getUserByEmail($email){
+        return User::where("email","=",$email)->first();
+    }
+    public function getLastAddress(){
+        $order = User::find($this->id);
+        if(isset($order->address)){
+            return $order->address;
+        }
+        return "Không có";
+    }
 }
