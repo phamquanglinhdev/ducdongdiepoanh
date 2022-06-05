@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 md-order-first px-0">
                     <div class=" rounded-circle border my-3 text-center mx-auto">
-                        <img src="https://vn-test-11.slatic.net/p/b3b9500f02c50eafee01a1291abbfed2.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
+                        <img src="https://dodongdiepoanh.com/uploads/DO/7.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
                     </div>
                     <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
                 </div>

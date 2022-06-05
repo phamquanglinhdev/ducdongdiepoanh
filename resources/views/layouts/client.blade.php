@@ -220,7 +220,7 @@
         </div>
     </div>
     <div class="container-fluid bg-footer py-3">
-        <h6 class="text-center text-white ">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
+        <h6 class="text-center text-white ">Copyright 2006 - 2022 All Rights Reserved.Do Dong Diep Oanh</h6>
     </div>
 </footer>
 <a id="back-top-top" class="d-flex align-items-center">
