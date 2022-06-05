@@ -40,13 +40,13 @@ class AppServiceProvider extends ServiceProvider
 
         }
         try {
-            $hotProducts = Product::limit(16)->get();
+            $hotProducts = Product::where("active","=",1)->limit(16)->get();
             View::share("HOT_PRODUCTS", $hotProducts);
         }catch (\Exception){
 
         }
         try {
-            $local_category = Category::all();
+            $local_category = Category::where("active","=",1)->get();
             View::share("LOCAL_CATEGORIES", $local_category);
         }catch (\Exception ){}
         Schema::defaultStringLength(191);
