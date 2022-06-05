@@ -156,7 +156,7 @@
     <!-- ket thuc phan san pham -->
     <section id="about">
         <div class="container">
-            <div class="row px-5">
+            <div class="row px-lg-5 p-0">
                 <div
                     class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
                     <div>
