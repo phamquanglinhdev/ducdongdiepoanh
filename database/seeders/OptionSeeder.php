@@ -36,22 +36,22 @@ class OptionSeeder extends Seeder
             'value' => "https://ducdongdiepoanh.com/assets/images/header_banner.jpg",
         ];
         Option::create($banner);
-        $video = [
-            'name' => "Video trang chủ",
-            'alias' => 'indexVideo',
-            'type' => "video",
-            'value' => "x13fvMdEGs4",
-        ];
-        Option::create($video);
-        for ($i = 0; $i < 4; $i++) {
-            $image = [
-                'alias' => 'indexImg_' . $i,
-                'name' => "Ảnh trang chủ " . $i,
-                'type' => "portrait",
-                'value' => "https://ducdongdiepoanh.com/assets/images/card-image.jpg",
-            ];
-            Option::create($image);
-        }
+//        $video = [
+//            'name' => "Video trang chủ",
+//            'alias' => 'indexVideo',
+//            'type' => "video",
+//            'value' => "x13fvMdEGs4",
+//        ];
+//        Option::create($video);
+//        for ($i = 0; $i < 4; $i++) {
+//            $image = [
+//                'alias' => 'indexImg_' . $i,
+//                'name' => "Ảnh trang chủ " . $i,
+//                'type' => "portrait",
+//                'value' => "https://ducdongdiepoanh.com/assets/images/card-image.jpg",
+//            ];
+//            Option::create($image);
+//        }
         $email = [
             'name' => 'Email',
             'alias' => 'email',
@@ -66,6 +66,12 @@ class OptionSeeder extends Seeder
             'value' => "0949.806.083"
         ];
         Option::create($hotline);
+        $hotline = [
+            'name' => 'Địa chỉ',
+            'alias' => 'address',
+            'type' => 'text',
+            'value' => "KCN Trấn Lâm - Ý Yên - Nam Định"
+        ];
         $zaloPlugin = [
             'name' => 'Pugin Chat Zalo',
             'alias' => 'zalo-plugin',

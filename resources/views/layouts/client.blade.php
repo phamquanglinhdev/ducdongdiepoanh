@@ -165,7 +165,7 @@
             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
         </div>
         <p class="text-center text-white my-3">
-            Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
+            Doanh nghiệp đồ đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
             TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội
             ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm
             bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
@@ -173,13 +173,13 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 <h5 class="text-center text-warning">Hệ thống showroom</h5>
-                <h6 class="text-center text-white  py-2">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white  py-2">Điện thoại : {{$SETTING["hotline"]}}</h6>
                 <h6 class="text-center text-white ">Email : {{$SETTING["email"]}}</h6>
             </div>
             <div class="col-md-6 col-12 text-center">
                 <h5 class="text-center text-warning">Liên hệ</h5>
-                <h6 class="text-center text-white py-2 ">Điện thoại : (+84) 376658437</h6>
-                <h6 class="text-center text-white ">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
+                <h6 class="text-center text-white py-2 ">Điện thoại : {{$SETTING["hotline"]}}</h6>
+                <h6 class="text-center text-white ">Địa chỉ : {{$SETTING["address"]}}</h6>
             </div>
         </div>
         <div class="row py-3">
