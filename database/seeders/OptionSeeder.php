@@ -66,12 +66,13 @@ class OptionSeeder extends Seeder
             'value' => "0949.806.083"
         ];
         Option::create($hotline);
-        $hotline = [
+        $address = [
             'name' => 'Địa chỉ',
             'alias' => 'address',
             'type' => 'text',
             'value' => "KCN Trấn Lâm - Ý Yên - Nam Định"
         ];
+        Option::create($address);
         $zaloPlugin = [
             'name' => 'Pugin Chat Zalo',
             'alias' => 'zalo-plugin',
