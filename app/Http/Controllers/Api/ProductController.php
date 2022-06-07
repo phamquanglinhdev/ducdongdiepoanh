@@ -11,4 +11,10 @@ class ProductController extends Controller
     public function all(){
         return Product::where("active","=",1)->get();
     }
+    public function byCategory(Request $request){
+        return Product::where("category_id","=",$request->id)->where("active","=",1)->orderBy("name","ASC")->get();
+    }
+    public function singleProduct(Request $request){
+        return Product::find($request->id);
+    }
 }
