@@ -151,9 +151,9 @@ class ClientController extends Controller
 ////                "grant_type" => $grant_type,
 //            ]
 //        );
-        echo $code_verifier;
-        echo $code;
-        echo $app_id;
-        echo $grant_type;
+        echo $code_verifier."<br>";
+        echo $code."<br>";
+        echo $app_id."<br>";
+        echo $grant_type."<br>";
     }
 }
