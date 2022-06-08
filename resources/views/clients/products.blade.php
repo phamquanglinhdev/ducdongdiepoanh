@@ -228,7 +228,7 @@
             });
         }
 
-        $("input").click(function () {
+        $("#products input").click(function () {
             limit = 1;
             categories = "";
             $('input[name="categories"]:checked').each(function (e) {
