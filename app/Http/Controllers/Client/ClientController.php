@@ -139,7 +139,7 @@ class ClientController extends Controller
         $code = $request->code;
         $app_id = "1632857012351867391";
         $grant_type = "authorization_code";
-        return Http::withHeaders(
+        $response = Http::withHeaders(
             [
                 "secret_key" => "1RyWGKyR5P11Pd47iYqC",
             ]
@@ -151,5 +151,6 @@ class ClientController extends Controller
                 "grant_type" => $grant_type,
             ]
         );
+        var_dump($response);
     }
 }
