@@ -151,6 +151,6 @@ class ClientController extends Controller
                 "grant_type" => $grant_type,
             ]
         );
-        var_dump($response);
+        return($response->json());
     }
 }
