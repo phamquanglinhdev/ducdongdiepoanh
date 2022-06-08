@@ -139,18 +139,21 @@ class ClientController extends Controller
         $code = $request->code;
         $app_id = "1632857012351867391";
         $grant_type = "authorization_code";
-        $response = Http::withHeaders(
-            [
-                "secret_key" => "1RyWGKyR5P11Pd47iYqC",
-            ]
-        )->post("https://oauth.zaloapp.com/v4/access_token?",
-            [
-//                "code_verifier" => $code_verifier,
-//                "code" => $code,
-//                "app_id" => $app_id,
-//                "grant_type" => $grant_type,
-            ]
-        );
-        return($response->json());
+//        $response = Http::withHeaders(
+//            [
+//                "secret_key" => "1RyWGKyR5P11Pd47iYqC",
+//            ]
+//        )->post("https://oauth.zaloapp.com/v4/access_token?",
+//            [
+////                "code_verifier" => $code_verifier,
+////                "code" => $code,
+////                "app_id" => $app_id,
+////                "grant_type" => $grant_type,
+//            ]
+//        );
+        echo $code_verifier;
+        echo $code;
+        echo $app_id;
+        echo $grant_type;
     }
 }
