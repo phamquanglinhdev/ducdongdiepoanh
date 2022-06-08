@@ -148,13 +148,13 @@ class ClientController extends Controller
                 "secret_key" => "1RyWGKyR5P11Pd47iYqC",
                 "Content-Type" => "application/x-www-form-urlencoded"
             ]
-        )->post("https://oauth.zaloapp.com/v4/access_token?", [
+        )->post("https://oauth.zaloapp.com/v4/access_token?",
             [
                 "code_verifier" => $code_verifier,
                 "code" => $code,
                 "app_id" => $app_id,
                 "grant_type" => $grant_type
             ]
-        ]);
+        );
     }
 }
