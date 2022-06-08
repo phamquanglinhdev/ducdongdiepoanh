@@ -57,8 +57,8 @@ Route::get("/api/drive/facebook",[ClientController::class,"facebookLogin"])->nam
 Route::get("/api/google-login",[ClientController::class,"googleCallback"])->name("google.callback");
 Route::get("/api/facebook-login",[ClientController::class,"facebookCallback"])->name("google.callback");
 Route::get("/api/drive/zalo",function (){
-    $code_change = \Illuminate\Support\Str::random(8);
-    $state = "";
+    $code_change = \Illuminate\Support\Str::random(43);
+    $state = 1;
     $app_id = "1632857012351867391";
     $callback = "https://dodongdiepoanh.com/api/zalo-login";
     return redirect("https://oauth.zaloapp.com/v4/permission?app_id=$app_id&redirect_uri=$callback&code_challenge=$code_change&state=$state");
