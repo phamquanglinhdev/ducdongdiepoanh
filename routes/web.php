@@ -56,6 +56,16 @@ Route::get("/api/drive/google",[ClientController::class,"googleLogin"])->name("g
 Route::get("/api/drive/facebook",[ClientController::class,"facebookLogin"])->name("facebook.login");
 Route::get("/api/google-login",[ClientController::class,"googleCallback"])->name("google.callback");
 Route::get("/api/facebook-login",[ClientController::class,"facebookCallback"])->name("google.callback");
+Route::get("/api/drive/zalo",function (){
+    $code_change = \Illuminate\Support\Str::random(8);
+    $state = "";
+    $app_id = "1632857012351867391";
+    $callback = "https://dodongdiepoanh.com/api/zalo-login";
+    return redirect("https://oauth.zaloapp.com/v4/permission?app_id=$app_id&redirect_uri=$callback&code_challenge=$code_change&state=$state");
+});
+Route::get("/api/zalo-login",function (){
+    return response();
+})->name("zalo.callback");
 //Route::get("/testSlack",function (){
 //    Notification::route('slack',env("SLACK_WEBHOOK"))
 //    ->notify(new HasOrder(Order::find(1)));
