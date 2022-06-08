@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SendPush;
+use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Client\ProductController;
 use App\Mail\TestHelloMail;
@@ -21,8 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function (){
     Route::get('/user/info', [UserController::class,"user"]);
+    Route::post('/user/edit/name', [CustomerController::class,"updateName"]);
+    Route::post('/user/edit/phone', [CustomerController::class,"updatePhone"]);
     Route::get('/products', [\App\Http\Controllers\Api\ProductController::class,"all"]);
     Route::post('/category/', [\App\Http\Controllers\Api\ProductController::class,"byCategory"]);
+    Route::post('/categories/', [\App\Http\Controllers\Api\ProductController::class,"categories"]);
     Route::post('/product/', [\App\Http\Controllers\Api\ProductController::class,"singleProduct"]);
 });
 Route::post("filter",[ProductController::class,"filter"])->name("filter");
