@@ -56,15 +56,15 @@
                     <div class=" py-2">
                         <div class="text-center py-2">Hoặc đăng nhập bằng</div>
                         <div class="row">
-                            <div class="col-md-4 col-12 px-md-2">
+                            <div class="col-md-6 col-12 px-md-2">
                                 <a class="btn btn-danger w-100" href="{{route("google.login")}}"> <i class="fab fa-google"></i> Google</a>
                             </div>
-                            <div class="col-md-4 col-12 px-md-2">
+                            <div class="col-md-6 col-12 px-md-2">
                                 <a class=" btn btn-primary w-100 " href="{{route("facebook.login")}}"><i class="fab fa-facebook-f"></i> Facebook</a>
                             </div>
-                            <div class="col-md-4 col-12 px-md-2">
-                                <a class=" btn btn-info w-100 " href="{{route("zalo.login")}}"><i class="fab fa-zhihu"></i> Zalo</a>
-                            </div>
+{{--                            <div class="col-md-4 col-12 px-md-2">--}}
+{{--                                <a class=" btn btn-info w-100 " href="{{route("zalo.login")}}"><i class="fab fa-zhihu"></i> Zalo</a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
