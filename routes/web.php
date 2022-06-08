@@ -64,7 +64,7 @@ Route::get("/api/drive/zalo",function (){
     return redirect("https://oauth.zaloapp.com/v4/permission?app_id=$app_id&redirect_uri=$callback&code_challenge=$code_change&state=$state");
 });
 Route::get("/api/zalo-login",function (){
-    return response();
+    return response()->content();
 })->name("zalo.callback");
 //Route::get("/testSlack",function (){
 //    Notification::route('slack',env("SLACK_WEBHOOK"))
