@@ -145,10 +145,10 @@ class ClientController extends Controller
             ]
         )->post("https://oauth.zaloapp.com/v4/access_token?",
             [
-                "code_verifier" => $code_verifier,
-                "code" => $code,
-                "app_id" => $app_id,
-                "grant_type" => $grant_type,
+//                "code_verifier" => $code_verifier,
+//                "code" => $code,
+//                "app_id" => $app_id,
+//                "grant_type" => $grant_type,
             ]
         );
         return($response->json());
