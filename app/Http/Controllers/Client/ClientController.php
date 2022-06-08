@@ -139,21 +139,42 @@ class ClientController extends Controller
         $code = $request->code;
         $app_id = "1632857012351867391";
         $grant_type = "authorization_code";
-//        $response = Http::withHeaders(
-//            [
-//                "secret_key" => "1RyWGKyR5P11Pd47iYqC",
-//            ]
-//        )->post("https://oauth.zaloapp.com/v4/access_token?",
-//            [
-////                "code_verifier" => $code_verifier,
-////                "code" => $code,
-////                "app_id" => $app_id,
-////                "grant_type" => $grant_type,
-//            ]
-//        );
-        echo $code_verifier."<br>";
-        echo $code."<br>";
-        echo $app_id."<br>";
-        echo $grant_type."<br>";
+////        $response = Http::withHeaders(
+////            [
+////                "secret_key" => "1RyWGKyR5P11Pd47iYqC",
+////            ]
+////        )->post("https://oauth.zaloapp.com/v4/access_token?",
+////            [
+//////                "code_verifier" => $code_verifier,
+//////                "code" => $code,
+//////                "app_id" => $app_id,
+//////                "grant_type" => $grant_type,
+////            ]
+////        );
+//        echo $code_verifier."<br>";
+//        echo $code."<br>";
+//        echo $app_id."<br>";
+//        echo $grant_type."<br>";
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://oauth.zaloapp.com/v4/access_token?code=$code&app_id=$app_id&grant_type=authorization_code&code_verifier=$code_verifier",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_HTTPHEADER => array(
+                'secret_key: 1RyWGKyR5P11Pd47iYqC'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+
     }
 }
