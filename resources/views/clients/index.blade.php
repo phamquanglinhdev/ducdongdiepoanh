@@ -48,8 +48,29 @@
         }
 
     </style>
-    <section class="">
-        <img src="{{asset("assets/images/header_banner.jpg")}}" class="w-100" alt="">
+    <section class="banner">
+{{--        <img src="{{$SETTING["banner"]}}" class="w-100" alt="">--}}
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{$SETTING["banner"]}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{$SETTING["banner"]}}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{$SETTING["banner"]}}" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </section>
     <!-- end header banner -->
     <!-- start gioi thieu nghe nhan -->
@@ -156,7 +177,7 @@
     <!-- ket thuc phan san pham -->
     <section id="about">
         <div class="container">
-            <div class="row px-5">
+            <div class="row px-lg-5 p-0">
                 <div
                     class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex md-order-last justify-content-center align-items-center h-100">
                     <div>
@@ -177,7 +198,7 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 md-order-first px-0">
                     <div class=" rounded-circle border my-3 text-center mx-auto">
-                        <img src="https://vn-test-11.slatic.net/p/b3b9500f02c50eafee01a1291abbfed2.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
+                        <img src="https://dodongdiepoanh.com/uploads/DO/7.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
                     </div>
                     <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
                 </div>

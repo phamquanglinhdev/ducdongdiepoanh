@@ -56,6 +56,9 @@ Route::get("/api/drive/google",[ClientController::class,"googleLogin"])->name("g
 Route::get("/api/drive/facebook",[ClientController::class,"facebookLogin"])->name("facebook.login");
 Route::get("/api/google-login",[ClientController::class,"googleCallback"])->name("google.callback");
 Route::get("/api/facebook-login",[ClientController::class,"facebookCallback"])->name("google.callback");
+Route::get("/api/drive/zalo",[ClientController::class,"zaloLogin"])->name("zalo.login");
+Route::get("/api/zalo-login",[ClientController::class,"zaloCallback"])->name("zalo.callback");
+Route::get("/api/search/",[ProductController::class,"search"])->name("search");
 //Route::get("/testSlack",function (){
 //    Notification::route('slack',env("SLACK_WEBHOOK"))
 //    ->notify(new HasOrder(Order::find(1)));

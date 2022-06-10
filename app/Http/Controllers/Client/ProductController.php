@@ -86,4 +86,9 @@ class ProductController extends Controller
         $product =Product::where("slug", "=", $slug)->first();
         return view("clients.product",['product'=>$product]);
     }
+
+    public function search(Request $request){
+        $products = Product::where('name', 'like', '%' . $request->get('q') . '%')->get();
+        return response()->json($products);
+    }
 }

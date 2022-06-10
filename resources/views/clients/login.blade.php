@@ -62,7 +62,9 @@
                             <div class="col-md-6 col-12 px-md-2">
                                 <a class=" btn btn-primary w-100 " href="{{route("facebook.login")}}"><i class="fab fa-facebook-f"></i> Facebook</a>
                             </div>
-
+{{--                            <div class="col-md-4 col-12 px-md-2">--}}
+{{--                                <a class=" btn btn-info w-100 " href="{{route("zalo.login")}}"><i class="fab fa-zhihu"></i> Zalo</a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>

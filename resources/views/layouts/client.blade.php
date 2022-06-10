@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="icon" type="image/x-icon" href="{{asset("assets/images/favicon.ico")}}">
-
+    <meta name="zalo-platform-site-verification" content="OOwL2EMJ1WuHauCix8CRCoggpWd6snLJCp4"/>
     @yield("css")
 </head>
 <body>
@@ -32,7 +32,7 @@
     <!-- top banner -->
     <div class="banner-wrap">
         <div class="container mx-auto">
-            <div class="row m-0 align-items-center">
+            <div class="row m-0 align-items-center justify-content-center">
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
                     <a href="{{route("index")}}">
                         <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
@@ -41,14 +41,8 @@
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 w-100">
                     <div class="row d-flex justify-content-around align-items-center h-100">
                         <div class="d-none d-md-block col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                            <div class="input-group border-white border rounded">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm tất cả ở đây">
-                                <div class="input-group-append">
-                                    <button class="btn text-white" type="button">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control search"
+                                   placeholder="Tìm kiếm tất cả ở đây">
                         </div>
                         <div class="col-12 col-sm-12 pb-sm-0 col-md-6 col-lg-6 col-xl-6">
                             <ul class="m-0 d-flex list-social-icon justify-content-end px-2 justify-content-sm-end justify-content-md-center align-items-center list-unstyled">
@@ -127,7 +121,8 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     @if(backpack_user()->role==0)
-                                        <a class="dropdown-item" href="{{backpack_url("dashboard")}}">BẢNG ĐIỀU KHIỂN (ADMIN)</a>
+                                        <a class="dropdown-item" href="{{backpack_url("dashboard")}}">BẢNG ĐIỀU KHIỂN
+                                            (ADMIN)</a>
                                     @endif
                                     <a class="dropdown-item" href="{{route("profile")}}">THÔNG TIN & LỊCH SỬ</a>
                                     <a class="dropdown-item" href="{{route("client.cart")}}">GIỎ HÀNG</a>
@@ -140,14 +135,7 @@
                         @endif
                         <li class="nav-item px-2 py-md-0 py-2">
                             <div class="d-block d-md-none">
-                                <div class="input-group border-white border rounded">
-                                    <input type="text" class="form-control" placeholder="Tìm kiếm tất cả ở đây">
-                                    <div class="input-group-append">
-                                        <button class="btn text-white" type="button">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <input type="text" class="form-control search" placeholder="Tìm kiếm tất cả ở đây">
                             </div>
                         </li>
                     </ul>
@@ -165,7 +153,7 @@
             <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
         </div>
         <p class="text-center text-white my-3">
-            Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
+            Doanh nghiệp đồ đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
             TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội
             ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm
             bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
@@ -173,13 +161,13 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 <h5 class="text-center text-warning">Hệ thống showroom</h5>
-                <h6 class="text-center text-white  py-2">Điện thoại : (+84) 376658437</h6>
+                <h6 class="text-center text-white  py-2">Điện thoại : {{$SETTING["hotline"]}}</h6>
                 <h6 class="text-center text-white ">Email : {{$SETTING["email"]}}</h6>
             </div>
             <div class="col-md-6 col-12 text-center">
                 <h5 class="text-center text-warning">Liên hệ</h5>
-                <h6 class="text-center text-white py-2 ">Điện thoại : (+84) 376658437</h6>
-                <h6 class="text-center text-white ">Địa chỉ : 264 Cầu Giấy , Hà Nội</h6>
+                <h6 class="text-center text-white py-2 ">Điện thoại : {{$SETTING["hotline"]}}</h6>
+                <h6 class="text-center text-white ">Địa chỉ : {{$SETTING["address"]}}</h6>
             </div>
         </div>
         <div class="row py-3">
@@ -220,7 +208,7 @@
         </div>
     </div>
     <div class="container-fluid bg-footer py-3">
-        <h6 class="text-center text-white ">Copyright 2006 - 2019 All Rights Reserved.Duc Dong Diep Oanh</h6>
+        <h6 class="text-center text-white ">Copyright 2006 - 2022 All Rights Reserved.Do Dong Diep Oanh</h6>
     </div>
 </footer>
 <a id="back-top-top" class="d-flex align-items-center">
@@ -294,6 +282,7 @@
 <script src="{{asset("assets/js/jquery.slim.min.js")}}"></script>
 <script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
 <script src="{{asset("assets/js/owl.carousel.min.js")}}"></script>
+<script src="{{asset("assets/js/search.min.js")}}"></script>
 <script src="{{asset("assets/js/custom.js")}}"></script>
 <script>
     var btn = $('#back-top-top');
@@ -316,6 +305,38 @@
     <x-facebook-chat></x-facebook-chat>
     <x-cart-modal></x-cart-modal>
 </div>
+<script>
+    jQuery(document).ready(function($) {
+        var engine = new Bloodhound({
+            remote: {
+                url: '{{route("search")}}?q=%QUERY%',
+                wildcard: '%QUERY%'
+            },
+            datumTokenizer: Bloodhound.tokenizers.whitespace('q'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace
+        });
+
+        $(".search").typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            source: engine.ttAdapter(),
+            name: 'usersList',
+            templates: {
+                empty: [
+                    '<div class="list-group search-results-dropdown"><div class="list-group-item">Không có kết quả phù hợp.</div></div>'
+                ],
+                header: [
+                    '<div class="list-group search-results-dropdown">'
+                ],
+                suggestion: function (data) {
+                    return '<a href="{{url("san-pham")}}/' + data.slug +'" class="list-group-item">' + data.name + '</a>'
+                }
+            }
+        });
+    });
+</script>
 @yield("js")
 </body>
 </html>
