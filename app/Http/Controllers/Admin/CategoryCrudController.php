@@ -64,7 +64,7 @@ class CategoryCrudController extends CrudController
     {
         CRUD::setValidation(CategoryRequest::class);
 
-        CRUD::field('name')->label("Tên danh mục");
+        CRUD::field('name')->label("Tên danh mục")->attributes(["required"=>true]);
         CRUD::field('slug')->type("hidden");
         CRUD::field('thumbnail')->type("image")->label("Ảnh")->crop(true)->aspect_ratio(1);
         /**
