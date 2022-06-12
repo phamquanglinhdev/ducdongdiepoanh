@@ -200,7 +200,7 @@
                     <div class=" rounded-circle my-3 text-center mx-auto">
                         <img src="https://dodongdiepoanh.com/uploads/DO/7.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
                     </div>
-                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
+                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Điệp Oanh</h4>
                 </div>
             </div>
         </div>
