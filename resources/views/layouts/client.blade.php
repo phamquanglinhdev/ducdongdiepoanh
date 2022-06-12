@@ -108,6 +108,8 @@
                         {{--                        </li>--}}
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}"
                                                                   class="nav-link text-white">SẢN PHẨM</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}#project"
+                                                                  class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a></li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
                         {{--                                BIỂU</a></li>--}}
                         <li class="nav-item px-2 py-md-0 py-2"><a href="" class="nav-link text-white">TIN TỨC</a></li>

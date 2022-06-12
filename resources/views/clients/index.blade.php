@@ -96,7 +96,7 @@
     </section>
     <!-- end phan gioi thieu nghe nhan  -->
     <!-- gioi thieu du an tieu bieu -->
-    <section class="good-project">
+    <section class="good-project" id="project">
         <div class="container p-md-5 p-1 mx-auto">
             <h1 class="text-main text-center font-weight-bold">DỰ ÁN TIÊU BIỂU</h1>
             <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}"
@@ -197,8 +197,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 md-order-first px-0">
-                    <div class=" rounded-circle border my-3 text-center mx-auto">
-                        <img src="https://dodongdiepoanh.com/uploads/DO/7.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
+                    <div class=" rounded-circle my-3 text-center mx-auto">
+                        <img src="https://dodongdiepdiepoanh.com/uploads/DO/7.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
                     </div>
                     <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Diệp Oanh</h4>
                 </div>
