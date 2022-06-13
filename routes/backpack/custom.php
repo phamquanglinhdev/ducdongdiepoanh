@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ContactCrudController;
 use App\Http\Controllers\Admin\OrderCrudController;
+use App\Http\Controllers\Client\ImportController;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -28,4 +29,6 @@ Route::group([
     Route::crud('order', 'OrderCrudController');
     Route::crud('device', 'DeviceCrudController');
     Route::crud('user', 'UserCrudController');
+    Route::get("import",[ImportController::class,"ExcelImport"])->name("ExcelImport");
+    Route::post("import/save",[ImportController::class,"SaveData"])->name("post.excel");
 }); // this should be the absolute last line of this file
