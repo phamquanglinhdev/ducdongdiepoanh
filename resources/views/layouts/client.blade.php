@@ -101,7 +101,7 @@
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}" class="nav-link text-white">TRANG
                                 CHỦ</a>
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("about")}}" class="nav-link text-white">GIỚI
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",1)}}" class="nav-link text-white">GIỚI
                                 THIỆU</a>
                         </li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
@@ -112,7 +112,7 @@
                                                                   class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a></li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
                         {{--                                BIỂU</a></li>--}}
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",1)}}" class="nav-link text-white">TIN TỨC</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",2)}}" class="nav-link text-white">TIN TỨC</a></li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}"
                                                                   class="nav-link text-white">LIÊN HỆ</a></li>
                         @if(backpack_auth()->check())
