@@ -41,6 +41,7 @@ class PostCrudController extends CrudController
     {
 
         CRUD::column('title')->label("Tiêu đề bài viết");
+        CRUD::column('thumbnail')->label("Ảnh bìa")->type("image")->aspect_ratio(1)->crop(true);
         CRUD::column('updated_at')->label("Lần cập nhật cuối");
 
         /**
