@@ -173,5 +173,9 @@
 @section("js")
     <script>
         $('.main-detail table').addClass("w-100")
+
+        $(".main-detail img").removeAttr("width")
+        $(".main-detail img").removeAttr("height")
+        $('.main-detail img').addClass("w-100")
     </script>
 @endsection
