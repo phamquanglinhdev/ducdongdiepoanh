@@ -49,7 +49,7 @@
                             </ul>
                         </div>
                         <!--main desc-->
-                        <div class="main-detail py-4 bg-white rounded">
+                        <div class="main-detail py-4 bg-white rounded p-1 ">
                             {!! $post->document !!}
                         </div>
                     </div>
