@@ -205,6 +205,21 @@
             </div>
         </div>
     </section>
+    <section class="post carousel">
+        @php
+            $posts = \App\Models\Post::orderBy("updated_at")->get();
+        @endphp
+        <div class="container">
+            <div class="owl-carousel">
+                @foreach($posts as $post)
+                    <div class="product-card text-center p-2 p-sm-4">
+                        <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}" class="img-fluid pb-3" alt="">
+                        <h5 class="text-main sm-small">{{$post->title}}</h5>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
     <!-- bat dau phan video  -->
 {{--    <section class="introduce-product">--}}
 {{--        <div class="container p-5 m-auto">--}}
@@ -270,6 +285,10 @@
 {{--    </section>--}}
     <!-- ket thuc phan video -->
 @endsection
-@section("css")
-
+@section("js")
+    <script>
+        $(document).ready(function(){
+            $(".posts-carousel").owlCarousel();
+        });
+    </script>
 @endsection
