@@ -205,7 +205,7 @@
             </div>
         </div>
     </section>
-    <section class="post carousel mt-2">
+    <section class="post carousel mt-lg-5 mt-3">
         <h1 class="text-main text-center font-weight-bold">TIN TỨC NỔI BẬT</h1>
         <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
                                       alt=""></div>
@@ -216,8 +216,10 @@
             <div class="owl-carousel">
                 @foreach($posts as $post)
                     <div class="product-card text-center p-2 p-sm-4">
-                        <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}" class="img-fluid pb-3" alt="">
-                        <h5 class="text-main sm-small">{{$post->title}}</h5>
+                        <a href="{{route("post",$post->id)}}">
+                            <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}" class="img-fluid pb-3" alt="">
+                            <h5 class="text-main sm-small">{{$post->title}}</h5>
+                        </a>
                     </div>
                 @endforeach
             </div>
