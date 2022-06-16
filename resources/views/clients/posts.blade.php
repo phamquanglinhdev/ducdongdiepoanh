@@ -168,4 +168,7 @@
             </div>
         </div>
     </section>
+    <script>
+        $('.main-detail table').addClass("w-100")
+    </script>
 @endsection
