@@ -64,6 +64,7 @@ class PostCrudController extends CrudController
 
         CRUD::field('title')->label("Tiêu đề bài viết");
         CRUD::field('document')->label("Nội dung")->type("tinymce");
+        CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->aspect_ratio(1)->crop(true);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
