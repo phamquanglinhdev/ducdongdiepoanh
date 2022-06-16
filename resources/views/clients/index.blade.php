@@ -200,12 +200,15 @@
                     <div class=" rounded-circle my-3 text-center mx-auto">
                         <img src="https://dodongdiepoanh.com/uploads/DO/7.jpg" class="img-fluid avatar rounded-circle p-lg-3 p-0" alt="">
                     </div>
-                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân đúc đồng Điệp Oanh</h4>
+                    <h4 class="text-center text-main font-weight-bold">Nghệ nhân ưu tú Vũ Duy Điệp</h4>
                 </div>
             </div>
         </div>
     </section>
-    <section class="post carousel">
+    <section class="post carousel mt-2">
+        <h1 class="text-main text-center font-weight-bold">TIN TỨC NỔI BẬT</h1>
+        <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
+                                      alt=""></div>
         @php
             $posts = \App\Models\Post::orderBy("updated_at")->get();
         @endphp
