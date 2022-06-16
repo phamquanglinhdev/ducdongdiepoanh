@@ -14,10 +14,10 @@
             font-size: 1.8rem !important;
         }
 
-        .main-content {
-            background-image: url("{{asset("assets/images/news_back.png")}}");
-            background-size: cover;
-        }
+        {{--.main-content {--}}
+        {{--    background-image: url("{{asset("assets/images/news_back.png")}}");--}}
+        {{--    background-size: cover;--}}
+        {{--}--}}
 
         /*end news*/
     </style>
