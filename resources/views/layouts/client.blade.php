@@ -112,7 +112,7 @@
                                                                   class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a></li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
                         {{--                                BIỂU</a></li>--}}
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="" class="nav-link text-white">TIN TỨC</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",1)}}" class="nav-link text-white">TIN TỨC</a></li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}"
                                                                   class="nav-link text-white">LIÊN HỆ</a></li>
                         @if(backpack_auth()->check())
