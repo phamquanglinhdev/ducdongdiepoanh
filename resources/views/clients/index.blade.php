@@ -102,7 +102,7 @@
             <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}"
                                           class="img-fluid py-2" alt=""></div>
             <div class="text-center text-main">
-                Với kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
+                Với kinh nghiệp nhiều đời, Đồ đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
                 kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
                 kinh
                 nghiệp nhiều đời, Đúc đồng Điệp
@@ -140,8 +140,8 @@
             <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
                                           alt=""></div>
             <p class="text-center text-main h5">
-                Đồ đồng Điệp Oanh được nghiên cứu và sáng tao như một tác phẩm nghệ thuật thật sự. <br>
-                Đây là các sản phẩm thủ công mỹ nghệ rất độc đáo , đồi hỏi kỹ nghệ cao.
+                Đồ đồng Điệp Oanh được nghiên cứu và sáng tạo như một tác phẩm nghệ thuật thật sự. <br>
+                Đây là các sản phẩm thủ công mỹ nghệ rất độc đáo, đòi hỏi kỹ nghệ cao.
             </p>
             <div class="row  m-0 pt-5 py-2">
                 @if(isset($HOT_PRODUCTS))
@@ -183,15 +183,15 @@
                     <div>
                         <div class="pt-4 pb-1 text-main font-weight-bold h2">ĐÚC ĐỒNG DIỆP OANH</div>
                         <h2 class="sub-title pb-4 text-main">ĐÚC ĐỒNG GIA TRUYỀN</h2>
-                        <p class="desc pb-2 pt-4">Doanh nghiệp đúc đồng Điệp Oanh là một trong những đơn vị đúc đồng và
+                        <p class="desc pb-2 pt-4">Doanh nghiệp Đồ đồng Điệp Oanh là một trong những đơn vị đúc đồng và
                             chế
                             tác đồ
                             đồng lớn của làng nghề tại TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân
-                            xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội ngũ các thợ giỏi và nghệ nhân
-                            xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm bằng
+                            xưởng chính cùng nhiều xưởng vệ tinh. Sở hữu một đội ngũ các thợ giỏi và nghệ nhân
+                            xuất sắc, kinh nghiệm lâu năm, chúng tôi đã sản xuất hàng trăm loại sản phẩm bằng
                             đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
                             tượng đồng chân dung, tượng đài, tượng phật, tranh đồng, trống đồng, chuông, chiêng
-                            và các sản phẩm phong thủy, mỹ nghệ trang trí nộ ngoại thất cao cấp, được kiểm soát
+                            và các sản phẩm phong thủy, mỹ nghệ trang trí nội ngoại thất cao cấp, được kiểm soát
                             từ đầu vào nguyên liệu cho đến đầu ra thành phẩm, đảm bảo sản phẩm khi đưa ra thị
                             trường đến tay người dùng phải đạt tiêu chuẩn cả về thẩm mỹ và kỹ thuật... </p>
                     </div>
