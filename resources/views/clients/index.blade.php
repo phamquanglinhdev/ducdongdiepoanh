@@ -102,11 +102,7 @@
             <div class="text-center"><img src="{{asset("assets/images/good_projects_stiker.png")}}"
                                           class="img-fluid py-2" alt=""></div>
             <div class="text-center text-main">
-                Với kinh nghiệp nhiều đời, Đồ đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
-                kinh nghiệp nhiều đời, Đúc đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....Với
-                kinh
-                nghiệp nhiều đời, Đúc đồng Điệp
-                Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:....
+                Với kinh nghiệp nhiều đời, Đồ đồng Điệp Oanh đã có những thành tựu tiêu biểu trong đúc đồng như:
             </div>
             <div class="owl-carousel">
                 <div class="product-card text-center p-2 p-sm-4">
