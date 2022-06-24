@@ -221,7 +221,7 @@
             </div>
         </div>
     </section>
-    <section class="videos mt-lg-5 mt-3 pb-5 d-none">
+    <section class="videos mt-lg-5 mt-3 pb-5 ">
         <div class="container">
             <h1 class="text-main text-center font-weight-bold">VIDEO NỔI BẬT</h1>
             <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
