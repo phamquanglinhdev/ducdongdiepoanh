@@ -201,7 +201,7 @@
             </div>
         </div>
     </section>
-    <section class="post carousel mt-lg-5 mt-3 d-none">
+    <section class="post carousel mt-lg-5 mt-3">
         <h1 class="text-main text-center font-weight-bold">TIN TỨC NỔI BẬT</h1>
         <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
                                       alt=""></div>
@@ -228,7 +228,7 @@
                                           alt=""></div>
             <div class="row m-0">
                 <div class="col-md-6 col-12">
-                    <iframe class="rounded" width="100%" height="300px" src="https://www.youtube.com/embed/I-NW0wMhhDA"></iframe>
+                    <iframe class="rounded" width="100%" height="300px" src="https://www.youtube.com/embed/Lfri2bVjo44"></iframe>
                 </div>
                 <div class="col-md-6 col-12">
                     <iframe  class="rounded" width="100%" height="300px" src="https://www.youtube.com/embed/Lfri2bVjo44"></iframe>
