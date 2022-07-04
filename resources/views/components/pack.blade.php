@@ -13,7 +13,9 @@
                 <b>{{$pack->Product()->first()->name}}</b> x
                 <input min="1" class="pack text-center" id="{{$pack->id}}" style="width: 3em" type="number"  value="{{$pack->quantity}}" required>
             </div>
-            <div>  {{number_format($pack->Product()->first()->price*$pack->quantity)}} đ <a class="text-main remove-pack" id="r-{{$pack->id}}"><i class="fas fa-trash-alt"></i> </a></div>
+            <div>  {{number_format($pack->Product()->first()->price*$pack->quantity)}} đ
+{{--                <a class="text-main remove-pack" id="r-{{$pack->id}}"><i class="fas fa-trash-alt"></i> </a>--}}
+            </div>
         </div>
         <hr>
     @endforeach
@@ -22,8 +24,8 @@
 @endif
 
 <div class="d-flex justify-content-between">
-    <div class="font-weight-bold">Tổng</div>
-    <div class="font-weight-bold">{{number_format($total)}} đ</div>
+{{--    <div class="font-weight-bold">Tổng</div>--}}
+{{--    <div class="font-weight-bold">{{number_format($total)}} đ</div>--}}
 </div>
 <hr>
 <style>
