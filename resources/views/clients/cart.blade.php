@@ -42,7 +42,7 @@
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <div class="font-weight-bold">Sản phẩm</div>
-                                <div class="font-weight-bold">Tạm tính</div>
+{{--                                <div class="font-weight-bold">Tạm tính</div>--}}
                             </div>
                             <hr>
                             <div id="packs">
@@ -68,9 +68,10 @@
                                     Thanh toán khi nhận hàng
                                 </label>
                             </div>
+                            <div class="text-main">Sau khi đặt hàng, nhân viên sẽ liên hệ để tư vấn .</div>
                             <hr>
                             <div class="text-center text-lg-left py-2">
-                                <button type="submit" class="btn bg-main text-white ">Xác nhận</button>
+                                <button type="submit" class="btn bg-main text-white ">Xác nhận đặt hàng</button>
                             </div>
                         </div>
 
