@@ -160,7 +160,7 @@
                                 <div class="d-md-flex justify-content-between align-items-end">
                                     <div class="text-main">{{$product->Category()->first()->name}}</div>
 {{--                                    <div class="text-warning font-weight-bold h5">{{number_format($product->price)}}đ--}}
-                                    </div>
+{{--                                    </div>--}}
                                 </div>
                             </a>
                         </div>
