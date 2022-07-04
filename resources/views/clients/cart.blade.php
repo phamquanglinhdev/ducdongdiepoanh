@@ -49,21 +49,21 @@
                                 {!! $data !!}
                             </div>
                             <div class="loading"></div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment_method" id="atm" value="atm" checked>
+                            <div class="form-check d-none">
+                                <input class="form-check-input" type="radio" name="payment_method" id="atm" value="atm" >
                                 <label class="form-check-label text-main h5 font-weight-bold" for="atm">
                                     Thanh toán chuyển khoản ngân hàng
                                 </label>
                             </div>
-                            <div>
+                            <div class="d-none">
                                 <div>Thông tin chuyển khoản:</div>
                                 <div>Ngân hàng: MB Bank </div>
                                 <div>Số tài khoản : 0000000000000</div>
                                 <div>Người thụ hưởng : Nguyễn Văn A</div>
                                 <div>Chi nhánh : Hà Nội</div>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment_method" id="cash" value="cash">
+                            <div class="form-check d-none">
+                                <input class="form-check-input" type="radio" name="payment_method" id="cash" value="cash" checked>
                                 <label class="form-check-label text-main h5 font-weight-bold" for="cash">
                                     Thanh toán khi nhận hàng
                                 </label>
