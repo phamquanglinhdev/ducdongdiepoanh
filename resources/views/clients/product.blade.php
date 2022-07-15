@@ -91,7 +91,7 @@
                 <h3 class="text-main font-weight-bold">{{$product->name}}</h3>
                 <div class="d-block d-sm-flex d-nd-flex justify-content-between align-items-center my-2">
                     <div class="d-flex justify-content-between align-items-center pr-md-1">
-                        <p class="text-warning font-weight-bold pl-2 h2 ">{{number_format($product->price)}} đ</p>
+{{--                        <p class="text-warning font-weight-bold pl-2 h2 ">{{number_format($product->price)}} đ</p>--}}
                     </div>
                     <div class="d-flex justify-content-between align-items-center pt-2 pt-md-0 pl-md-2">
                         <div class="d-flex justify-content-center align-items-center pr-2">

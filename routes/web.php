@@ -32,7 +32,7 @@ Route::get("/san-pham/{slug}",[ProductController::class,'showProduct',"slug"])->
 Route::get("/lien-he/",[FixedPageController::class,'contact'])->name("contact");
 Route::post("/lien-he/",[FixedPageController::class,'saveFeedback'])->name("contact.save");
 Route::get("/gioi-thieu-nghe-nhan/",[FixedPageController::class,'about'])->name("about");
-Route::get("/tin-tuc/{id}",[PostController::class,'render',"id"])->where(["id"])->name("post");
+Route::get("/tin-tuc/{id?}",[PostController::class,'render',"id"])->where(["id"])->name("post");
 
 Route::middleware(['client'])->prefix("user")->group(function () {
     Route::get('/gio-hang', [CartController::class,"showCart"])->name("client.cart");

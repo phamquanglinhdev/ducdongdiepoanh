@@ -25,7 +25,8 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+             'first_thumbnail' => 'required',
+             'second_thumbnail' => 'required',
         ];
     }
 
@@ -49,7 +50,8 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            "first_thumbnail.required"=>"Ảnh sản phẩm (1) không được trống",
+            "second_thumbnail.required"=>"Ảnh sản phẩm (2) không được trống",
         ];
     }
 }

@@ -136,15 +136,15 @@
                         {{--                            </li>--}}
 
                         {{--                        </ul>--}}
-                        <ul class="list-group text-left">
-                            <div class="form-group">
-                                <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>
-                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0"
-                                       max="19999999"
-                                       value="0" id="sliderRange">
-                                <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>
-                            </div>
-                        </ul>
+{{--                        <ul class="list-group text-left">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>--}}
+{{--                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0"--}}
+{{--                                       max="19999999"--}}
+{{--                                       value="0" id="sliderRange">--}}
+{{--                                <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>--}}
+{{--                            </div>--}}
+{{--                        </ul>--}}
                         <div class="row m-0 justify-content-between py-2">
                             <div class="col-6 p-lg-1">
                                 <a class="btn bg-main p-2 text-white w-100" id="previous">Trang trước</a>

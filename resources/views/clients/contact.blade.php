@@ -32,7 +32,7 @@
                 <div class="d-flex my-2 justify-content-between flex-wrap">
                     <div class="">
                         <div class="text-main font-weight-bold">Địa chỉ</div>
-                        <div>264 Cầu Giấy, HN</div>
+                        <div>{{$SETTING["address"]??""}}</div>
                     </div>
                     <div class="">
                         <div class="text-main font-weight-bold">Email</div>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="">
                         <div class="text-main font-weight-bold">Điện thoại</div>
-                        <div>(+84) 388 517 838</div>
+                        <div>{{$SETTING["hotline"]??""}}</div>
                     </div>
                 </div>
                 <form action="{{route("contact.save")}}" method="post">

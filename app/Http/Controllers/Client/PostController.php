@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function render($id){
+    public function render($id=1){
         $posts = Post::get();
         $post = Post::find($id);
         return view("clients.posts",["post"=>$post,"posts"=>$posts]);

@@ -46,19 +46,9 @@ class ProductController extends Controller
         }else{
             $products = Product::orderBy("updated_at", "DESC");
         }
-//        if ($request->type != "empty") {
-////            $products=Product::orderBy("updated_at","DESC");
-////            foreach ($category as $item){
-////                $products = $products->orWhere("category","=",$item);
-////            }
-//        }
         $page = $request->limit;
         $start = ($page-1)*6;
         $data=null;
-        $products = $products->where("price",">=",$request->price);
-        if($request->price > 0){
-            $products = $products->orderBy("price","ASC");
-        }
         $products = $products->where("active", "=", true)->offset($start)->limit(6)->get();
         foreach ($products as $product) {
             $data .= view("components.product", ["product" => $product]);

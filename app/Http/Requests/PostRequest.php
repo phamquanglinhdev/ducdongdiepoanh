@@ -25,7 +25,8 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+             'title' => 'required|min:5|max:255',
+             'document' => 'required'
         ];
     }
 
@@ -37,7 +38,7 @@ class PostRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+
         ];
     }
 
@@ -49,7 +50,10 @@ class PostRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            "title.required"=>"Tiêu đề không được để trống",
+            "title.min"=>"Tiêu đề quá ngắn",
+            "title.max"=>"Tiêu đề quá dài",
+            "document.required"=>"Nội dung không được để trống",
         ];
     }
 }

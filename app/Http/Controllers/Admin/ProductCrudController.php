@@ -76,8 +76,8 @@ class ProductCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ProductRequest::class);
-        CRUD::field('code')->label("Mã sản phẩm");
-        CRUD::field('name')->label("Tên sản phẩm");
+        CRUD::field('code')->label("Mã sản phẩm")->attributes(["required"=>true]);
+        CRUD::field('name')->label("Tên sản phẩm")->attributes(["required"=>true]);
         CRUD::field('slug')->label("URL")->type("hidden");
         CRUD::addField([
             'name' => 'category_id',
@@ -86,19 +86,21 @@ class ProductCrudController extends CrudController
             'models' => 'App\Models\Category',
             'entity' => 'Category',
             'attribute' => 'name',
+            'attributes' => ["required"=>true],
+
             'options' => (function ($query) {
                 return $query->orderBy('name','ASC')->where('active',true)->get();
             })
         ]);
-        CRUD::field('size')->label("Kích thước");
-        CRUD::field('price')->label("Khoảng giá");
+        CRUD::field('size')->label("Kích thước")->attributes(["required"=>true]);
+        CRUD::field('price')->label("Khoảng giá")->attributes(["required"=>true]);
         CRUD::field('first_thumbnail')->label("Ảnh sản phẩm (1)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('second_thumbnail')->label("Ảnh sản phẩm (2)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('third_thumbnail')->label("Ảnh sản phẩm (3)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('four_thumbnail')->label("Ảnh sản phẩm (4)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('five_thumbnail')->label("Ảnh sản phẩm (5)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
-        CRUD::field('rating')->label("Chất lượng (1->5)");
-        CRUD::field('description')->label("Giới thiệu")->type("textarea");
+        CRUD::field('rating')->label("Chất lượng (1->5)")->attributes(["required"=>true]);
+        CRUD::field('description')->label("Giới thiệu")->type("textarea")->attributes(["required"=>true]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

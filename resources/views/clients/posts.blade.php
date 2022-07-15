@@ -14,12 +14,12 @@
             font-size: 1.8rem !important;
         }
 
-        .main-content {
-            background-image: url("{{asset("assets/images/news_back.png")}}");
-            background-size: cover;
-        }
+        {{--.main-content {--}}
+        {{--    background-image: url("{{asset("assets/images/news_back.png")}}");--}}
+        {{--    background-size: cover;--}}
+        {{--}--}}
 
-        /*end news*/
+         /*end news*/
     </style>
     <section class="main-content">
         <div class="container p-3 p-md-5 m-auto">
@@ -49,7 +49,7 @@
                             </ul>
                         </div>
                         <!--main desc-->
-                        <div class="main-detail py-4">
+                        <div class="main-detail py-4 bg-white rounded p-1 ">
                             {!! $post->document !!}
                         </div>
                     </div>
@@ -60,112 +60,31 @@
                             <h5 class="text-main text-sm-center text-md-center  text-lg-left  font-weight-bold">Tin Đọc
                                 Nhiều</h5>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row  my-3">
-                        <div class="col-12">
-                            <h5 class="text-main text-sm-center text-md-center text-lg-left   font-weight-bold">Tin Đọc
-                                Nhiều</h5>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row  my-3">
-                        <div class="col-12">
-                            <h5 class="text-main text-sm-center  text-md-center text-lg-left   font-weight-bold">Tin Đọc
-                                Nhiều</h5>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                            <hr class="my-3 border-main"/>
-                            <a href="#" class="nav-link text-dark">
-                                <img src="{{asset("assets/images/new_detail_img_2.jpg")}}"
-                                     class="img-fluid rounded-20 my-2"/>
-                                <p class="text-truncate-sm  font-weight-500">Nghệ nhân đúc đồng Vũ Duy Điệp:
-                                    Kết hợp tinh hoa nghề với khoa ...</p>
-                            </a>
-                        </div>
-
+                        @if(isset($posts))
+                            @foreach($posts as $post)
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
+                                    <hr class="my-3 border-main"/>
+                                    <a href="{{route("post",$post->id)}}" class="nav-link text-dark">
+                                        <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}"
+                                             class="img-fluid rounded-20 my-2"/>
+                                        <p class="text-truncate-sm  font-weight-500">{{$post->title}}</p>
+                                    </a>
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+@endsection
+@section("js")
+    <script>
+        $('.main-detail table').addClass("w-100")
+
+        $(".main-detail img").removeAttr("width")
+        $(".main-detail img").removeAttr("height")
+        $('.main-detail img').addClass("w-100")
+    </script>
 @endsection

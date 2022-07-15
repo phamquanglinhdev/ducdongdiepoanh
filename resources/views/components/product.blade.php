@@ -16,7 +16,7 @@
             </a>
             <div class="d-lg-flex justify-content-between align-items-center">
                 <strong class="font-weight-normal">{{$product->Category()->first()->name}}</strong>
-                <div class="text-warning font-weight-bold h5">{{number_format($product->price)}} đ</div>
+{{--                <div class="text-warning font-weight-bold h5">{{number_format($product->price)}} đ</div>--}}
             </div>
             <div class="">Kích thước:{{$product->size}}</div>
             <div class="">Mã sản phẩm:{{$product->code}}</div>
