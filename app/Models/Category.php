@@ -34,17 +34,34 @@ class Category extends Model
 
         $this->attributes['slug'] = Str::slug($this->name, "-") . ".aspx";
     }
+
     public function hideCategory()
     {
-        return view("components.delete",['route'=>"hide-category","id"=>$this->id]);
+        return view("components.delete", ['route' => "hide-category", "id" => $this->id]);
     }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function Products(){
-        return $this->hasMany(Product::class,"category_id","id");
+    public function Products()
+    {
+        return $this->hasMany(Product::class, "category_id", "id");
+    }
+
+    public function SubCategories()
+    {
+        return $this->hasMany(Category::class, "category_id", "id");
+    }
+
+    public function OwnCategory()
+    {
+        return $this->belongsTo(Category::class, "category_id", "id");
+    }
+    public function hasSub(): bool
+    {
+        return $this->hasMany(Category::class, "category_id", "id")->count() > 0;
     }
     /*
     |--------------------------------------------------------------------------

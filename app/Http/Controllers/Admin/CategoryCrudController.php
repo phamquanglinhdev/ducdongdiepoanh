@@ -46,7 +46,13 @@ class CategoryCrudController extends CrudController
         CRUD::column('name')->label("Tên danh mục");
         CRUD::column('slug')->label("URL");
         CRUD::column('thumbnail')->type("image")->label("Ảnh");
-
+        CRUD::addColumn([
+            'name' => 'category_id',
+            'label' => 'Danh mục cha',
+            'entity'=>'OwnCategory',
+            'attribute'=>'name',
+            'model'=>'App\Models\Category',
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -67,6 +73,14 @@ class CategoryCrudController extends CrudController
         CRUD::field('name')->label("Tên danh mục")->attributes(["required"=>true]);
         CRUD::field('slug')->type("hidden");
         CRUD::field('thumbnail')->type("image")->label("Ảnh")->crop(true)->aspect_ratio(1);
+        CRUD::addField([
+            'name' => 'category_id',
+            'label' => 'Danh mục cha',
+            'entity'=>'OwnCategory',
+            'attribute'=>'name',
+            'model'=>'App\Models\Category',
+            'type'=>'select2',
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
