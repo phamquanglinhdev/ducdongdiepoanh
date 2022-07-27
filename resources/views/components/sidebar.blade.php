@@ -1,5 +1,5 @@
 @php
-    $categories = \App\Models\Category::where("category_id","=",null)->get();
+    $categories = \App\Models\Category::where("category_id","=",null)->where("active","=",1)->get();
 @endphp
 <div class="btn bg-main text-white w-100 rounded-0 text-uppercase">
     Danh mục sản phẩm
