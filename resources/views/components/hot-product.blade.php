@@ -39,7 +39,7 @@
 {{--Fist categories--}}
 @php
     $firstCategory = \App\Models\Category::where("active","=",1)->first();
-    if(isset($firstCategory->name)){
+    if(isset($firstCategory)){
         $products = $firstCategory->Products()->limit(8)->get();
     }
 @endphp
