@@ -86,77 +86,86 @@
     </style>
     <section class="my-5">
         <div class="container m-auto text-center color-web">
-            <div class="text-main h1 font-weight-bold">Sản Phẩm</div>
-            <strong class="m-0 text-main ">Đồ đồng Điệp Oanh được nghiên cứu và sáng tạo các sản phẩm truyền
-                thống.</strong><br>
-            <strong class="m-0 text-main ">Đây là các sản phẩm thủ công mỹ nghệ rất đọc đáo, đòi hỏi kỹ nghệ
-                cao.</strong><br>
-            <img class="mt-2" src="{{asset("assets/images/products-sticker.png")}}">
+            {{--            <div class="text-main h1 font-weight-bold">Sản Phẩm</div>--}}
+            {{--            <strong class="m-0 text-main ">Đồ đồng Điệp Oanh được nghiên cứu và sáng tạo các sản phẩm truyền--}}
+            {{--                thống.</strong><br>--}}
+            {{--            <strong class="m-0 text-main ">Đây là các sản phẩm thủ công mỹ nghệ rất đọc đáo, đòi hỏi kỹ nghệ--}}
+            {{--                cao.</strong><br>--}}
+            {{--            <img class="mt-2" src="{{asset("assets/images/products-sticker.png")}}">--}}
         </div>
     </section>
     <section class="products">
         <div class="container px-lg-5 m-auto">
             <div class="row justify-content-end">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 px-1 px-md-3 py-sm-3 d-block d-md-block">
-                    <div class="bg-main w-100 px-lg-4 h5 py-2 text-white text-center ">Sản phẩm</div>
-                    <div id="large-filter">
-                        <ul class="list-unstyled list-type-product">
-                            <li>
-                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>
-                            </li>
-                            @if(isset($categories))
-                                @foreach($categories as $category)
-                                    <li class="nav-item my-1">
-                                        <input type="checkbox" value="{{$category->id}}" id="{{$category->name}}"
-                                               name="categories"/>
-                                        <label class="small" for="{{$category->name}}">{{$category->name}}</label>
-                                    </li>
-                                @endforeach
-                            @endif
-                        </ul>
-                        {{--                        <ul class="list-unstyled list-type-product">--}}
-                        {{--                            <li>--}}
-                        {{--                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="nav-item my-1">--}}
-                        {{--                                <input type="checkbox" id="input_product_type_6"/>--}}
-                        {{--                                <label class="small" for="input_product_type_6">Tượng thờ</label>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="nav-item my-1">--}}
-                        {{--                                <input type="checkbox" id="input_product_type_7"/>--}}
-                        {{--                                <label class="small" for="input_product_type_7">Đồ thờ cúng</label>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="nav-item my-1">--}}
-                        {{--                                <input type="checkbox" id="input_product_type_8"/>--}}
-                        {{--                                <label class="small" for="input_product_type_8">Đồ phong thủy</label>--}}
-                        {{--                            </li>--}}
-                        {{--                            <li class="nav-item my-1">--}}
-                        {{--                                <input type="checkbox" id="input_product_type_9"/>--}}
-                        {{--                                <label class="small" for="input_product_type_9">Đồ trang trí</label>--}}
-                        {{--                            </li>--}}
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 px-1 px-md-3 d-block d-md-block">
+                    @include("components.sidebar")
+                    {{--                    <div class="bg-main w-100 px-lg-4 h5 py-2 text-white text-center ">Sản phẩm</div>--}}
+                    {{--                    <div id="large-filter">--}}
+                    {{--                        <ul class="list-unstyled list-type-product">--}}
+                    {{--                            <li>--}}
+                    {{--                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>--}}
+                    {{--                            </li>--}}
+                    {{--                            @if(isset($categories))--}}
+                    {{--                                @foreach($categories as $category)--}}
+                    {{--                                    <li class="nav-item my-1">--}}
+                    {{--                                        <input type="checkbox" value="{{$category->id}}" id="{{$category->name}}"--}}
+                    {{--                                               name="categories"/>--}}
+                    {{--                                        <label class="small" for="{{$category->name}}">{{$category->name}}</label>--}}
+                    {{--                                    </li>--}}
+                    {{--                                @endforeach--}}
+                    {{--                            @endif--}}
+                    {{--                        </ul>--}}
+                    {{--                        --}}{{--                        <ul class="list-unstyled list-type-product">--}}
+                    {{--                        --}}{{--                            <li>--}}
+                    {{--                        --}}{{--                                <p class="  text-main mt-2 mb-1 font-weight-bold">Loại sản phẩm</p>--}}
+                    {{--                        --}}{{--                            </li>--}}
+                    {{--                        --}}{{--                            <li class="nav-item my-1">--}}
+                    {{--                        --}}{{--                                <input type="checkbox" id="input_product_type_6"/>--}}
+                    {{--                        --}}{{--                                <label class="small" for="input_product_type_6">Tượng thờ</label>--}}
+                    {{--                        --}}{{--                            </li>--}}
+                    {{--                        --}}{{--                            <li class="nav-item my-1">--}}
+                    {{--                        --}}{{--                                <input type="checkbox" id="input_product_type_7"/>--}}
+                    {{--                        --}}{{--                                <label class="small" for="input_product_type_7">Đồ thờ cúng</label>--}}
+                    {{--                        --}}{{--                            </li>--}}
+                    {{--                        --}}{{--                            <li class="nav-item my-1">--}}
+                    {{--                        --}}{{--                                <input type="checkbox" id="input_product_type_8"/>--}}
+                    {{--                        --}}{{--                                <label class="small" for="input_product_type_8">Đồ phong thủy</label>--}}
+                    {{--                        --}}{{--                            </li>--}}
+                    {{--                        --}}{{--                            <li class="nav-item my-1">--}}
+                    {{--                        --}}{{--                                <input type="checkbox" id="input_product_type_9"/>--}}
+                    {{--                        --}}{{--                                <label class="small" for="input_product_type_9">Đồ trang trí</label>--}}
+                    {{--                        --}}{{--                            </li>--}}
 
-                        {{--                        </ul>--}}
-{{--                        <ul class="list-group text-left">--}}
-{{--                            <div class="form-group">--}}
-{{--                                <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>--}}
-{{--                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0"--}}
-{{--                                       max="19999999"--}}
-{{--                                       value="0" id="sliderRange">--}}
-{{--                                <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>--}}
-{{--                            </div>--}}
-{{--                        </ul>--}}
-                        <div class="row m-0 justify-content-between py-2">
-                            <div class="col-6 p-lg-1">
-                                <a class="btn bg-main p-2 text-white w-100" id="previous">Trang trước</a>
-                            </div>
-                            <div class="col-6 p-lg-1">
-                                <a class="btn bg-main p-2 text-white w-100" id="next">Trang kế</a>
-                            </div>
+                    {{--                        --}}{{--                        </ul>--}}
+                    {{--                        <ul class="list-group text-left">--}}
+                    {{--                            <div class="form-group">--}}
+                    {{--                                <label class="color-web mt-3 font-weight-500" for="sliderRange">Giá</label>--}}
+                    {{--                                <input type="range" name="price" class="form-control-range my-2 slider-score" min="0"--}}
+                    {{--                                       max="19999999"--}}
+                    {{--                                       value="0" id="sliderRange">--}}
+                    {{--                                <p>Từ <span id="valueRange"></span><span> đ đến 20.000.000 đ</span></p>--}}
+                    {{--                            </div>--}}
+                    {{--                        </ul>--}}
+                    <div class="row m-0 justify-content-between py-2">
+                        <div class="col-6 p-lg-1">
+                            <a class="btn bg-main p-2 text-white w-100" id="previous">Trang trước</a>
+                        </div>
+                        <div class="col-6 p-lg-1">
+                            <a class="btn bg-main p-2 text-white w-100" id="next">Trang kế</a>
                         </div>
                     </div>
+                    {{--                    </div>--}}
+
+                    @include("components.list-posts")
                 </div>
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 my-3 my-md-0">
-                    <div class="row mb-2 my-sm-0 mb-md-4" id="products">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+                    @if($own!=null)
+                        <div class="btn bg-main text-white rounded-0">{{\App\Models\Category::find($own)->name}}</div>
+                    @else
+                        <div class="btn bg-main text-white rounded-0">Tất cả sản phẩm</div>
+                    @endif
+
+                    <div class="row m-0 mb-2 my-sm-0 mb-md-4" id="products">
                         {!! $data !!}
                     </div>
                     <hr>
@@ -188,7 +197,7 @@
         </script>
     @endif
     <script>
-        let categories = "";
+        let categories = {{$own}};
         let limit = 1;
         let price = 0;
         let search = "";
@@ -230,7 +239,7 @@
 
         $(".products input").click(function () {
             limit = 1;
-            categories = "";
+            categories = {{$own}};
             $('input[name="categories"]:checked').each(function (e) {
                 categories += this.value + ",";
             });
@@ -240,7 +249,7 @@
         })
         $("#next").click(function () {
             limit += 1;
-            categories = "";
+            categories = {{$own}};
             $('input[name="categories"]:checked').each(function (e) {
                 categories += this.value + ",";
             });

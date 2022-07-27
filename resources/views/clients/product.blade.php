@@ -95,15 +95,15 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center pt-2 pt-md-0 pl-md-2">
                         <div class="d-flex justify-content-center align-items-center pr-2">
-                            @for($i=1;$i<=5;$i++)
-                                @if($i<=$product->rating)
-                                    <i class="fas mx-1 fa-star text-warning"></i>
-                                @else
-                                    <i class="far mx-1 fa-star text-warning"></i>
-                                @endif
-                            @endfor
+{{--                            @for($i=1;$i<=5;$i++)--}}
+{{--                                @if($i<=$product->rating)--}}
+{{--                                    <i class="fas mx-1 fa-star text-warning"></i>--}}
+{{--                                @else--}}
+{{--                                    <i class="far mx-1 fa-star text-warning"></i>--}}
+{{--                                @endif--}}
+{{--                            @endfor--}}
                         </div>
-                        <a href="#"><i class="far fa-heart text-main text-20"></i></a>
+{{--                        <a href="#"><i class="far fa-heart text-main text-20"></i></a>--}}
                     </div>
                 </div>
                 <hr class="my-3 border">
@@ -112,30 +112,32 @@
                     đơn hàng sẽ không được giao ngay tới khách hàng.
                 </p>
                 <br>
-                <p class="font-weight-bold d-flex justify-content-start align-items-center">
-                    <i class="fas fa-heart text-main text-20 pr-2"></i> 37K người đã thích sản phẩm này
-                </p>
+{{--                <p class="font-weight-bold d-flex justify-content-start align-items-center">--}}
+{{--                    <i class="fas fa-heart text-main text-20 pr-2"></i> 37K người đã thích sản phẩm này--}}
+{{--                </p>--}}
                 <div style="overflow-wrap: anywhere">
                     {{ $product->description }}
                 </div>
                 <br>
+                <p><span class="font-weight-bold">Mã sản phẩm : </span> {{$product->code}}</p>
                 <p><span class="font-weight-bold">Kích thước : </span> {{$product->size}}</p>
                 <p><span class="font-weight-bold">Chất liệu : </span> Đồng mạ vàng</p>
+                <p><span class="font-weight-bold">Tình trạng : </span> Còn hàng</p>
                 <br>
                 <a class="h4 text btn rounded px-5 py-2 bg-main text-warning text-uppercase"
-                   href="{{route("client.cart.buyItem",$product->id)}}">
-                    Mua ngay
+                   href="tel:+84949806083">
+                    Gọi ngay 0949 806 083
                 </a>
-                @if(backpack_auth()->check())
-                    <a class="h4 text btn rounded px-5 py-2 btn-warning text-white text-uppercase" id="add-cart">
-                        Thêm vào giỏ hàng
-                    </a>
-                @else
-                    <a class="h4 text btn rounded px-5 py-2 btn-warning text-white text-uppercase " href="{{route("client.login")}}">
-                        Đăng nhập
-                    </a>
-                    <div class="text-main">* Đăng nhập để thêm sản phẩm vào giỏ hàng nhé</div>
-                @endif
+{{--                @if(backpack_auth()->check())--}}
+{{--                    <a class="h4 text btn rounded px-5 py-2 btn-warning text-white text-uppercase" id="add-cart">--}}
+{{--                        Gọi ngay 0949 806 083--}}
+{{--                    </a>--}}
+{{--                @else--}}
+{{--                    <a class="h4 text btn rounded px-5 py-2 btn-warning text-white text-uppercase " href="{{route("client.login")}}">--}}
+{{--                        Đăng nhập--}}
+{{--                    </a>--}}
+{{--                    <div class="text-main">* Đăng nhập để thêm sản phẩm vào giỏ hàng nhé</div>--}}
+{{--                @endif--}}
 
             </div>
         </div>

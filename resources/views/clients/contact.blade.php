@@ -20,7 +20,7 @@
                 <div class="ember-gg-map rounded">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d477799.4078156822!2d105.63010912386147!3d20.677394023914566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313677b2397a258f%3A0x8e2e7cdbc3c3cfc6!2zQ3R5IHRuaGggbeG7mXQgdGjDoG5oIHZpw6puIMSRw7pjIMSRaeG7h3Agb2FuaA!5e0!3m2!1svi!2s!4v1652790527186!5m2!1svi!2s"
-                        width="100%" height="600vh" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="100%" height="700vh" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -49,6 +49,16 @@
                         <label for="name" class="text-main  font-weight-bold">Họ và tên</label>
                         <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp"
                                required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="text-main  font-weight-bold">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phone" name="phone"
+                               aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="text-main  font-weight-bold">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                               aria-describedby="emailHelp" required>
                     </div>
                     <div class="form-group">
                         <label for="address" class="text-main  font-weight-bold">Địa chỉ</label>

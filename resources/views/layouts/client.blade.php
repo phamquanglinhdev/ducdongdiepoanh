@@ -22,7 +22,9 @@
 
 <!--End of WebPush.vn-->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=752127876147770&autoLogAppEvents=1" nonce="meZBPpaO"></script>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=752127876147770&autoLogAppEvents=1"
+        nonce="meZBPpaO"></script>
 <!-- Messenger Plugin chat Code -->
 <style>
 
@@ -102,40 +104,43 @@
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}" class="nav-link text-white">TRANG
                                 CHỦ</a>
                         </li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",1)}}" class="nav-link text-white">GIỚI
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",1)}}"
+                                                                  class="nav-link text-white">GIỚI
                                 THIỆU</a>
                         </li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
                         {{--                        </li>--}}
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}"
                                                                   class="nav-link text-white">SẢN PHẨM</a></li>
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("index")}}#project"
-                                                                  class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("structs")}}"
+                                                                  class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a>
+                        </li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">CÔNG TRÌNH TIÊU--}}
                         {{--                                BIỂU</a></li>--}}
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",2)}}" class="nav-link text-white">TIN TỨC</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("post",2)}}"
+                                                                  class="nav-link text-white">TIN TỨC</a></li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("contact")}}"
                                                                   class="nav-link text-white">LIÊN HỆ</a></li>
-                        @if(backpack_auth()->check())
-                            <li class="nav-item dropdown px-2 py-md-0 py-2 text-uppercase text-white">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{backpack_user()->name}}
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    @if(backpack_user()->role==0)
-                                        <a class="dropdown-item" href="{{backpack_url("dashboard")}}">BẢNG ĐIỀU KHIỂN
-                                            (ADMIN)</a>
-                                    @endif
-                                    <a class="dropdown-item" href="{{route("profile")}}">THÔNG TIN & LỊCH SỬ</a>
-                                    <a class="dropdown-item" href="{{route("client.cart")}}">GIỎ HÀNG</a>
-                                    <a class="dropdown-item" href="{{route("client.logout")}}">ĐĂNG XUẤT</a>
-                                </div>
-                            </li>
-                        @else
-                            <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("client.login")}}"
-                                                                      class="nav-link text-white">ĐĂNG NHẬP</a></li>
-                        @endif
+                        {{--                        @if(backpack_auth()->check())--}}
+                        {{--                            <li class="nav-item dropdown px-2 py-md-0 py-2 text-uppercase text-white">--}}
+                        {{--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
+                        {{--                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                        {{--                                    {{backpack_user()->name}}--}}
+                        {{--                                </a>--}}
+                        {{--                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                        {{--                                    @if(backpack_user()->role==0)--}}
+                        {{--                                        <a class="dropdown-item" href="{{backpack_url("dashboard")}}">BẢNG ĐIỀU KHIỂN--}}
+                        {{--                                            (ADMIN)</a>--}}
+                        {{--                                    @endif--}}
+                        {{--                                    <a class="dropdown-item" href="{{route("profile")}}">THÔNG TIN & LỊCH SỬ</a>--}}
+                        {{--                                    <a class="dropdown-item" href="{{route("client.cart")}}">GIỎ HÀNG</a>--}}
+                        {{--                                    <a class="dropdown-item" href="{{route("client.logout")}}">ĐĂNG XUẤT</a>--}}
+                        {{--                                </div>--}}
+                        {{--                            </li>--}}
+                        {{--                        @else--}}
+                        {{--                            <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("client.login")}}"--}}
+                        {{--                                                                      class="nav-link text-white">ĐĂNG NHẬP</a></li>--}}
+                        {{--                        @endif--}}
                         <li class="nav-item px-2 py-md-0 py-2">
                             <div class="d-block d-md-none">
                                 <input type="text" class="form-control search" placeholder="Tìm kiếm tất cả ở đây">
@@ -151,26 +156,48 @@
 </header>
 @yield("content")
 <footer class="bg-main container-fluid">
-    <div class="container m-auto py-3 px-md-5">
-        <div class="d-flex justify-content-center align-items-center">
-            <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">
-        </div>
-        <p class="text-center text-white my-3">
-            Doanh nghiệp đồ đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại
-            TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội
-            ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm
-            bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,
-        </p>
-        <div class="row">
-            <div class="col-md-6 col-12">
-                <h5 class="text-center text-warning">Hệ thống showroom</h5>
-                <h6 class="text-center text-white  py-2">Điện thoại : {{$SETTING["hotline"]}}</h6>
-                <h6 class="text-center text-white ">Email : {{$SETTING["email"]}}</h6>
+    <div class="container m-auto py-3 pt-5">
+        {{--        <div class="d-flex justify-content-center align-items-center">--}}
+        {{--            <img src="{{asset("assets/images/logo.png")}}" class="img-fluid" alt="">--}}
+        {{--        </div>--}}
+        {{--        <p class="text-center text-white my-3">--}}
+        {{--            Doanh nghiệp đồ đồng Điệp Oanh là một trong những đơn vị đúc đồng và chế tác đồ đồng lớn của làng nghề tại--}}
+        {{--            TT.Lâm - Ý Yên - Nam Định. Cơ sở sản xuất gồm ba phân xưởng chính cùng nhiều xưởng vệ tinh, Sở hữu một đội--}}
+        {{--            ngũ các thợ giỏi và nghệ nhân xuất sắc, kinh nghiệm lâu năm Chúng tôi đã sản xuất hàng trăm loại sản phẩm--}}
+        {{--            bằng đồng với mẫu mã và kích thước đa dạng, phong phú trong đó có các loại đồ thờ cúng,--}}
+        {{--        </p>--}}
+        <div class="row text-white justify-content-between">
+            <div class="col-md-4 col-12">
+                <h3 class="font-weight-bold my-2">Đồ đồng Điệp Oanh</h3>
+                {{--                <h5 class="text-center text-warning">Hệ thống showroom</h5>--}}
+                <div class="text-white">GPĐKKD: 600662679, cấp ngày 08/10/2009</div>
+                <div class="text-white mb-2">Nơi cấp: Sở KH và Đầu Tư tỉnh Nam Định</div>
+                <div class="text-white">Điện thoại : {{$SETTING["hotline"]}}</div>
+                <div class="text-white mb-2">Email : {{$SETTING["email"]}}</div>
+                <div class="text-white ">Địa chỉ : {{$SETTING["address"]}}</div>
+                <div class="text-white ">Xưởng sản xuất: Khu A – Thị Trấn Lâm – Ý Yên – Nam Định</div>
+
             </div>
-            <div class="col-md-6 col-12 text-center">
-                <h5 class="text-center text-warning">Liên hệ</h5>
-                <h6 class="text-center text-white py-2 ">Điện thoại : {{$SETTING["hotline"]}}</h6>
-                <h6 class="text-center text-white ">Địa chỉ : {{$SETTING["address"]}}</h6>
+            <div class="col-md-2 col-12">
+                <h3 class="font-weight-bold my-2">Về chúng tôi</h3>
+                <div class="text-white">Thông tin liên hệ</div>
+                <div class="text-white ">Cam kết chất lượng</div>
+                <div class="text-white ">Lời giới thiệu</div>
+            </div>
+            <div class="col-md-2 col-12">
+                <h3 class="font-weight-bold my-2">Điều khoản</h3>
+                <div class="text-white">Chính sách bảo mật</div>
+                <div class="text-white ">Chính sách thanh toán</div>
+                <div class="text-white ">Chính sách bảo hành đổi trả</div>
+                <div class="text-white ">Chính sách vận chuyển</div>
+                <div class="text-white ">Hướng dẫn mua hàng</div>
+            </div>
+            <div class="col-md-4 col-12">
+                <h3 class="font-weight-bold my-2">Google Map</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d478933.7354164277!2d106.01885!3d20.31393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313677b2397a258f%3A0x8e2e7cdbc3c3cfc6!2zQ3R5IHRuaGggbeG7mXQgdGjDoG5oIHZpw6puIMSRw7pjIMSRaeG7h3Agb2FuaA!5e0!3m2!1svi!2s!4v1658932955298!5m2!1svi!2s"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <div class="row py-3">
@@ -309,7 +336,7 @@
     <x-cart-modal></x-cart-modal>
 </div>
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         var engine = new Bloodhound({
             remote: {
                 url: '{{route("search")}}?q=%QUERY%',
@@ -334,7 +361,7 @@
                     '<div class="list-group search-results-dropdown">'
                 ],
                 suggestion: function (data) {
-                    return '<a href="{{url("san-pham")}}/' + data.slug +'" class="list-group-item">' + data.name + '</a>'
+                    return '<a href="{{url("san-pham")}}/' + data.slug + '" class="list-group-item">' + data.name + '</a>'
                 }
             }
         });

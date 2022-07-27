@@ -33,8 +33,8 @@
 </div>
 <div class="btn bg-main text-white w-100 rounded-0 mt-2">Facebook</div>
 <div class="fb-page" data-href="https://www.facebook.com/dododiepoanh"
-     data-tabs="timeline,events"
-     data-width="" data-height=""
+     data-tabs=""
+     data-width="" data-height="800vh"
      data-small-header="false"
      data-adapt-container-width="true"
      data-hide-cover="false"

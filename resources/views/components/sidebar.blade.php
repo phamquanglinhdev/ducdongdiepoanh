@@ -7,35 +7,42 @@
 @foreach($categories as $category)
     <div class="category-box mb-1 text-uppercase text-muted card">
         <a class="btn text-left w-100 rounded-0 "
-                @if($category->hasSub())
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#category-{{$category->id}}"
-                @else
-                    href="{{route("products",$category->id)}}"
-                @endif
-                aria-expanded="false" aria-controls="collapseWidthExample">
-            <i class="fas fa-caret-right"></i> {{$category->name}}
+           @if($category->hasSub())
+               type="button"
+           data-toggle="collapse"
+           data-target="#category-{{$category->id}}"
+           @else
+               href="{{route("products",$category->id)}}"
+           @endif
+           aria-expanded="false" aria-controls="collapseWidthExample">
+            @if($category->hasSub())
+                <i class="fas fa-caret-right"></i>
+            @endif
+            {{$category->name}}
         </a>
         <div>
             <div class="collapse width mt-0 text-uppercase" id="category-{{$category->id}}">
                 @foreach($category->SubCategories()->get() as $sub)
-                    <button class="btn text-main text-left w-100 rounded-0 text-uppercase"
-                            @if($sub->hasSub())
-                                type="button" data-toggle="collapse"
-                                data-target="#category-sub-{{$sub->id}}"
-                            @else
-                                href="{{route("products",$sub->id)}}"
-                            @endif
-                            aria-expanded="false" aria-controls="collapseWidthExample">
-                        <i class="fas fa-caret-right ml-3"></i> {{$sub->name}}
-                    </button>
+                    <a class="btn text-main text-left w-100 rounded-0 text-uppercase"
+                       @if($sub->hasSub())
+                           type="button" data-toggle="collapse"
+                       data-target="#category-sub-{{$sub->id}}"
+                       @else
+                           href="{{route("products",$sub->id)}}"
+                       @endif
+                       aria-expanded="false" aria-controls="collapseWidthExample">
+                        <span class="ml-3"></span>
+                        @if($sub->hasSub())
+                            <i class="fas fa-caret-right "></i>
+                        @endif
+                        {{$sub->name}}
+                    </a>
                     <div>
                         <div class="collapse width mt-0" id="category-sub-{{$sub->id}}">
                             @foreach($sub->SubCategories()->get() as $minSub)
                                 <div class="p-1">
                                     <a href="{{route("products",$minSub->id)}}" class="nav-link text-main">
-                                        <i class="fas fa-caret-right ml-4"></i> {{$minSub->name}}
+                                        <span class="ml-4"></span> {{$minSub->name}}
                                     </a>
                                 </div>
                             @endforeach

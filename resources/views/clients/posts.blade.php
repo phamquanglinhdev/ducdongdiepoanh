@@ -24,6 +24,28 @@
     <section class="main-content">
         <div class="container p-3 p-md-5 m-auto">
             <div class="row">
+                <div class="col-12 col-lg-3 pl-sm-2">
+{{--                    <div class="row  my-3">--}}
+{{--                        <div class="col-12">--}}
+{{--                            <h5 class="text-main text-sm-center text-md-center  text-lg-left  font-weight-bold">Tin Đọc--}}
+{{--                                Nhiều</h5>--}}
+{{--                        </div>--}}
+{{--                        @if(isset($posts))--}}
+{{--                            @foreach($posts as $post)--}}
+{{--                                <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">--}}
+{{--                                    <hr class="my-3 border-main"/>--}}
+{{--                                    <a href="{{route("post",$post->id)}}" class="nav-link text-dark">--}}
+{{--                                        <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}"--}}
+{{--                                             class="img-fluid rounded-20 my-2"/>--}}
+{{--                                        <p class="text-truncate-sm  font-weight-500">{{$post->title}}</p>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            @endforeach--}}
+{{--                        @endif--}}
+{{--                    </div>--}}
+                    @include("components.sidebar")
+                    @include("components.list-posts")
+                </div>
                 <div class="col-12 col-lg-9 pr-sm-3">
                     <div class="new-detail">
                         <h4 class="text-main news-responsive-text-title  font-weight-bold">{{$post->title}}</h4>
@@ -54,27 +76,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-3 pl-sm-2">
-                    <div class="row  my-3">
-                        <div class="col-12">
-                            <h5 class="text-main text-sm-center text-md-center  text-lg-left  font-weight-bold">Tin Đọc
-                                Nhiều</h5>
-                        </div>
-                        @if(isset($posts))
-                            @foreach($posts as $post)
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-12 px-sm-2 px-md-3 text-center">
-                                    <hr class="my-3 border-main"/>
-                                    <a href="{{route("post",$post->id)}}" class="nav-link text-dark">
-                                        <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}"
-                                             class="img-fluid rounded-20 my-2"/>
-                                        <p class="text-truncate-sm  font-weight-500">{{$post->title}}</p>
-                                    </a>
-                                </div>
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
             </div>
+            @include("components.posts")
         </div>
     </section>
 

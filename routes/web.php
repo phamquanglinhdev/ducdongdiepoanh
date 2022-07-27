@@ -29,6 +29,8 @@ Route::get("/tat-ca-san-pham/{category?}",[ProductController::class,"index","cat
 Route::get("/products/delete/{id}",[ProductController::class,'hide',"id"])->where(["id"])->name("hide-product");
 Route::get("/categories/delete/{id}",[ProductController::class,'hideCategory',"id"])->where(["id"])->name("hide-category");
 Route::get("/san-pham/{slug}",[ProductController::class,'showProduct',"slug"])->where(["slug"])->name("product");
+Route::get("/cong-trinh-tieu-bieu/",[FixedPageController::class,'structs'])->name("structs");
+Route::get("/cong-trinh/{id?}",[FixedPageController::class,'struct','id'])->where(["id"])->name("struct");
 Route::get("/lien-he/",[FixedPageController::class,'contact'])->name("contact");
 Route::post("/lien-he/",[FixedPageController::class,'saveFeedback'])->name("contact.save");
 Route::get("/gioi-thieu-nghe-nhan/",[FixedPageController::class,'about'])->name("about");

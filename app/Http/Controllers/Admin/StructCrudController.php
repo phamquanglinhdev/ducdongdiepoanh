@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ContactRequest;
-use App\Models\Contact;
+use App\Http\Requests\StructRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ContactCrudController
+ * Class StructCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ContactCrudController extends CrudController
+class StructCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -27,11 +26,9 @@ class ContactCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Contact::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/contact');
-        CRUD::setEntityNameStrings('Lời nhắn', 'Lời nhắn');
-        $this->crud->denyAccess(["show","update","create"]);
-        $this->crud->addButtonFromModelFunction("line","shows","shows","top");
+        CRUD::setModel(\App\Models\Struct::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/struct');
+        CRUD::setEntityNameStrings('Công trình tiêu biểu', 'Các công trình tiêu biểu');
     }
 
     /**
@@ -42,11 +39,8 @@ class ContactCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name')->label("Tên khách hàng");
-        CRUD::column('email')->label("Email");
-        CRUD::column('phone')->label("Số điện thoại");
-        CRUD::column('address')->label("Địa chỉ");
-
+        CRUD::column('name')->label("Tên");
+        CRUD::column('thumbnail')->type("image")->label("Ảnh bìa");
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -62,13 +56,11 @@ class ContactCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(ContactRequest::class);
+        CRUD::setValidation(StructRequest::class);
 
-//        CRUD::field('name')->label("Tên khách hàng");
-//        CRUD::field('address')->label("Địa chỉ");
-//        CRUD::field('message');
-//        CRUD::field('created_at');
-//        CRUD::field('updated_at');
+        CRUD::field('name')->label("Tên");
+        CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->crop("true")->aspect_ratio(1);
+        CRUD::field('document')->label("Nội dung")->type("tinymce");
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -86,9 +78,5 @@ class ContactCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-    public function showFeedback($id=1){
-
-        return view("admin.feedback",["contact"=>Contact::find($id)]);
     }
 }

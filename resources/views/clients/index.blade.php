@@ -89,43 +89,9 @@
     <!-- ket thuc phan san pham -->
 
     <section class="post carousel mt-lg-5 mt-3">
-        <h1 class="text-main text-center font-weight-bold">TIN TỨC NỔI BẬT</h1>
-        <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
-                                      alt=""></div>
-        @php
-            $posts = \App\Models\Post::orderBy("updated_at")->get();
-        @endphp
-        <div class="container">
-            <div class="owl-carousel">
-                @foreach($posts as $post)
-                    <div class="product-card text-center p-2 p-sm-4">
-                        <a href="{{route("post",$post->id)}}">
-                            <img src="{{$post->thumbnail??"https://dodongdiepoanh.com/uploads/DO/7.jpg"}}"
-                                 class="img-fluid pb-3" alt="">
-                            <h5 class="text-main sm-small">{{$post->title}}</h5>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
+        @include("components.posts")
     </section>
-    <section class="videos mt-lg-5 mt-3 pb-5">
-        <div class="container">
-            <h1 class="text-main text-center font-weight-bold">VIDEO NỔI BẬT</h1>
-            <div class="text-center"><img src="{{asset("assets/images/products-sticker.png")}}" class="img-fluid py-2"
-                                          alt=""></div>
-            <div class="row m-0">
-                <div class="col-md-6 col-12">
-                    <iframe class="rounded" width="100%" height="300px"
-                            src="https://www.youtube.com/embed/Lfri2bVjo44"></iframe>
-                </div>
-                <div class="col-md-6 col-12">
-                    <iframe class="rounded" width="100%" height="300px"
-                            src="https://www.youtube.com/embed/Lfri2bVjo44"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include("components.videos")
     <!-- bat dau phan video  -->
     {{--    <section class="introduce-product">--}}
     {{--        <div class="container p-5 m-auto">--}}

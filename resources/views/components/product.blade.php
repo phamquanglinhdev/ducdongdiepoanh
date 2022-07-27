@@ -1,12 +1,12 @@
 <div class="col-6 col-sm-6 col-md-6 col-lg-4 px-md-2 px-0 py-2">
-    <div class="p-1 shadow-lg h-100 rounded">
-        <div class="product-card rounded text-center p-2 mb-md-3">
+    <div class="p-1 h-100 rounded border">
+        <div class="rounded text-center p-2">
             <a href="{{route("product",$product->slug)}}">
-                <img src="{{$product->first_thumbnail}}" class="img-fluid pb-md-2" alt="">
-                <div class="d-flex justify-content-center align-items-center pb-lg-4 product-rating">
-                    @for($i=1;$i<=$product->rating;$i++)
-                        <i class="small fas mx-1 fa-star text-warning" data-star="1"></i>
-                    @endfor
+                <img src="{{$product->first_thumbnail}}" class="img-fluid " alt="">
+                <div class="d-flex justify-content-center align-items-center product-rating">
+{{--                    @for($i=1;$i<=$product->rating;$i++)--}}
+{{--                        <i class="small fas mx-1 fa-star text-warning" data-star="1"></i>--}}
+{{--                    @endfor--}}
                 </div>
             </a>
         </div>

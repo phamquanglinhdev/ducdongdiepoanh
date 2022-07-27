@@ -43,6 +43,7 @@ class PostCrudController extends CrudController
         CRUD::column('title')->label("Tiêu đề bài viết");
         CRUD::column('thumbnail')->label("Ảnh bìa")->type("image")->aspect_ratio(1)->crop(true);
         CRUD::column('updated_at')->label("Lần cập nhật cuối");
+        CRUD::column('type')->label("Loại bài viết")->type("select_from_array")->options(["Tin tức thường","Tin tức doanh nghiệp"]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -65,6 +66,7 @@ class PostCrudController extends CrudController
         CRUD::field('title')->label("Tiêu đề bài viết");
         CRUD::field('document')->label("Nội dung")->type("tinymce");
         CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->aspect_ratio(1)->crop(true);
+        CRUD::field('type')->label("Loại bài viết")->type("select_from_array")->options(["Tin tức thường","Tin tức doanh nghiệp"]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

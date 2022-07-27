@@ -25,7 +25,7 @@ class ProductController extends Controller
         foreach ($products as $product) {
             $data .= view("components.product", ["product" => $product]);
         }
-        return view("clients.products", ["data" => $data,"categories"=>$categories]);
+        return view("clients.products", ["data" => $data,"categories"=>$categories,'own'=>$category]);
     }
 
     public function filter(Request $request)
