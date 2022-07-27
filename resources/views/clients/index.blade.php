@@ -75,44 +75,14 @@
     <!-- end header banner -->
 
     <!-- bat dau phan san pham -->
-    <section class="products pt-2">
+    <section class="products pt-3">
         <div class="row container m-auto pt-2">
             <div class="col-md-3">
                 @include("components.sidebar")
+                @include("components.list-posts")
             </div>
             <div class="col-md-9">
-                <div class="mx-auto">
-                    <div class="row  m-0 py-2">
-                        @if(isset($HOT_PRODUCTS))
-                            @foreach($HOT_PRODUCTS as $product)
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 pl-3 p-1">
-                                    <a href="{{route("product",$product->slug)}}"
-                                       style="text-decoration: none;color: inherit">
-                                        <div class="product-card shadow-lg rounded-20 text-center p-2 mb-3">
-                                            <img src="{{$product->first_thumbnail}}" class="img-fluid pb-2" alt="">
-                                            <div class="d-flex justify-content-center align-items-center pb-4">
-                                                @for($i =1;$i<=5;$i++)
-                                                    @if($product->rating >= $i)
-                                                        <i class="small fas mx-1 fa-star text-warning"></i>
-                                                    @else
-                                                        <i class="small far mx-1 fa-star text-warning"></i>
-                                                    @endif
-                                                @endfor
-                                            </div>
-                                        </div>
-                                        <div class="text-main font-weight-bold ">{{$product->name}}</div>
-                                        <div class="d-md-flex justify-content-between align-items-end">
-                                            <div class="text-main">{{$product->Category()->first()->name}}</div>
-                                            {{--                                    <div class="text-warning font-weight-bold h5">{{number_format($product->price)}}đ--}}
-                                            {{--                                    </div>--}}
-                                        </div>
-                                    </a>
-                                </div>
-                            @endforeach
-                        @endif
-                    </div>
-
-                </div>
+                @include("components.hot-product")
             </div>
         </div>
     </section>

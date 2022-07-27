@@ -5,7 +5,7 @@
     Danh mục sản phẩm
 </div>
 @foreach($categories as $category)
-    <div class="category-box mb-1 text-uppercase text-muted">
+    <div class="category-box mb-1 text-uppercase text-muted card">
         <a class="btn text-left w-100 rounded-0 " type="button" data-toggle="collapse"
                 @if($category->hasSub())
                     data-target="#category-{{$category->id}}"
