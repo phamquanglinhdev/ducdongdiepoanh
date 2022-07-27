@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
         }
         try {
-            $hotProducts = Product::where("active","=",1)->limit(16)->get();
+            $hotProducts = Product::where("active","=",1)->limit(8)->get();
             View::share("HOT_PRODUCTS", $hotProducts);
         }catch (\Exception){
 
