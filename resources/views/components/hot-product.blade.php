@@ -44,7 +44,7 @@
     }
 @endphp
 <div class="d-flex justify-content-between">
-    <div class="btn bg-main text-white w-25 rounded-0">{{$firstCategory->name}}</div>
+    <div class="btn bg-main text-white w-25 rounded-0">{{$firstCategory->name??"Sản phẩm"}}</div>
     <a href="{{route("products",$firstCategory->id)}}" class="btn text-main rounded-0">Xem tất cả</a>
 </div>
 <div class="mx-auto">
