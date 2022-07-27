@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Operations\InlineCreateOperation;
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -18,6 +20,7 @@ class ProductCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+//    use InlineCreateOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -76,31 +79,41 @@ class ProductCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ProductRequest::class);
-        CRUD::field('code')->label("Mã sản phẩm")->attributes(["required"=>true]);
-        CRUD::field('name')->label("Tên sản phẩm")->attributes(["required"=>true]);
+        CRUD::field('code')->label("Mã sản phẩm")->attributes(["required" => true]);
+        CRUD::field('name')->label("Tên sản phẩm")->attributes(["required" => true]);
         CRUD::field('slug')->label("URL")->type("hidden");
         CRUD::addField([
             'name' => 'category_id',
             'label' => 'Danh mục',
-            'type' => 'select',
+            'type' => 'select2',
             'models' => 'App\Models\Category',
             'entity' => 'Category',
             'attribute' => 'name',
-            'attributes' => ["required"=>true],
-
+            'attributes' => ["required" => true],
             'options' => (function ($query) {
-                return $query->orderBy('name','ASC')->where('active',true)->get();
+                $depth = [];
+                $categories = Category::all();
+                foreach ($categories as $category){
+                    if(!$category->hasSub()){
+                        $depth[]=$category->id;
+                    }
+                }
+               $query->where("id",$depth[0]);
+                foreach ($depth as $item){
+                    $query->orWhere("id",$item);
+                }
+                return $query->orderBy('name', 'ASC')->where('active', true)->get();
             })
         ]);
-        CRUD::field('size')->label("Kích thước")->attributes(["required"=>true]);
-        CRUD::field('price')->label("Khoảng giá")->attributes(["required"=>true]);
+        CRUD::field('size')->label("Kích thước")->attributes(["required" => true]);
+        CRUD::field('price')->label("Khoảng giá")->attributes(["required" => true]);
         CRUD::field('first_thumbnail')->label("Ảnh sản phẩm (1)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('second_thumbnail')->label("Ảnh sản phẩm (2)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('third_thumbnail')->label("Ảnh sản phẩm (3)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('four_thumbnail')->label("Ảnh sản phẩm (4)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
         CRUD::field('five_thumbnail')->label("Ảnh sản phẩm (5)(có thể để trống)")->type("image")->crop(true)->aspect_ratio(1);
-        CRUD::field('rating')->label("Chất lượng (1->5)")->attributes(["required"=>true]);
-        CRUD::field('description')->label("Giới thiệu")->type("textarea")->attributes(["required"=>true]);
+        CRUD::field('rating')->label("Chất lượng (1->5)")->attributes(["required" => true]);
+        CRUD::field('description')->label("Giới thiệu")->type("textarea")->attributes(["required" => true]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
