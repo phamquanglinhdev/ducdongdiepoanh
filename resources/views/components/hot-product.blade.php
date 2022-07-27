@@ -38,8 +38,10 @@
 <hr>
 {{--Fist categories--}}
 @php
-    $firstCategory = \App\Models\Category::find(1)->first();
-    $products = $firstCategory->Products()->limit(8)->get();
+    $firstCategory = \App\Models\Category::where("active","=",1)->first();
+    if(isset($firstCategory->name)){
+        $products = $firstCategory->Products()->limit(8)->get();
+    }
 @endphp
 <div class="d-flex justify-content-between">
     <div class="btn bg-main text-white w-25 rounded-0">{{$firstCategory->name}}</div>
