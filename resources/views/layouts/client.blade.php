@@ -27,7 +27,39 @@
         nonce="meZBPpaO"></script>
 <!-- Messenger Plugin chat Code -->
 <style>
+    @media (min-width: 768px) {
+        .submenu:hover .dropdown-menu{
+            display: inline-flex!important;
+            justify-content: center;
+            align-items: center;
+            left: 101%!important;
+            top: -10px!important;
+        }
 
+        .top-50{
+            top: 50px;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .submenu .dropdown-menu{
+            display: block!important;
+        }
+
+        .submenu .dropdown-menu .row{
+            display: block!important;
+        }
+        .submenu{
+            display: block!important;
+        }
+        .submenu .dropdown-menu.collapse.show{
+
+        }
+       .collapse:not(.show){
+            display: none!important;
+        }
+    }
 </style>
 
 
@@ -110,8 +142,60 @@
                         </li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
                         {{--                        </li>--}}
-                        <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("products")}}"
-                                                                  class="nav-link text-white">SẢN PHẨM</a></li>
+                        <li class="nav-item px-2 py-md-0 py-2 dropdown border-0 outline-0 rounded">
+                            <a href="{{route("products")}}" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">SẢN PHẨM</a>
+                            <ul class="dropdown-menu border-0 outline-0 shadow top-50 rounded">
+                                <li class="nav-item dropdown submenu pr-2 py-0">
+                                    <div class="d-none d-lg-flex justify-content-between align-items-center ">
+                                        <a class="nav-link text-dark" data-toggle="dropdown">item one</a>
+                                        <span class="fas fa-angle-right text-dark"></span>
+                                    </div>
+                                    <div class="d-lg-none d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseMainItem1">
+                                        <a class="nav-link text-dark">item one</a>
+                                        <span class="fas fa-angle-right text-dark"></span>
+                                    </div>
+
+                                    <div id="collapseMainItem1" class="collapse dropdown-menu rounded-0 border-0 outline-0 shadow py-0">
+
+                                        <div class="row flex-nowrap p-lg-0 px-2">
+                                            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                                <div class="d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collpaseSubItem1">
+                                                    <a class="d-inline d-md-none">Item One</a>
+                                                    <span class="fas fa-angle-right d-inline d-lg-none"></span>
+                                                </div>
+                                                <ul id="collpaseSubItem1" class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark">subitem one</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                                <div class="d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collpaseSubItem1">
+                                                    <a class="d-inline d-md-none">Item One</a>
+                                                    <span class="fas fa-angle-right d-inline d-lg-none"></span>
+                                                </div>
+                                                <ul id="collpaseSubItem1" class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark">subitem one</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                                <div class="d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collpaseSubItem1">
+                                                    <a class="d-inline d-md-none">Item One</a>
+                                                    <span class="fas fa-angle-right d-inline d-lg-none"></span>
+                                                </div>
+                                                <ul id="collpaseSubItem1" class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark">subitem one</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("structs")}}"
                                                                   class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a>
                         </li>
@@ -315,6 +399,9 @@
 <script src="{{asset("assets/js/search.min.js")}}"></script>
 <script src="{{asset("assets/js/custom.js")}}"></script>
 <script>
+    $(document).on('click', '.dropdown-menu', function (e) {
+        e.stopPropagation();
+    });
     var btn = $('#back-top-top');
 
     $(window).scroll(function () {
