@@ -32,14 +32,15 @@
     </div>
 </div>
 <div class="btn bg-main text-white w-100 rounded-0 mt-2">Facebook</div>
-<div class="fb-page" data-href="https://www.facebook.com/dododiepoanh"
-     data-tabs=""
-     data-width="" data-height="800vh"
+<div class="fb-page" data-href="https://www.facebook.com/dododiepoanh/"
+     data-tabs="" data-width=""
+     data-height=""
      data-small-header="false"
      data-adapt-container-width="true"
      data-hide-cover="false"
      data-show-facepile="true">
-    <blockquote cite="https://www.facebook.com/dododiepoanh" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/dododiepoanh">Đồ Đồng Điệp Oanh</a>
+    <blockquote cite="https://www.facebook.com/dododiepoanh/"
+                class="fb-xfbml-parse-ignore"><a
+            href="https://www.facebook.com/dododiepoanh/">Đồ Đồng Điệp Oanh</a>
     </blockquote>
 </div>

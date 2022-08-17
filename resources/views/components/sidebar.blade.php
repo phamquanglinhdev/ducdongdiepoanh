@@ -1,3 +1,6 @@
+<style>
+
+</style>
 @php
     $categories = \App\Models\Category::where("category_id","=",null)->where("active","=",1)->get();
 @endphp
@@ -8,50 +11,70 @@
     <div class="category-box mb-1 text-uppercase text-muted card">
         <a class="btn text-left w-100 rounded-0 "
            @if($category->hasSub())
-               type="button"
+               role="button"
            data-toggle="collapse"
-           data-target="#category-{{$category->id}}"
+           href="#category-{{$category->id}}"
            @else
                href="{{route("products",$category->id)}}"
            @endif
-           aria-expanded="false" aria-controls="collapseWidthExample">
+           aria-expanded="false" aria-controls="category-{{$category->id}}">
             @if($category->hasSub())
                 <i class="fas fa-caret-right"></i>
             @endif
             {{$category->name}}
         </a>
-        <div>
-            <div class="collapse width mt-0 text-uppercase" id="category-{{$category->id}}">
+
+        <div class="collapse mt-0 text-uppercase" id="category-{{$category->id}}">
+            <div class="sub-box">
                 @foreach($category->SubCategories()->get() as $sub)
-                    <a class="btn text-main text-left w-100 rounded-0 text-uppercase"
+                    <a class="ml-3 btn text-main text-left w-100 rounded-0 text-uppercase"
                        @if($sub->hasSub())
-                           type="button" data-toggle="collapse"
-                       data-target="#category-sub-{{$sub->id}}"
+                           role="button" data-toggle="collapse"
+                       href="#category-sub-{{$sub->id}}"
                        @else
                            href="{{route("products",$sub->id)}}"
                        @endif
-                       aria-expanded="false" aria-controls="collapseWidthExample">
-                        <span class="ml-3"></span>
+                       aria-expanded="false" aria-controls="category-sub-{{$sub->id}}">
+                        <span></span>
                         @if($sub->hasSub())
                             <i class="fas fa-caret-right "></i>
                         @endif
                         {{$sub->name}}
                     </a>
-                    <div>
-                        <div class="collapse width mt-0" id="category-sub-{{$sub->id}}">
-                            @foreach($sub->SubCategories()->get() as $minSub)
-                                <div class="p-1">
-                                    <a href="{{route("products",$minSub->id)}}" class="nav-link text-main">
-                                        <span class="ml-4"></span> {{$minSub->name}}
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
+                    <div class="collapse mt-0" id="category-sub-{{$sub->id}}">
+                        @foreach($sub->SubCategories()->get() as $minSub)
+                            <div class="">
+                                <a href="{{route("products",$minSub->id)}}" class="ml-4 nav-link text-main">
+                                    <i class="fas fa-angle-right"></i>
+                                    {{$minSub->name}}
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 @endforeach
             </div>
         </div>
+
     </div>
 @endforeach
-
+@section("js")
+    <script>
+        $(".category-box").hover(
+            function () {
+                console.log($(this).children(".collapse"))
+                $(this).children(".collapse").collapse('show');
+            }, function () {
+                $(this).children(".collapse").collapse('hide');
+            }
+        );
+        $(".sub-box").hover(
+            function () {
+                console.log($(this).children(".collapse"))
+                $(this).children(".collapse").collapse('show');
+            }, function () {
+                $(this).children(".collapse").collapse('hide');
+            }
+        );
+    </script>
+@endsection
 

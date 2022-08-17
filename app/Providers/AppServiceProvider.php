@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
 
         }
         try {
-            $local_category = Category::where("active","=",1)->get();
+            $local_category = Category::where("active","=",1)->where("category_id",null)->get();
             View::share("LOCAL_CATEGORIES", $local_category);
         }catch (\Exception ){}
         Schema::defaultStringLength(191);

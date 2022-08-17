@@ -10,10 +10,11 @@
     <a href="tel:0949806083" type="button"
        class="btn bg-main text-white border-white show-cart rounded-pill d-flex align-items-center p-1"
        data-toggle="modal" data-target="#cart">
-        <div class="font-weight-bold p-1">0949.806.083</div>
+        <div class="font-weight-bold p-1 d-md-block d-none">0949.806.083</div>
         <i class="fas fa-phone fa-2x bg-warning p-2 rounded-circle"></i>
     </a>
 </div>
+
 <!-- Modal -->
 {{--    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
 {{--        <div class="modal-dialog modal-dialog-centered" role="document">--}}

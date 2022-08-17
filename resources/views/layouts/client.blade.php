@@ -27,38 +27,79 @@
         nonce="meZBPpaO"></script>
 <!-- Messenger Plugin chat Code -->
 <style>
-    @media (min-width: 768px) {
-        .submenu:hover .dropdown-menu{
-            display: inline-flex!important;
-            justify-content: center;
-            align-items: center;
-            left: 101%!important;
-            top: -10px!important;
-        }
+    /*@media (min-width: 768px) {*/
+    /*    .submenu:hover .dropdown-menu {*/
+    /*        display: inline-flex !important;*/
+    /*        justify-content: center;*/
+    /*        align-items: center;*/
+    /*        left: 101% !important;*/
+    /*        top: -10px !important;*/
+    /*    }*/
 
-        .top-50{
-            top: 50px;
-        }
+    /*    .top-50 {*/
+    /*        top: 50px;*/
+    /*    }*/
+    /*}*/
+
+    /*@media (max-width: 768px) {*/
+
+    /*    .submenu .dropdown-menu {*/
+    /*        display: block !important;*/
+    /*    }*/
+
+    /*    .submenu .dropdown-menu .row {*/
+    /*        display: block !important;*/
+    /*    }*/
+
+    /*    .submenu {*/
+    /*        display: block !important;*/
+    /*    }*/
+
+    /*    .submenu .dropdown-menu.collapse.show {*/
+
+    /*    }*/
+
+    /*    .collapse:not(.show) {*/
+    /*        display: none !important;*/
+    /*    }*/
+    /*}*/
+
+    .megamenu {
+        position: static;
     }
 
-    @media (max-width: 768px) {
+    .megamenu .dropdown-menu {
+        background: none;
+        border: none;
+        width: 100%;
+    }
 
-        .submenu .dropdown-menu{
-            display: block!important;
-        }
 
-        .submenu .dropdown-menu .row{
-            display: block!important;
-        }
-        .submenu{
-            display: block!important;
-        }
-        .submenu .dropdown-menu.collapse.show{
+    body {
 
-        }
-       .collapse:not(.show){
-            display: none!important;
-        }
+    }
+
+    code {
+        color: #745eb1;
+        background: #000000;
+        padding: 0.1rem 0.2rem;
+        border-radius: 0.2rem;
+    }
+
+    .text-uppercase {
+        letter-spacing: 0.08em;
+    }
+
+    .dropdown .dropdown-menu {
+        transition: all 0.5s;
+        overflow: hidden;
+        transform-origin: top center;
+        transform: scale(1, 0);
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: scale(1);
     }
 </style>
 
@@ -142,59 +183,111 @@
                         </li>
                         {{--                        <li class="nav-item px-2 py-md-0 py-2"><a href="#" class="nav-link text-white">NGHÊ NHÂN</a>--}}
                         {{--                        </li>--}}
-                        <li class="nav-item px-2 py-md-0 py-2 dropdown border-0 outline-0 rounded">
-                            <a href="{{route("products")}}" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">SẢN PHẨM</a>
-                            <ul class="dropdown-menu border-0 outline-0 shadow top-50 rounded">
-                                <li class="nav-item dropdown submenu pr-2 py-0">
-                                    <div class="d-none d-lg-flex justify-content-between align-items-center ">
-                                        <a class="nav-link text-dark" data-toggle="dropdown">item one</a>
-                                        <span class="fas fa-angle-right text-dark"></span>
-                                    </div>
-                                    <div class="d-lg-none d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseMainItem1">
-                                        <a class="nav-link text-dark">item one</a>
-                                        <span class="fas fa-angle-right text-dark"></span>
-                                    </div>
+                        {{--                        <li class="nav-item px-2 py-md-0 py-2 dropdown border-0 outline-0 rounded">--}}
+                        {{--                            <a href="{{route("products")}}" class="nav-link text-white dropdown-toggle"--}}
+                        {{--                               data-toggle="dropdown">SẢN PHẨM</a>--}}
+                        {{--                            <ul class="dropdown-menu border-0 outline-0 shadow top-50 rounded">--}}
+                        {{--                                @foreach($LOCAL_CATEGORIES as $category)--}}
+                        {{--                                    <li class="nav-item dropdown submenu pr-2 py-0">--}}
+                        {{--                                        <div class="d-none d-lg-flex justify-content-between align-items-center ">--}}
+                        {{--                                            <a class="nav-link text-dark text-uppercase"--}}
+                        {{--                                               data-toggle="dropdown">{{$category->name}}</a>--}}
+                        {{--                                            <span class="fas fa-angle-right text-dark"></span>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="d-lg-none d-flex justify-content-between align-items-center"--}}
+                        {{--                                             data-toggle="collapse" data-target="#collapseMainItem-{{$category->id}}">--}}
+                        {{--                                            <a class="nav-link text-dark text-uppercase">{{$category->name}}</a>--}}
+                        {{--                                            <span class="fas fa-angle-right text-dark"></span>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div id="collapseMainItem-{{$category->id}}"--}}
+                        {{--                                             class="collapse dropdown-menu rounded-0 border-0 outline-0 shadow py-0">--}}
+                        {{--                                            <ul id="collpaseSubItem-{{$category->id}}"--}}
+                        {{--                                                class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">--}}
+                        {{--                                                <li class="nav-item">--}}
+                        {{--                                                    <a href="#" class="nav-link text-dark text-uppercase">{{$category->name}} ABC</a>--}}
+                        {{--                                                </li>--}}
+                        {{--                                                <li class="nav-item">--}}
+                        {{--                                                    <a href="#" class="nav-link text-dark">{{$category->name}} ABC</a>--}}
+                        {{--                                                </li>--}}
+                        {{--                                                <li class="nav-item">--}}
+                        {{--                                                    <a href="#" class="nav-link text-dark">{{$category->name}} ABC</a>--}}
+                        {{--                                                </li>--}}
+                        {{--                                            </ul>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </li>--}}
+                        {{--                                @endforeach--}}
+                        {{--                            </ul>--}}
+                        {{--                        </li>--}}
+                        <li class="nav-item px-2 d-md-none d-block"><a class="nav-link text-white" href="{{route("products")}}">SẢN PHẨM</a></li>
+                        <li class="nav-item px-2 dropdown megamenu d-md-block d-none">
+                            <a id="megamneu" href="" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="true"
+                               class="nav-link text-white dropdown-toggle font-weight-bold text-uppercase">SẢN
+                                PHẨM</a>
+                            <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0 ">
+                                <div class=" d-block bg-main">
+                                    <div class="row rounded-0 m-0 shadow-sm">
+                                        <div class="col-12">
+                                            <div class="p-lg-4">
+                                                <div class="row m-0">
+                                                    @foreach($LOCAL_CATEGORIES as $category)
+                                                        <div
+                                                            class="col-lg-3 col-md-4 col-sm-6 p-3">
+                                                            <h6 class="font-weight-bold text-uppercase text-white">
+                                                                <div class="btn bg-white text-main w-100">
+                                                                    @if(!$category->hasSub())
+                                                                        <a class="text-main"
+                                                                           href="{{route("products",$category->id)}}">
+                                                                            {{$category->name}}
+                                                                        </a>
+                                                                    @else
+                                                                        {{$category->name}}
+                                                                    @endif
+                                                                </div>
+                                                            </h6>
+                                                            <ul class="list-unstyled">
+                                                                @if($category->hasSub())
+                                                                    @foreach($category->SubCategories()->get() as $sub)
+                                                                        <li class="nav-item ">
+                                                                            @if(!$sub->hasSub())
+                                                                                <a href="#"
+                                                                                   class="nav-link pb-0 text-white text-uppercase">
+                                                                                    {{$sub->name}}</a>
+                                                                            @else
+                                                                                <a data-toggle="collapse"
+                                                                                   class="nav-link pb-0 text-white text-uppercase"
+                                                                                   href="#collapse-{{$sub->id}}"
+                                                                                   role="button"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapseExample">
+                                                                                    <i class="fas fa-plus-square"></i>
+                                                                                    {{$sub->name}}
+                                                                                </a>
+                                                                                <div class="collapse"
+                                                                                     id="collapse-{{$sub->id}}">
+                                                                                    @if($sub->hasSub())
+                                                                                        @foreach($sub->SubCategories()->get() as $sub2)
+                                                                                            <a href="#"
+                                                                                               class="nav-link pb-0 text-white text-uppercase">
+                                                                                                <i class="ml-3 fas fa-minus-square"></i>
+                                                                                                {{$sub2->name}}</a>
+                                                                                        @endforeach
+                                                                                    @endif
+                                                                                </div>
+                                                                            @endif
+                                                                        </li>
+                                                                    @endforeach
+                                                                @endif
 
-                                    <div id="collapseMainItem1" class="collapse dropdown-menu rounded-0 border-0 outline-0 shadow py-0">
-
-                                        <div class="row flex-nowrap p-lg-0 px-2">
-                                            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                                <div class="d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collpaseSubItem1">
-                                                    <a class="d-inline d-md-none">Item One</a>
-                                                    <span class="fas fa-angle-right d-inline d-lg-none"></span>
+                                                            </ul>
+                                                        </div>
+                                                    @endforeach
                                                 </div>
-                                                <ul id="collpaseSubItem1" class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link text-dark">subitem one</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                                <div class="d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collpaseSubItem1">
-                                                    <a class="d-inline d-md-none">Item One</a>
-                                                    <span class="fas fa-angle-right d-inline d-lg-none"></span>
-                                                </div>
-                                                <ul id="collpaseSubItem1" class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link text-dark">subitem one</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                                <div class="d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collpaseSubItem1">
-                                                    <a class="d-inline d-md-none">Item One</a>
-                                                    <span class="fas fa-angle-right d-inline d-lg-none"></span>
-                                                </div>
-                                                <ul id="collpaseSubItem1" class="collapse d-flex flex-wrap flex-column justify-content-between align-items-center list-unstyled">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link text-dark">subitem one</a>
-                                                    </li>
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item px-2 py-md-0 py-2"><a href="{{route("structs")}}"
                                                                   class="nav-link text-white">CÔNG TRÌNH TIÊU BIỂU</a>
