@@ -47,7 +47,18 @@ class AppServiceProvider extends ServiceProvider
         }
         try {
             $local_category = Category::where("active","=",1)->where("category_id",null)->get();
-            View::share("LOCAL_CATEGORIES", $local_category);
+            $sorted =[];
+            foreach ($local_category as $category){
+                if($category->hasSub()){
+                    $sorted[]=$category;
+                }
+            }
+            foreach ($local_category as $category){
+                if(!$category->hasSub()){
+                    $sorted[]=$category;
+                }
+            }
+            View::share("LOCAL_CATEGORIES", $sorted);
         }catch (\Exception ){}
         Schema::defaultStringLength(191);
 

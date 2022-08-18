@@ -57,7 +57,7 @@
 
     </div>
 @endforeach
-@section("js")
+@section("include-js")
     <script>
         $(".category-box").hover(
             function () {

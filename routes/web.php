@@ -35,6 +35,8 @@ Route::get("/lien-he/",[FixedPageController::class,'contact'])->name("contact");
 Route::post("/lien-he/",[FixedPageController::class,'saveFeedback'])->name("contact.save");
 Route::get("/gioi-thieu-nghe-nhan/",[FixedPageController::class,'about'])->name("about");
 Route::get("/tin-tuc/{id?}",[PostController::class,'render',"id"])->where(["id"])->name("post");
+Route::post("/tin-tuc/load/",[PostController::class,'loadComponent',"limit"])->where(["limit"])->name("ajax-post");
+Route::get("/danh-sach-tin-tuc",[PostController::class,'list'])->name("posts");
 
 Route::middleware(['client'])->prefix("user")->group(function () {
     Route::get('/gio-hang', [CartController::class,"showCart"])->name("client.cart");
