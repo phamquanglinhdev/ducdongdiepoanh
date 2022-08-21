@@ -1,13 +1,13 @@
 <style>
     .social-fix{
         position: fixed;
-        bottom: 40% !important;
+        bottom: 0 !important;
         right: 5px !important;
         z-index: 9;
     }
     .icon{
-        width: 2.5em;
-        height: 2.5em;
+        width: 3em;
+        height: 3em;
     }
 </style>
 <div class="social-fix d-flex align-items-end flex-column">
