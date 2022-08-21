@@ -6,7 +6,7 @@
     <title>{{$title??"Đồ đồng Điệp Oanh"}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{$SETTING["description"]}}">
-    <meta name="keywords" content="{{$SETTING["keywords"]}}">
+    <meta name="keywords" content="{{$keyword??$SETTING["keywords"]}}">
     <link rel="stylesheet" href="{{asset("assets/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/owl.carousel.min.css")}}">
@@ -218,7 +218,8 @@
                         {{--                                @endforeach--}}
                         {{--                            </ul>--}}
                         {{--                        </li>--}}
-                        <li class="nav-item px-2 d-md-none d-block"><a class="nav-link text-white" href="{{route("products")}}">SẢN PHẨM</a></li>
+                        <li class="nav-item px-2 d-md-none d-block"><a class="nav-link text-white"
+                                                                       href="{{route("products")}}">SẢN PHẨM</a></li>
                         <li class="nav-item px-2 dropdown megamenu d-md-block d-none">
                             <a id="megamneu" href="" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="true"
@@ -363,16 +364,18 @@
             </div>
             <div class="col-md-2 col-12">
                 <h3 class="font-weight-bold my-2">Điều khoản</h3>
-                <div class="text-white">Chính sách bảo mật</div>
-                <div class="text-white ">Chính sách thanh toán</div>
-                <div class="text-white ">Chính sách bảo hành đổi trả</div>
-                <div class="text-white ">Chính sách vận chuyển</div>
-                <div class="text-white ">Hướng dẫn mua hàng</div>
+                @if(isset($PAGES))
+                    @foreach($PAGES as $page)
+                        <div class="text-white">
+                            <a class="text-white" href="{{route("fix-page",$page->slug)}}">{{$page->name}}</a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
             <div class="col-md-4 col-12">
                 <h3 class="font-weight-bold my-2">Google Map</h3>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d478933.7354164277!2d106.01885!3d20.31393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313677b2397a258f%3A0x8e2e7cdbc3c3cfc6!2zQ3R5IHRuaGggbeG7mXQgdGjDoG5oIHZpw6puIMSRw7pjIMSRaeG7h3Agb2FuaA!5e0!3m2!1svi!2s!4v1658932955298!5m2!1svi!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.671712919712!2d106.01890000000002!3d20.313851200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313677befa87199f%3A0x21302beaea6d1e32!2zxJDDumMgxJDhu5NuZyDEkGnhu4dwIE9hbmggLSDEkOG7kyDEkOG7k25nIEtodSBW4buxYyDDnSBZw6pu!5e0!3m2!1svi!2s!4v1661074989789!5m2!1svi!2s"
                     width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -510,11 +513,7 @@
         $('html, body').animate({scrollTop: 0}, '300');
     });
 </script>
-<div class="pill-fix">
-    <x-zalo-chat></x-zalo-chat>
-    <x-facebook-chat></x-facebook-chat>
-    <x-cart-modal></x-cart-modal>
-</div>
+@include("components.social-fix")
 <script>
     jQuery(document).ready(function ($) {
         var engine = new Bloodhound({

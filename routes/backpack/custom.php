@@ -32,4 +32,5 @@ Route::group([
     Route::get("import",[ImportController::class,"ExcelImport"])->name("ExcelImport");
     Route::post("import/save",[ImportController::class,"SaveData"])->name("post.excel");
     Route::crud('struct', 'StructCrudController');
+    Route::crud('page', 'PageCrudController');
 }); // this should be the absolute last line of this file

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\FixedPageController;
+use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PostController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\UserController;
@@ -37,6 +38,7 @@ Route::get("/gioi-thieu-nghe-nhan/",[FixedPageController::class,'about'])->name(
 Route::get("/tin-tuc/{id?}",[PostController::class,'render',"id"])->where(["id"])->name("post");
 Route::post("/tin-tuc/load/",[PostController::class,'loadComponent',"limit"])->where(["limit"])->name("ajax-post");
 Route::get("/danh-sach-tin-tuc",[PostController::class,'list'])->name("posts");
+Route::get("/trang/{slug}",[PageController::class,'show',"slug"])->where(["slug"])->name("fix-page");
 
 Route::middleware(['client'])->prefix("user")->group(function () {
     Route::get('/gio-hang', [CartController::class,"showCart"])->name("client.cart");

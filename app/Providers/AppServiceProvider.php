@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\Option;
+use App\Models\Page;
 use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -40,26 +41,34 @@ class AppServiceProvider extends ServiceProvider
 
         }
         try {
-            $hotProducts = Product::where("active","=",1)->limit(8)->get();
+            $hotProducts = Product::where("active", "=", 1)->limit(8)->get();
             View::share("HOT_PRODUCTS", $hotProducts);
-        }catch (\Exception){
+        } catch (\Exception) {
 
         }
         try {
-            $local_category = Category::where("active","=",1)->where("category_id",null)->get();
-            $sorted =[];
-            foreach ($local_category as $category){
-                if($category->hasSub()){
-                    $sorted[]=$category;
+            $local_category = Category::where("active", "=", 1)->where("category_id", null)->get();
+            $sorted = [];
+            foreach ($local_category as $category) {
+                if ($category->hasSub()) {
+                    $sorted[] = $category;
                 }
             }
-            foreach ($local_category as $category){
-                if(!$category->hasSub()){
-                    $sorted[]=$category;
+            foreach ($local_category as $category) {
+                if (!$category->hasSub()) {
+                    $sorted[] = $category;
                 }
             }
             View::share("LOCAL_CATEGORIES", $sorted);
-        }catch (\Exception ){}
+        } catch (\Exception) {
+        }
+
+        try {
+            $page = Page::where("name", "like", "%Chính sách%")->get();
+
+            View::share("PAGES", $page);
+        } catch (\Exception) {
+        }
         Schema::defaultStringLength(191);
 
     }
