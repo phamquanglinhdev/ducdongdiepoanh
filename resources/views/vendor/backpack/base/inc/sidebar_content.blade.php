@@ -6,7 +6,9 @@
 {{--<li class='nav-item'><a class='nav-link' href='{{ backpack_url('order') }}'><i class='nav-icon la la-file-invoice-dollar'></i> Đơn hàng</a></li>--}}
 <hr>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('contact') }}'><i class='nav-icon la la-address-book'></i> Liên hệ</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('post') }}'><i class='nav-icon la la-pager'></i> Bài viêt</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('post') }}'><i class='nav-icon la la-pinterest'></i> Bài viêt</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('page') }}'><i class='nav-icon la la-pager'></i> Trang </a></li>
+
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('struct') }}'><i class='nav-icon la la-building'></i> Công trình tiêu biểu</a></li>
 {{--<li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Khách hàng</a></li>--}}
 <hr>
@@ -17,4 +19,3 @@
 
 
 
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('page') }}'><i class='nav-icon la la-question'></i> Pages</a></li>
