@@ -12,7 +12,7 @@
 </style>
 <div class="social-fix d-flex align-items-end flex-column">
     <div class="">
-        <a href="https://zalo.me/3236278465751243976" type="button"
+        <a href="https://www.messenger.com/t/dododiepoanh" type="button"
            class="btn show-zalo  d-flex align-items-center p-1" target="_blank">
             <div class="icon">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Facebook_Messenger_logo_2020.svg/2048px-Facebook_Messenger_logo_2020.svg.png" class="w-100">
@@ -20,7 +20,7 @@
         </a>
     </div>
     <div class="">
-        <a href="https://www.messenger.com/t/dododiepoanh" type="button"
+        <a href="https://zalo.me/3236278465751243976" type="button"
            class="btn d-flex align-items-center p-1" target="_blank">
             <div class="icon">
                 <img src="{{asset("assets/images/zalo.svg")}}" class="w-100">
