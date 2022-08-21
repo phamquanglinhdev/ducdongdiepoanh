@@ -251,7 +251,7 @@
                                                                     @foreach($category->SubCategories()->get() as $sub)
                                                                         <li class="nav-item ">
                                                                             @if(!$sub->hasSub())
-                                                                                <a href="#"
+                                                                                <a href="{{route("products",$sub->id)}}"
                                                                                    class="nav-link pb-0 text-white text-uppercase">
                                                                                     {{$sub->name}}</a>
                                                                             @else
@@ -268,7 +268,7 @@
                                                                                      id="collapse-{{$sub->id}}">
                                                                                     @if($sub->hasSub())
                                                                                         @foreach($sub->SubCategories()->get() as $sub2)
-                                                                                            <a href="#"
+                                                                                            <a href="{{route("products",$sub2->id)}}"
                                                                                                class="nav-link pb-0 text-white text-uppercase">
                                                                                                 <i class="ml-3 fas fa-minus-square"></i>
                                                                                                 {{$sub2->name}}</a>
