@@ -6,8 +6,8 @@
         z-index: 9;
     }
     .icon{
-        width: 3em;
-        height: 3em;
+        width: 4em;
+        height: 4em;
     }
 </style>
 <div class="social-fix d-flex align-items-end flex-column">
