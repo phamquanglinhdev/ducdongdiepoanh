@@ -109,9 +109,10 @@
     <div class="banner-wrap">
         <div class="container mx-auto">
             <div class="row m-0 align-items-center justify-content-center">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-1 px-sm-0">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 py-2 text-center px-sm-0">
                     <a href="{{route("index")}}">
-                        <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo img-fluid">
+                        <img src="{{asset("assets/images/logo.png")}}" alt="logo" class="header-logo w-100 img-fluid"
+                        >
                     </a>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 w-100">
@@ -382,7 +383,7 @@
         </div>
         <div class="row py-3">
             <div class="col text-center">
-                <img src="{{asset("assets/images/good_projects_stiker.png")}}" class="img-fluid" alt="">
+                <img src="{{asset("assets/images/pt-white.png")}}" class="img-fluid" style="width: 4em" alt="">
             </div>
         </div>
         <div class="row">
