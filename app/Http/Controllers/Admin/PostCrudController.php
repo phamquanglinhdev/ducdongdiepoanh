@@ -64,7 +64,7 @@ class PostCrudController extends CrudController
 
 
         CRUD::field('title')->label("Tiêu đề bài viết");
-        CRUD::field('document')->label("Nội dung")->type("tinymce");
+        CRUD::field('document')->label("Nội dung")->type("ckeditor");
         CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->aspect_ratio(1)->crop(true);
         CRUD::field('type')->label("Loại bài viết")->type("select_from_array")->options(["Tin tức thường","Tin tức doanh nghiệp"]);
 
